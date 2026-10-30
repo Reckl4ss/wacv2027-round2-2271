@@ -1,0 +1,8 @@
+[
+  "python",
+  ".\\src\\engines\\external_coverage\\verify.py",
+  "--output",
+  ".\\results\\reference\\external_coverage",
+  "--report",
+  ".\\runs\\external-verify\\report.json"
+]

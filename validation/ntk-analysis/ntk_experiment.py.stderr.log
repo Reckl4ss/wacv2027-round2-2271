@@ -1,0 +1,2 @@
+<REVIEW_WORKSPACE>\.venv\Lib\site-packages\numpy\lib\_nanfunctions_impl.py:1845: RuntimeWarning: invalid value encountered in subtract
+  np.subtract(arr, avg, out=arr, casting='unsafe', where=where)

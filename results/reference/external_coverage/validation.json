@@ -1,0 +1,17 @@
+{
+  "eq1_completed": false,
+  "eq1_eligible_population_count": 0,
+  "join_record_counts": {
+    "nb101_cifar10.jsonl.gz": 9781,
+    "nb301_cifar10.jsonl.gz": 11221,
+    "transnas_micro_autoencoder.jsonl.gz": 4096,
+    "transnas_micro_class_object.jsonl.gz": 4096,
+    "transnas_micro_class_scene.jsonl.gz": 4096,
+    "transnas_micro_jigsaw.jsonl.gz": 4096,
+    "transnas_micro_normal.jsonl.gz": 4096,
+    "transnas_micro_room_layout.jsonl.gz": 4096,
+    "transnas_micro_segmentsemantic.jsonl.gz": 4096
+  },
+  "schema_version": "1.1.0",
+  "status": "PASS"
+}

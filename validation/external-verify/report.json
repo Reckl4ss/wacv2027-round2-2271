@@ -1,0 +1,195 @@
+{
+  "files_verified": 9,
+  "observed": {
+    "nb101_cifar10.jsonl.gz": {
+      "counts": {
+        "capacity_finite": 9781,
+        "capacity_scale_exact_match": 9781,
+        "curve_joined": 9781,
+        "eq1_eligible": 0,
+        "erank_finite": 0,
+        "exact_final_accuracy_match": 9781,
+        "exact_paper_t_finite": 0,
+        "q_13_complete": 9781,
+        "rows": 9781,
+        "task_native_early_metric_finite": 0,
+        "task_native_final_metric_exact_match": 9781
+      },
+      "missing_fields": {
+        "8_required_proxy_count_gap": 9781,
+        "erank": 9781,
+        "exact_first5_train_accuracy_T": 9781,
+        "required_proxy_name_set_not_frozen": 9781
+      }
+    },
+    "nb301_cifar10.jsonl.gz": {
+      "counts": {
+        "capacity_finite": 11221,
+        "capacity_scale_exact_match": 0,
+        "curve_joined": 11221,
+        "eq1_eligible": 0,
+        "erank_finite": 0,
+        "exact_final_accuracy_match": 11221,
+        "exact_paper_t_finite": 0,
+        "q_13_complete": 11221,
+        "rows": 11221,
+        "task_native_early_metric_finite": 0,
+        "task_native_final_metric_exact_match": 11221
+      },
+      "missing_fields": {
+        "8_required_proxy_count_gap": 11221,
+        "erank": 11221,
+        "exact_first5_train_accuracy_T": 11221,
+        "required_proxy_name_set_not_frozen": 11221
+      }
+    },
+    "transnas_micro_autoencoder.jsonl.gz": {
+      "counts": {
+        "capacity_finite": 4096,
+        "capacity_scale_exact_match": 0,
+        "curve_joined": 4096,
+        "eq1_eligible": 0,
+        "erank_finite": 0,
+        "exact_final_accuracy_match": 0,
+        "exact_paper_t_finite": 0,
+        "q_13_complete": 4096,
+        "rows": 4096,
+        "task_native_early_metric_finite": 4096,
+        "task_native_final_metric_exact_match": 4096
+      },
+      "missing_fields": {
+        "8_required_proxy_count_gap": 4096,
+        "erank": 4096,
+        "exact_final_accuracy_match": 4096,
+        "exact_first5_train_accuracy_T": 4096,
+        "required_proxy_name_set_not_frozen": 4096
+      }
+    },
+    "transnas_micro_class_object.jsonl.gz": {
+      "counts": {
+        "capacity_finite": 4096,
+        "capacity_scale_exact_match": 0,
+        "curve_joined": 4096,
+        "eq1_eligible": 0,
+        "erank_finite": 0,
+        "exact_final_accuracy_match": 4096,
+        "exact_paper_t_finite": 4096,
+        "q_13_complete": 4096,
+        "rows": 4096,
+        "task_native_early_metric_finite": 4096,
+        "task_native_final_metric_exact_match": 4096
+      },
+      "missing_fields": {
+        "8_required_proxy_count_gap": 4096,
+        "erank": 4096,
+        "required_proxy_name_set_not_frozen": 4096
+      }
+    },
+    "transnas_micro_class_scene.jsonl.gz": {
+      "counts": {
+        "capacity_finite": 4096,
+        "capacity_scale_exact_match": 0,
+        "curve_joined": 4096,
+        "eq1_eligible": 0,
+        "erank_finite": 0,
+        "exact_final_accuracy_match": 4096,
+        "exact_paper_t_finite": 4096,
+        "q_13_complete": 4096,
+        "rows": 4096,
+        "task_native_early_metric_finite": 4096,
+        "task_native_final_metric_exact_match": 4096
+      },
+      "missing_fields": {
+        "8_required_proxy_count_gap": 4096,
+        "erank": 4096,
+        "required_proxy_name_set_not_frozen": 4096
+      }
+    },
+    "transnas_micro_jigsaw.jsonl.gz": {
+      "counts": {
+        "capacity_finite": 4096,
+        "capacity_scale_exact_match": 0,
+        "curve_joined": 4096,
+        "eq1_eligible": 0,
+        "erank_finite": 0,
+        "exact_final_accuracy_match": 4096,
+        "exact_paper_t_finite": 4096,
+        "q_13_complete": 4096,
+        "rows": 4096,
+        "task_native_early_metric_finite": 4096,
+        "task_native_final_metric_exact_match": 4096
+      },
+      "missing_fields": {
+        "8_required_proxy_count_gap": 4096,
+        "erank": 4096,
+        "required_proxy_name_set_not_frozen": 4096
+      }
+    },
+    "transnas_micro_normal.jsonl.gz": {
+      "counts": {
+        "capacity_finite": 4096,
+        "capacity_scale_exact_match": 0,
+        "curve_joined": 4096,
+        "eq1_eligible": 0,
+        "erank_finite": 0,
+        "exact_final_accuracy_match": 0,
+        "exact_paper_t_finite": 0,
+        "q_13_complete": 4096,
+        "rows": 4096,
+        "task_native_early_metric_finite": 4096,
+        "task_native_final_metric_exact_match": 4096
+      },
+      "missing_fields": {
+        "8_required_proxy_count_gap": 4096,
+        "erank": 4096,
+        "exact_final_accuracy_match": 4096,
+        "exact_first5_train_accuracy_T": 4096,
+        "required_proxy_name_set_not_frozen": 4096
+      }
+    },
+    "transnas_micro_room_layout.jsonl.gz": {
+      "counts": {
+        "capacity_finite": 4096,
+        "capacity_scale_exact_match": 0,
+        "curve_joined": 4096,
+        "eq1_eligible": 0,
+        "erank_finite": 0,
+        "exact_final_accuracy_match": 0,
+        "exact_paper_t_finite": 0,
+        "q_13_complete": 4096,
+        "rows": 4096,
+        "task_native_early_metric_finite": 4096,
+        "task_native_final_metric_exact_match": 4096
+      },
+      "missing_fields": {
+        "8_required_proxy_count_gap": 4096,
+        "erank": 4096,
+        "exact_final_accuracy_match": 4096,
+        "exact_first5_train_accuracy_T": 4096,
+        "required_proxy_name_set_not_frozen": 4096
+      }
+    },
+    "transnas_micro_segmentsemantic.jsonl.gz": {
+      "counts": {
+        "capacity_finite": 4096,
+        "capacity_scale_exact_match": 0,
+        "curve_joined": 4096,
+        "eq1_eligible": 0,
+        "erank_finite": 0,
+        "exact_final_accuracy_match": 4096,
+        "exact_paper_t_finite": 4096,
+        "q_13_complete": 4096,
+        "rows": 4096,
+        "task_native_early_metric_finite": 4096,
+        "task_native_final_metric_exact_match": 4096
+      },
+      "missing_fields": {
+        "8_required_proxy_count_gap": 4096,
+        "erank": 4096,
+        "required_proxy_name_set_not_frozen": 4096
+      }
+    }
+  },
+  "status": "PASS",
+  "total_join_records": 49674
+}

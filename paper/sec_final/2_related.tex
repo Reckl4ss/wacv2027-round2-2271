@@ -1,0 +1,59 @@
+\section{Related Work}
+\label{sec:related}
+
+% NOTE: the page-1 concept figure (\cref{fig:signflip}) is floated from the
+% abstract (sec/0_abstract.tex); the analysis-overview figure (\cref{fig:overview})
+% is in the appendix. We reference them here rather than redefining them.
+
+The zero-cost NAS literature has largely asked \emph{how to build a proxy
+that ranks better}; we instead study the statistical structure associated with
+existing proxy scores, organizing
+each proxy's quality correlation into a capacity term and a residual trainability
+term (\cref{eq:decomp}) and studying the size, accessibility, and sign-stability of
+the two (expanded in \cref{app:related-ext}).
+
+\noindent\textbf{Capacity and expressivity proxies} score the richness an
+architecture can express at init (NEAR~\cite{near2025} via effective rank,
+Dextr~\cite{dextr2025} via a spectral condition number (its \px{cond-sum} we
+reimplement at parity), Zen-NAS~\cite{lin2021zen} via Gaussian-perturbation
+response) but none prices \emph{how much of every other proxy is largely the same
+number}; \cref{sec:result1} shows a single component aligns closely with
+effective rank.
+\noindent\textbf{Trainability and gradient proxies} score how easily a net will
+train, from one-minibatch gradient/Jacobian/NTK statistics
+(ZiCo~\cite{li2023zico}, TE-NAS~\cite{chen2021tenas},
+\px{jacob-cov}~\cite{jacobcov}, GradSign~\cite{gradsign},
+MeCo~\cite{jiang2023meco}); what is open is whether, with capacity held fixed,
+anything remains for them to read at init, which \cref{sec:result2,sec:result3}
+supply as the second term of \cref{eq:decomp}.
+\noindent\textbf{Ensembles and joint proxies} mix the two (AZ-NAS~\cite{aznas2024}
+ensembles four axes, InTrain~\cite{intrain2026} multiplies a capacity term by a
+gradient-health term, while SWAP-NAS~\cite{peng2024swap} scores sample-wise
+activation patterns). Several evaluated constituents reverse between axes,
+whereas SWAP and AZ-NAS remain positive on both
+(\cref{sec:result4}); this mixed evidence motivates validating a recipe's
+orientation rather than assuming universal transport.
+L-SWAG~\cite{casarin2025lswag} is treated as uncovered rather than assigned an
+approximated score because no official, licensed, auditable implementation was
+available for this study.
+\noindent\textbf{Benchmarks and the cross-space critique} document these effects
+without a single account: rankings are inconsistent across spaces and many proxies
+correlate with accuracy via parameter count~\cite{ning2021evaluating,white2021powerful},
+simple features rival learned proxies~\cite{kadlecova2024graf}, and
+NAS-Bench-Suite-Zero~\cite{krishnakumar2022nbsz} reports combining $13$ proxies adds
+up to $+42\%$ over the best single one. We do not chase the $+42\%$ (our
+same-direction gain is a conservative $+13.8\%$ (TSS) / $+1.0\%$ (SSS)) but
+\emph{relate the observed gain to two associations}: a leading
+capacity-associated term (\cref{sec:result1}) and a residual associated with the
+external early-training target (\cref{sec:result3}); the cross-space
+inconsistency is summarized by the sign reversals of
+\cref{sec:result4}; against our own framing we refute a strict label-free ceiling
+(\cref{sec:result5}). A measurement-provenance inventory and compute accounting
+are provided in \cref{app:provenance-inventory}.
+\noindent\textbf{Kernel spectral bias} we borrow only as a map: the picture of
+Canatar \etal~\cite{canatar2021spectral} (and Bordelon--Pehlevan) reads a label-free
+statistic's reachable target as the at-init NTK's kernel-regression error, and our
+single formal statement (\cref{thm:bound}) bounds that \emph{frozen} target, not
+trained accuracy. The observed proxy--trainability associations therefore do not
+follow from the proposition (\cref{sec:result2,sec:result3}). The proposition is
+motivation; the contribution is the empirical decomposition.

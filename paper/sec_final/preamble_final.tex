@@ -1,0 +1,88 @@
+%
+% --- color support (needed by \textcolor in \PH and \definecolor in main.tex)
+%
+\usepackage{xcolor}
+
+%
+% --- inline annotations
+%
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\todo}[1]{{\color{red}#1}}
+\newcommand{\TODO}[1]{\textbf{\color{red}[TODO: #1]}}
+% --- disable by uncommenting
+% \renewcommand{\TODO}[1]{}
+% \renewcommand{\todo}[1]{#1}
+
+% --- placeholder for anything not in the evidence packet
+\newcommand{\PH}[1]{\textcolor{red}{[PH:#1]}}
+
+% --- figures live in figures/
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{{figures/}}
+
+% --- math macros
+\usepackage{amsmath,amssymb,amsthm}
+\setlength{\emergencystretch}{3em} % absorb stubborn overfull lines during page build
+% Two-column article defaults to \flushbottom, which stretches sparse columns and
+% opens large inter-paragraph gaps (especially around the nobreak result/proposition
+% boxes). Let column bottoms be ragged instead of vertically stretched.
+\raggedbottom
+
+% The official review submission displays WACV's line numbers.
+
+% --- framed "Result" boxes (Allen-Zhu "Physics of LM" style); pdflatex-safe
+\usepackage{mdframed}
+\usepackage{booktabs}  % \toprule/\midrule/\bottomrule in body curated tables
+% Proxy/metric names: clean sans-serif identifier (NOT a monospace "code" look),
+% hyphenated to match the figure labels, and breakable to avoid column overflow.
+\newcommand{\px}[1]{\textsf{#1}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Corr}{\operatorname{Corr}}
+\newcommand{\Phimc}{\mathcal{G}}
+\DeclareMathOperator{\erank}{erank}
+\newcommand{\corr}{\operatorname{corr}}
+\newcommand{\partialcorr}{\operatorname{partial}}
+\newcommand{\acc}{\mathrm{acc}}
+\newcommand{\params}{\mathrm{params}}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+% --- empirical, falsifiable regularities (NOT theorems): numbered "Result N"
+% Rendered as a light-gray framed box (Allen-Zhu "Result N" register).
+\theoremstyle{definition}
+\newtheorem{findingthm}{Result}
+\mdfdefinestyle{findingbox}{%
+  backgroundcolor=black!4,
+  linecolor=black!30,
+  linewidth=0.4pt,
+  roundcorner=2pt,
+  innertopmargin=3pt,
+  innerbottommargin=3pt,
+  innerleftmargin=4pt,
+  innerrightmargin=4pt,
+  skipabove=3pt,
+  skipbelow=3pt,
+  nobreak=false, % allow the box to split across a column/page break, so a box that
+                 % does not fit at a column bottom FILLS it and continues, instead of
+                 % being bumped whole and leaving a large ragged gap below.
+}
+\newmdenv[style=findingbox]{findingframe}
+\newenvironment{finding}[1][]%
+  {\begin{findingframe}\begin{findingthm}[#1]}%
+  {\end{findingthm}\end{findingframe}}
+% --- inline run-in numbered "Result" environment, sharing the findingthm counter.
+% Renders "\textbf{Result k (handle).} ..." inline; \cref-able as "Result k".
+\newtheoremstyle{resultrunin}{4pt}{4pt}{}{}{\bfseries}{.}{ }{\thmname{#1}~\thmnumber{#2}\thmnote{ (#3)}}
+\theoremstyle{resultrunin}
+\newtheorem{result}[findingthm]{Result}
+% cleveref names for \cref{find:...} (cleveref is loaded \AtEndPreamble in wacv.sty)
+% The counter driving \cref is now `findingthm` (the inner theorem inside the box).
+\AtEndPreamble{%
+  \crefname{findingthm}{Result}{Results}%
+  \Crefname{findingthm}{Result}{Results}%
+}
+

@@ -1,0 +1,12 @@
+{
+  "task": "width-partials",
+  "status": "PASS",
+  "commands": [
+    {
+      "script": "width_partial.py",
+      "arguments": [],
+      "exit_code": 0
+    }
+  ],
+  "scope": "Execution check; numerical/visual comparison is a separate validation step."
+}

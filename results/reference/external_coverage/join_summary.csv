@@ -1,0 +1,10 @@
+benchmark,final_metric,official_history_rows,official_micro_rows,task,train_metric,zc_rows
+NAS-Bench-101,,423624,,cifar10,,9781
+NAS-Bench-301,,11221,,cifar10,,11221
+TransNAS-Bench-101/micro,valid_top1,,4096,class_scene,train_top1,4096
+TransNAS-Bench-101/micro,valid_top1,,4096,class_object,train_top1,4096
+TransNAS-Bench-101/micro,valid_top1,,4096,jigsaw,train_top1,4096
+TransNAS-Bench-101/micro,valid_neg_loss,,4096,room_layout,train_neg_loss,4096
+TransNAS-Bench-101/micro,valid_acc,,4096,segmentsemantic,train_acc,4096
+TransNAS-Bench-101/micro,valid_ssim,,4096,normal,train_ssim,4096
+TransNAS-Bench-101/micro,valid_ssim,,4096,autoencoder,train_ssim,4096

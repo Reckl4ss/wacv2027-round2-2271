@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "entry_points": [
+    "main.tex",
+    "appendix.tex"
+  ],
+  "cross_reference_cycles": 2,
+  "label_definitions_unchanged": {
+    "main": true,
+    "appendix": true
+  },
+  "label_keys": 212,
+  "static_reference_occurrences": 278,
+  "unresolved_static_references": [],
+  "final_compiler_issues": []
+}

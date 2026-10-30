@@ -1,0 +1,14 @@
+[
+  "python",
+  ".\\src\\engines\\sampling_robustness\\verify.py",
+  "--input-dir",
+  ".\\data\\frozen",
+  "--outputs",
+  ".\\results\\reference\\sampling_robustness",
+  "--input-manifest",
+  ".\\data\\provenance\\sampling_robustness\\input_checksums.sha256",
+  "--selected-output",
+  ".\\runs\\sampling-verify\\selected_ids.csv.gz",
+  "--report",
+  ".\\runs\\sampling-verify\\report.json"
+]

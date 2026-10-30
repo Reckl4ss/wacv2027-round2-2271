@@ -1,0 +1,17 @@
+{
+  "task": "figures",
+  "status": "PASS",
+  "commands": [
+    {
+      "script": "portability.py",
+      "arguments": [],
+      "exit_code": 0
+    },
+    {
+      "script": "pipeline.py",
+      "arguments": [],
+      "exit_code": 0
+    }
+  ],
+  "scope": "Execution check; numerical/visual comparison is a separate validation step."
+}

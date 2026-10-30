@@ -1,0 +1,16 @@
+[
+  "python",
+  ".\\src\\engines\\recent_proxies\\verify.py",
+  "--round1-results",
+  ".\\data\\frozen",
+  "--raw",
+  ".\\results\\reference\\recent_proxies\\raw_scores.jsonl.gz",
+  "--architecture-scores",
+  ".\\results\\reference\\recent_proxies\\architecture_scores.jsonl.gz",
+  "--correlations",
+  ".\\results\\reference\\recent_proxies\\correlations.csv",
+  "--results",
+  ".\\results\\reference\\recent_proxies\\results.json",
+  "--output",
+  ".\\runs\\recent-verify\\report.json"
+]

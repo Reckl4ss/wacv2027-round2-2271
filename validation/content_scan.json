@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "files_examined": 234,
+  "checks": [
+    "personal_path",
+    "private_key",
+    "github_credential",
+    "aws_access_key"
+  ],
+  "hits": [],
+  "scope": "Pattern scan of candidate text, gzip payloads and trusted pickle strings. Not a scan of the original public Git history or a proof that no possible secret exists."
+}

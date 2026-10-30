@@ -1,0 +1,17 @@
+\\begin{tabular}{llrrrr}
+Protocol & Pair & $K=1$ & $K=5$ & $K=10$ & $K=50$ \\
+\\hline
+round1\\_compatible & nb201\\_tss\\_to\\_sss & +7.826 [+6.045,+9.166] & +6.622 [+4.876,+8.021] & +5.402 [+4.386,+6.435] & +3.001 [+2.633,+3.372] \\
+round1\\_compatible & nb201\\_sss\\_to\\_tss & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] \\
+round1\\_compatible & transnas\\_scene\\_to\\_nb101 & +1.108 [-2.374,+4.033] & +1.554 [-0.120,+3.062] & +1.973 [+0.626,+3.133] & +1.563 [-0.093,+3.304] \\
+round1\\_compatible & transnas\\_scene\\_to\\_nb201 & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] \\
+identity\\_disjoint & nb201\\_tss\\_to\\_sss & +7.826 [+7.024,+8.077] & +6.622 [+5.949,+6.743] & +5.402 [+5.057,+5.599] & +3.001 [+2.880,+3.082] \\
+identity\\_disjoint & nb201\\_sss\\_to\\_tss & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] \\
+identity\\_disjoint & transnas\\_scene\\_to\\_nb101 & +1.108 [+0.315,+1.939] & +1.554 [+1.041,+1.968] & +1.973 [+1.487,+2.208] & +1.563 [+1.093,+1.990] \\
+identity\\_disjoint & transnas\\_scene\\_to\\_nb201 & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] & +0.000 [+0.000,+0.000] \\
+\\end{tabular}
+
+% Round-1-compatible intervals resample target positions before CALIB/EVAL splitting; identities may overlap.
+% Identity-disjoint sensitivity intervals partition identities, then resample within each side.
+% Percentile intervals are algorithmic resampling summaries; no inferential p-values are reported.
+% Screen uses target-CALIB cached labels and is not label-free.

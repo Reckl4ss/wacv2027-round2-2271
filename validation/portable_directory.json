@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "clean_copy": true,
+  "space_and_unicode_path": true,
+  "same_fresh_cpu_environment": true,
+  "commands": [
+    {
+      "command": [
+        "python",
+        "scripts/verify_bundle.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/reproduce.py",
+        "search-points"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "scripts/reproduce.py",
+        "dimension"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "Independent directory resolution; no original workspace layout, Git config or credentials needed."
+}

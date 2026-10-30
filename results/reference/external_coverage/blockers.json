@@ -1,0 +1,22 @@
+{
+  "benchmark_blockers": {
+    "NAS-Bench-101": [
+      "only108 histories contain halfway/final metrics, not epochs 1-5 train accuracy"
+    ],
+    "NAS-Bench-301": [
+      "histories contain train_losses and val_accuracies but no train_accuracy; loss is not substituted"
+    ],
+    "TransNAS-Bench-101": [
+      "native first-five training metrics are available, but train_neg_loss/train_ssim are not exact training-accuracy T",
+      "native final metrics are available, but valid_neg_loss/valid_ssim are not exact final accuracy",
+      "the eight-field proxy count gap, unaudited required-name set, and erank remain blocked"
+    ]
+  },
+  "eq1_completed": false,
+  "global_blockers": [
+    "Official ZC inputs contain 13 finite proxy fields versus a required count of 21; the count gap is 8.",
+    "The authoritative Round-1 sources do not freeze an unambiguous 21-name contract, so the names/set difference for the eight-field count gap are blocked rather than invented.",
+    "No aligned external effective-rank field is present for any benchmark."
+  ],
+  "schema_version": "1.1.0"
+}

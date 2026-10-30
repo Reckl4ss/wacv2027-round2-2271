@@ -1,0 +1,15 @@
+{
+  "task": "ntk-analysis",
+  "status": "PASS",
+  "commands": [
+    {
+      "script": "ntk_experiment.py",
+      "arguments": [
+        "--phase",
+        "analyze"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "Execution check; numerical/visual comparison is a separate validation step."
+}

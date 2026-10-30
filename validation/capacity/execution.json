@@ -1,0 +1,21 @@
+{
+  "task": "capacity",
+  "status": "PASS",
+  "exit_code": 0,
+  "seconds": 81.37846089992672,
+  "reference_comparison": {
+    "status": "PASS",
+    "numeric_values": 3162,
+    "absolute_tolerance": 1e-10,
+    "max_abs_error": 2.7000623958883807e-13,
+    "differences": []
+  },
+  "scope": "Full cached-population analysis, including cached early targets; upstream measurements not rerun.",
+  "python": "3.13.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "scipy": "1.18.0",
+    "pandas": "3.0.3",
+    "matplotlib": "3.11.0"
+  }
+}

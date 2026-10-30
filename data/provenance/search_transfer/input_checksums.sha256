@@ -1,0 +1,12 @@
+# Populated only from files actually used by the clean rerun.
+# Verified immutable Round-1 gate inputs:
+52f5aaac6d71690cea04b532ff3215a102fea5b9ce4f0bfa2b265e02f6946da7  round1_reconstructed_source/code/search_transfer_demo.py
+00e6b67e07ea7f3937b35cba8c4852ed00e440213bbb3ef254b6568633e59bb0  round1_reconstructed_source/results/base_tss_cifar10.pkl
+3b15bec29b9c38e10f5ef7df141bbb7d9c595aab5afd3bb570cc308f48f787d0  round1_reconstructed_source/results/base_sss_cifar10.pkl
+ef6cda6a8580373f6eeda60ca41431bde80f3e332c991a1565f848e91acfafe9  round1_reconstructed_source/results/exp_alpha_components.pkl
+
+# NASLib official ZC inputs (download IDs and pinned source commit in official_sources.json):
+aaf67baf526661c84b9c2bd449926cd0ff41d9451fe0aeaeba3450013ec6801f  official_inputs/zc/zc_nasbench101.json
+60934abb09b682abe0e1ca44acf08a1162e3001f34960ac78fda9f8867525c52  official_inputs/zc/zc_transbench101_micro.json
+
+# A missing or mismatched entry is a blocker, never permission to run an unverified file.

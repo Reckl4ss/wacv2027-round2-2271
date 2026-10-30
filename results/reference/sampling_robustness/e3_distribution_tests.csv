@@ -1,0 +1,7 @@
+space,variable,comparison,ks_statistic,selection_randomization_pvalue,randomization_draws,mean_difference_intersection_minus_base,holm_adjusted_pvalue_within_axis
+tss,accuracy,intersection_vs_base_available,0.027753086419753048,0.8380809595202399,2000,0.2737166872428105,1.0
+tss,params,intersection_vs_base_available,0.02354320987654321,0.7451274362818591,2000,0.009081513086419912,1.0
+tss,param_count,intersection_vs_base_available,0.0,1.0,2000,0.0,1.0
+sss,accuracy,intersection_vs_base_available,0.10090366581415175,0.031984007996002,2000,0.2848808184143081,0.095952023988006
+sss,params,intersection_vs_base_available,0.0923444160272805,0.051974012993503245,2000,0.010123695959079332,0.10394802598700649
+sss,param_count,intersection_vs_base_available,0.0923444160272805,0.057971014492753624,2000,10071.271338448423,0.10394802598700649

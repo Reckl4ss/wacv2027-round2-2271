@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "scripts_parsed": 33,
+  "engine_numeric_constant_sequences_checked": 13,
+  "scope": "Syntax/numeric literal integrity, not a substitute for executed result comparison."
+}

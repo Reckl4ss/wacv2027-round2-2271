@@ -1,0 +1,141 @@
+================================================================================
+SCALE-UP 2: NB101 STANDARD-PROXY + PARAMS DECOMPOSITION  -- NO GPU, NO TRAINING
+PYTHON: C:\Python314\python.exe | numpy 2.4.4 | SEED 1234
+MODE: FULL
+Stats imported verbatim from zoo_analysis.py. CAPACITY CONTROL = params.
+SMALL-N (n=100): CIs wide -> ALL NB101 findings are SUGGESTIVE.
+================================================================================
+[NB101 build] DATA SOURCE: v2--nasbench101--cifar10--9000.json (n=100, SMALL-N)
+   acc = val_acc (json). capacity control = PARAMS (json).
+   proxies = ['grad_norm', 'snip', 'fisher', 'synflow', 'jacob_cov', 'grasp', 'plain', 'zen', 'epe_nas', 'l2_norm', 'nwot']
+   BLOCKED no-GPU (stated, NOT fabricated): erank/spectral (need net build),
+   early-epoch T_slope (needs full nasbench_full.tfrecord). -> R3 T-arm SKIPPED;
+   we report params-controlled partial(Q, acc | params) instead.
+
+################################################################################
+# NB101  n=100  (capacity control = PARAMS; erank=NaN -> run_R2/R3 use params fallback)
+################################################################################
+
+================================================================================
+R1 ONE-AXIS + NBSZ REPLICATE-AND-DECOMPOSE -- NB101-cf10  (n=100, proxies requested=11)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        grad_norm        +1  data(rho=+0.51)
+        snip             +1  data(rho=+0.54)
+        fisher           +1  data(rho=+0.50)
+        synflow          +1  data(rho=+0.69)
+        jacob_cov        -1  data(rho=-0.53)
+        grasp            -1  data(rho=-0.10)
+        plain            +1  data(rho=+0.05)
+        zen              +1  data(rho=+0.65)
+        epe_nas          -1  data(rho=-0.08)
+        l2_norm          +1  data(rho=+0.55)
+        nwot             +1  data(rho=+0.32)
+  [R1a masking] complete-case PCA: kept 100/100 archs (dropped 0 non-finite). Per-column non-finite cells (masked, NOT zeroed):
+        none (all proxy cells finite)
+
+  [R1a rank-HEADLINE] PCA: var(PC1)= 51.3%  var(PC1+PC2)= 65.5%  (k_proxies=11)
+  [R1a rank-HEADLINE] corr(PC1,params)=+0.795  corr(PC1,erank)=+nan  corr(PC1,acc)=+0.625
+  [R1a rank-HEADLINE] PC1 loadings (sorted |.|):
+        snip             +0.391
+        grad_norm        +0.384
+        zen              +0.366
+        fisher           +0.360
+        synflow          +0.353
+        l2_norm          +0.342
+        nwot             +0.290
+        grasp            +0.221
+        jacob_cov        +0.199
+        plain            +0.123
+        epe_nas          +0.079
+
+  [R1a raw-z-SENSITIVITY] PCA: var(PC1)= 52.4%  var(PC1+PC2)= 66.8%  (k_proxies=11)
+  [R1a raw-z-SENSITIVITY] corr(PC1,params)=+0.838  corr(PC1,erank)=+nan  corr(PC1,acc)=+0.614
+  [R1a raw-z-SENSITIVITY] PC1 loadings (sorted |.|):
+        snip             +0.396
+        grad_norm        +0.390
+        zen              +0.376
+        l2_norm          +0.364
+        synflow          +0.353
+        nwot             +0.324
+        fisher           +0.308
+        jacob_cov        +0.188
+        grasp            +0.170
+        plain            +0.150
+        epe_nas          +0.078
+
+  [R1a] proxy x proxy Spearman (oriented): mean|rho|=0.409  median|rho|=0.403  (P=11)
+
+  [R1b NBSZ replicate] 5-fold CV ridge on per-column RANKS predicting acc.
+       strictly leakage-free: features ranked WITHIN the train fold (test rows mapped via searchsorted); ridge fit + standardization use TRAIN folds only.
+       best single proxy = synflow  CV-R2=0.4694
+       ALL 11 proxies        CV-R2=0.6235
+       complementarity GAIN: abs=+0.1541  rel=+32.8%  (their "+42%"-style number)
+       NOTE: best-single baseline is in-sample-selected (argmax CV-R2 over proxies), so the reported gain is a LOWER BOUND (conservative for the one-axis thesis).
+
+  [R1c decompose] capacity {erank,params} regressed out of acc AND every proxy INSIDE each CV train fold (train-fit, applied to held-out rows -> no target-touch).
+       best single residual proxy = jacob_cov  CV-R2(res)=0.2224
+       ALL proxies residual          CV-R2(res)=0.4837
+       SURVIVING complementarity GAIN: abs=+0.2613  rel=+117.5%
+
+  [R1d transfer] partial(residual-surrogate-pred, T_slope | erank,params) = +nan  95%CI[+nan,+nan]
+
+  [R1 INTERPRETATION]
+       MIXED: residual gain large, transfer absent -> see R3 for the per-proxy verdict.
+
+================================================================================
+R2 CAPACITY-ANCHORED DECOMPOSITION -- NB101-cf10  (n=100)
+================================================================================
+  [capacity] 100/100 rows lack erank -> capacity column uses the params FALLBACK for them (heterogeneous: erank for the rest). See STDONLY note.
+  rankR2(acc | erank,params)      = 0.4490  95%CI[0.301,0.576]
+  (T unavailable for >=5 archs -> trainability-share increment skipped here.)
+  acc-residual on capacity: finite=100/100  std=21.422
+
+----- [NB101] per-proxy access (target=T_slope is all-NaN -> partial(Q,T|..) shows
+      n/a HONESTLY; the load-bearing NB101 column is partial(Q, acc-residual | params)
+      and the ceiling rankR2(acc|params) vs +best proxy). -----
+
+================================================================================
+R3 FULL-ZOO TRAINABILITY-RESIDUAL ACCESS + CEILING -- NB101-cf10  (n=100, target=T_slope)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        grad_norm        +1  data(rho=+0.51)
+        snip             +1  data(rho=+0.54)
+        fisher           +1  data(rho=+0.50)
+        synflow          +1  data(rho=+0.69)
+        jacob_cov        -1  data(rho=-0.53)
+        grasp            -1  data(rho=-0.10)
+        plain            +1  data(rho=+0.05)
+        zen              +1  data(rho=+0.65)
+        epe_nas          -1  data(rho=-0.08)
+        l2_norm          +1  data(rho=+0.55)
+        nwot             +1  data(rho=+0.32)
+  [capacity] 100/100 rows lack erank -> params-fallback in the capacity control (heterogeneous; partials only partially capacity-controlled for those rows).
+  finite T=0/100  partial(T,acc|erank,params)=+nan (premise sanity; expect ~+0.6)
+  proxy            corr(Q,T)  partial(Q,T|cap,pa) partial(Q,accres|..)   corr(Q,er)   flag
+  grad_norm             +nan      +nan[+nan,+nan]    +0.119[-0.15,+0.37]         +nan       
+  snip                  +nan      +nan[+nan,+nan]    +0.073[-0.19,+0.34]         +nan       
+  fisher                +nan      +nan[+nan,+nan]    +0.166[-0.08,+0.42]         +nan       
+  synflow               +nan      +nan[+nan,+nan]    +0.361[+0.15,+0.55]         +nan       
+  jacob_cov             +nan      +nan[+nan,+nan]    +0.488[+0.28,+0.64]         +nan       
+  grasp                 +nan      +nan[+nan,+nan]    -0.182[-0.38,+0.02]         +nan       
+  plain                 +nan      +nan[+nan,+nan]    -0.052[-0.26,+0.15]         +nan       
+  zen                   +nan      +nan[+nan,+nan]    +0.268[+0.08,+0.47]         +nan       
+  epe_nas               +nan      +nan[+nan,+nan]    -0.005[-0.22,+0.20]         +nan       
+  l2_norm               +nan      +nan[+nan,+nan]    +0.131[-0.07,+0.33]         +nan       
+  nwot                  +nan      +nan[+nan,+nan]    -0.456[-0.58,-0.28]         +nan       
+
+  CEILING rankR2(acc):  {erank,params}=0.4490   {+best label-free proxy=jacob_cov}=0.5902   {+T oracle}=nan
+  NOTE: best_r2 is an IN-SAMPLE MAX over K=11 label-free proxies -> optimistically biased upward by selection.
+  selection NOISE FLOOR (best-of-K random columns lift): mean=+0.0212  p95=+0.0442
+  best-proxy lift over capacity = +0.1412  (real lift = +0.1199 after noise floor)
+  gap closed ONLY by ground-truth T = +nan (LOWER BOUND: best_r2 is selection-inflated, so true T-only gap is LARGER)
+
+[NB101 INTERPRETATION] No-GPU NB101 supports ONLY the capacity-vs-complementarity
+  arm (R1 PCA + NBSZ residual gain + ceiling rankR2(acc|params)). The trainability
+  (T) arm and the spectral (erank) arm are BLOCKED without GPU/tfrecord and are NOT
+  estimated (no fabricated T/erank). All numbers are SMALL-N (n=100) -> suggestive.
+
+[saved] scaleup_nb101_results.pkl
+
+[done] NB101 decomposition complete.

@@ -1,0 +1,6 @@
+[
+  "python",
+  ".\\scripts\\replay_search_points.py",
+  "--output",
+  ".\\runs\\search-points"
+]

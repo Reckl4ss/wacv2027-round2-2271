@@ -1,0 +1,98 @@
+{
+  "architecture_rows": 2850,
+  "correlations": [
+    {
+      "ci": [
+        0.7661774926971976,
+        0.8254092569958857
+      ],
+      "method": "swap",
+      "rho": 0.7975574728077051,
+      "space": "tss",
+      "target": "test_accuracy"
+    },
+    {
+      "ci": [
+        0.7649416225485047,
+        0.8240125538964808
+      ],
+      "method": "swap",
+      "rho": 0.79647608996451,
+      "space": "tss",
+      "target": "validation_accuracy"
+    },
+    {
+      "ci": [
+        0.7306398219859529,
+        0.8186105977209246
+      ],
+      "method": "swap",
+      "rho": 0.7783457331748139,
+      "space": "sss",
+      "target": "test_accuracy"
+    },
+    {
+      "ci": [
+        0.7483178780859744,
+        0.8339606952800249
+      ],
+      "method": "swap",
+      "rho": 0.7947688946673815,
+      "space": "sss",
+      "target": "validation_accuracy"
+    },
+    {
+      "ci": [
+        0.910177422066434,
+        0.9309021067001574
+      ],
+      "method": "aznas",
+      "rho": 0.9216585543551294,
+      "space": "tss",
+      "target": "test_accuracy"
+    },
+    {
+      "ci": [
+        0.9102157437866687,
+        0.9305771744105188
+      ],
+      "method": "aznas",
+      "rho": 0.921430391476319,
+      "space": "tss",
+      "target": "validation_accuracy"
+    },
+    {
+      "ci": [
+        0.6920152493100398,
+        0.7790750270918682
+      ],
+      "method": "aznas",
+      "rho": 0.7396540515281734,
+      "space": "sss",
+      "target": "test_accuracy"
+    },
+    {
+      "ci": [
+        0.684191644508499,
+        0.7691028673982143
+      ],
+      "method": "aznas",
+      "rho": 0.7305841784461969,
+      "space": "sss",
+      "target": "validation_accuracy"
+    }
+  ],
+  "model_identity_exact": true,
+  "official_negative_infinity_counts": {
+    "tss/az_expressivity/negative_infinity": 250,
+    "tss/az_progressivity/negative_infinity": 250,
+    "tss/az_trainability/negative_infinity": 105
+  },
+  "population_counts": {
+    "sss": 425,
+    "tss": 1000
+  },
+  "raw_rows": 52725,
+  "score_validity": "all scores finite except preserved official negative-infinity sentinels",
+  "status": "PASS"
+}

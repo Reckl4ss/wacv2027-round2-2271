@@ -1,0 +1,12 @@
+{
+  "task": "early-windows",
+  "status": "PASS",
+  "commands": [
+    {
+      "script": "t_window.py",
+      "arguments": [],
+      "exit_code": 0
+    }
+  ],
+  "scope": "Execution check; numerical/visual comparison is a separate validation step."
+}

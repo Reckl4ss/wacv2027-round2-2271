@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "files": [
+    "src/analysis/zoo_analysis.py",
+    "src/analysis/width_partial.py"
+  ],
+  "check": "AST equals executed kernel after string literals are normalized; changes are report descriptions only."
+}

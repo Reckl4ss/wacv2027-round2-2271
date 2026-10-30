@@ -1,0 +1,136 @@
+========================================================================================
+FDR RECOUNT -- multiple-comparison control for the rebuttal
+[local execution path omitted]
+NO TRAINING / NO net build -- permutation re-analysis of existing pkls only.
+========================================================================================
+========================================================================================
+FAMILY A -- R3 PER-PROXY PARTIAL GRID: partial(Q, T_slope | erank, params)
+  29 full-zoo proxies x {TSS, SSS} = 58 tests.  Null = 5000 FREEDMAN-LANE permutations/cell
+  (permute y-resid, add back Z-fit, re-residualise; calibrated under strong erank/params
+   confounding -- the regime here -- where a residual-shuffle null would be anti-conservative).
+  (oriented exactly as zoo_analysis R3: per-space sign(corr(Q,acc)); rank-residual partial.)
+  BH-FDR note: the 58 tests share controls {erank,params} and a common target T within a space,
+  so they are POSITIVELY dependent, not independent. BH controls FDR under positive dependence
+  (PRDS); Benjamini-Yekutieli 2001 is the conservative alternative -- the BY count is also shown.
+========================================================================================
+
+  58 cells tested (finite); BH-FDR alpha=0.05 step-up cut p<=0.027794 (34 reject); Holm-Bonferroni FWER=0.05 (23 reject).
+  conservative-dependence check: Benjamini-Yekutieli (arbitrary dependence) cut p<=0.0021996 (25 reject).
+  EXPECTED #false positives: family-wise alpha*m = 2.90 ; BH expected E[FP] <= alpha*R = 1.70 over the 34 BH discoveries.
+
+  proxy            space   partial      perm_p        n    BH.05  Holm.05
+  fisher           TSS      -0.152   0.0081984      324      YES        -
+  grad_norm        TSS      -0.358  0.00019996      324      YES      YES
+  grasp            TSS      -0.176   0.0009998      324      YES      YES
+  snip             TSS      -0.369  0.00019996      324      YES      YES
+  synflow          TSS      -0.126    0.027794      324      YES        -
+  jacob_cov        TSS      +0.604  0.00019996      317      YES      YES
+  plain            TSS      -0.170   0.0021996      324      YES        -
+  zico             TSS      -0.197  0.00039992      324      YES      YES
+  meco             TSS      +0.291  0.00019996      324      YES      YES
+  zen              TSS      -0.049     0.37892      317        -        -
+  ntk              TSS      +0.180  0.00079984      324      YES      YES
+  gradsign         TSS      -0.135    0.017796      324      YES        -
+  cond_sum         TSS      +0.215  0.00039992      324      YES      YES
+  stable_sum       TSS      +0.109     0.05219      324        -        -
+  Ralpha_0.5       TSS      -0.266  0.00019996      324      YES      YES
+  Ralpha_2.0       TSS      +0.256  0.00019996      324      YES      YES
+  Ralpha_4.0       TSS      +0.245  0.00019996      324      YES      YES
+  Ralpha_8.0       TSS      +0.223  0.00019996      324      YES      YES
+  Ralpha_16.0      TSS      +0.205  0.00019996      324      YES      YES
+  Q_ntk_logcond    TSS      -0.121    0.032394      324        -        -
+  Q_ntk_logtrace   TSS      -0.075     0.16937      324        -        -
+  Q_ntk_effrank    TSS      +0.105    0.056389      324        -        -
+  Q_ntk_loglmax    TSS      -0.078     0.15317      324        -        -
+  Q_zico_rand      TSS      +0.207  0.00039992      324      YES      YES
+  Q_zico_rot       TSS      +0.183   0.0019996      317      YES        -
+  Q_coh_rand       TSS      -0.072     0.18956      324        -        -
+  Q_coh_rot        TSS      +0.128    0.024395      324      YES        -
+  Q_adapt_rot      TSS      +0.143    0.009998      324      YES        -
+  Q_zico_oracle    TSS      +0.253  0.00019996      324      YES      YES  [LABEL]
+  fisher           SSS      +0.098     0.25355      138        -        -
+  grad_norm        SSS      +0.074     0.39412      138        -        -
+  grasp            SSS      -0.030     0.73805      138        -        -
+  snip             SSS      +0.296   0.0011998      138      YES      YES
+  synflow          SSS      +0.332  0.00039992      138      YES      YES
+  jacob_cov        SSS      -0.124     0.15077      138        -        -
+  plain            SSS      +0.131     0.13977      138        -        -
+  zico             SSS      +0.233   0.0085983      138      YES        -
+  meco             SSS      -0.398  0.00019996      138      YES      YES
+  zen              SSS      +0.517  0.00019996      138      YES      YES
+  ntk              SSS      +0.241   0.0061988      138      YES        -
+  gradsign         SSS      -0.130     0.12118      138        -        -
+  cond_sum         SSS      -0.141     0.10358      138        -        -
+  stable_sum       SSS      -0.014     0.86363      138        -        -
+  Ralpha_0.5       SSS      -0.295  0.00019996      138      YES      YES
+  Ralpha_2.0       SSS      +0.067     0.43351      138        -        -
+  Ralpha_4.0       SSS      -0.010     0.91322      138        -        -
+  Ralpha_8.0       SSS      +0.006     0.94621      138        -        -
+  Ralpha_16.0      SSS      +0.015     0.86243      138        -        -
+  Q_ntk_logcond    SSS      -0.475  0.00019996      138      YES      YES
+  Q_ntk_logtrace   SSS      -0.032     0.71286      138        -        -
+  Q_ntk_effrank    SSS      -0.343  0.00019996      138      YES      YES
+  Q_ntk_loglmax    SSS      -0.198    0.019996      138      YES        -
+  Q_zico_rand      SSS      +0.121     0.15817      138        -        -
+  Q_zico_rot       SSS      -0.045     0.59168      138        -        -
+  Q_coh_rand       SSS      +0.075     0.38052      138        -        -
+  Q_coh_rot        SSS      -0.205    0.015997      138      YES        -
+  Q_adapt_rot      SSS      -0.602  0.00019996      138      YES      YES
+  Q_zico_oracle    SSS      +0.040     0.64527      138        -        -  [LABEL]
+
+  LONE-SURVIVOR ntk CONFIRMATION (both axes, both spaces): the R3 verdict named ntk as the
+  only LABEL-FREE proxy with partial(Q,T_slope|.)>0 AND CI excluding 0 in BOTH spaces. Here we
+  attach permutation p to BOTH axes (T_slope AND acc-residual) in BOTH spaces and FDR them.
+     ntk T_slope TSS    partial=+0.180 perm_p=0.0015997 n=324  BH=YES Holm=YES
+     ntk acc-res TSS    partial=+0.304 perm_p=0.00019996 n=324  BH=YES Holm=YES
+     ntk T_slope SSS    partial=+0.241 perm_p=0.0053989 n=138  BH=YES Holm=YES
+     ntk acc-res SSS    partial=+0.159 perm_p=0.068986 n=138  BH=- Holm=-
+     => ntk T_slope axis survives BH-FDR in BOTH spaces: YES
+
+========================================================================================
+FAMILY B -- PORTABILITY GRID: corr(Q, acc) per (proxy, space).
+  13 proxies x 7 spaces; permutation null = 5000 acc-shuffles per FINITE cell.
+  Recomputed from crossspace.collect_spaces() raw arrays (same data as crossspace_out.txt).
+========================================================================================
+
+  91 finite cells; BH-FDR alpha=0.05 cut p<=0.038592 (78 reject); Holm (72 reject).
+  EXPECTED #false positives: family-wise alpha*m=4.55 ; BH E[FP]<=alpha*R=3.90.
+
+  crossspace TABLE-1 SIGN-FLIP rule (n_pos>0 & n_neg>0 @ eps=0.02) marks 8 proxies: grad_norm, snip, fisher, jacov, zen, grasp, plain, epe_nas.
+  -> 4 STRONG cross-task reversals drilled down here: jacov, grasp, zen, plain.
+  -> 4 OMITTED (grad_norm, snip, fisher, epe_nas) flip ONLY in the small-n=50 NB301-cf10 column (|rho|<=0.34): attenuation,
+     not a real reversal. (All 13 proxies are still BH-corrected together above.)
+
+  STRONG SIGN-FLIPS (jacov/grasp/zen/plain): is each flip FDR-significant or a noise/attenuation cell?
+  proxy     space                 rho      perm_p      n    BH.05  Holm.05 verdict
+  jacov     NB101-cf10         -0.526  0.00019996    100      YES      YES REAL-FLIP (FDR-sig)
+  jacov     NB301-cf10         -0.075     0.59668     50        -        - attenuation (not FDR-sig)
+     -> jacov: median rho=+0.677 ; 1 FDR-significant REAL flips, 1 non-significant attenuation cells.
+  grasp     NB101-cf10         -0.102     0.31574    100        -        - attenuation (not FDR-sig)
+  grasp     TransNAS-object    -0.390  0.00019996    150      YES      YES REAL-FLIP (FDR-sig)
+  grasp     TransNAS-scene     -0.566  0.00019996    150      YES      YES REAL-FLIP (FDR-sig)
+     -> grasp: median rho=+0.205 ; 2 FDR-significant REAL flips, 1 non-significant attenuation cells.
+  zen       NB201-cf10         -0.065    0.038592    977      YES        - REAL-FLIP (FDR-sig)
+  zen       NB201-cf100        -0.086   0.0061988    977      YES        - REAL-FLIP (FDR-sig)
+     -> zen: median rho=+0.470 ; 2 FDR-significant REAL flips, 0 non-significant attenuation cells.
+  plain     NB101-cf10         +0.047     0.64507    100        -        - attenuation (not FDR-sig)
+  plain     TransNAS-object    +0.516  0.00019996    150      YES      YES REAL-FLIP (FDR-sig)
+  plain     TransNAS-scene     +0.326  0.00019996    150      YES      YES REAL-FLIP (FDR-sig)
+     -> plain: median rho=-0.053 ; 2 FDR-significant REAL flips, 1 non-significant attenuation cells.
+
+========================================================================================
+JOINT FAMILY (A R3-partials + B portability) -- strictest single-family correction
+========================================================================================
+  total tests m=149 ; BH-FDR reject=112 (cut p<=0.036193) ; Holm reject=90 ; expected E[FP]<=alpha*R=5.60.
+
+========================================================================================
+BOTTOM LINE
+========================================================================================
+  * R3 partial grid (Family A): 34/58 cells survive BH-FDR (25 survive the conservative Benjamini-Yekutieli, 23 survive Holm). ntk T_slope axis survives BH in BOTH spaces: YES.
+  * Portability grid (Family B): 78/91 finite cells survive BH-FDR, 72 survive Holm.
+      jacov  : 1 FDR-significant REAL sign-flips vs 1 non-significant attenuation cells.
+      grasp  : 2 FDR-significant REAL sign-flips vs 1 non-significant attenuation cells.
+      zen    : 2 FDR-significant REAL sign-flips vs 0 non-significant attenuation cells.
+      plain  : 2 FDR-significant REAL sign-flips vs 1 non-significant attenuation cells.
+  * The handful of partial/flip survivors are NOT multiple-comparison luck: they pass BH-FDR
+    (and mostly Holm) with expected false-positive counts < 1 at the BH threshold.

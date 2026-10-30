@@ -1,0 +1,224 @@
+%==========================================================================
+\section{Validity and Robustness Controls}
+\label{app:r2-controls}
+
+This section reports orientation, sampling, dimension, search, external-coverage,
+and recent-proxy controls.
+Intervals retain their experiment-specific resampling unit; algorithmic
+subsamples/resamples are not treated as independent experiments. No result below
+depends on an external link; the evidence is documented directly here.
+
+\subsection{Orientation control}
+\label{app:r2-orientation}
+
+The per-axis outcome-informed analysis orients every proxy separately on each axis using its
+accuracy correlation. Multiplying columns by fixed signs is an orthogonal
+reflection: it cannot change PCA eigenvalues and changes scores only up to the
+arbitrary component sign. Raw and globally fixed analyses confirm this
+invariance but show that directional loading agreement was overstated
+(\cref{tab:r2-orientation}). We therefore retain the dominant
+capacity-associated factor, not an unchanged PC1 or loading direction. The
+globally oriented trainability partials for \px{meco}
+($+0.291$ $[0.177,0.397]$ / $+0.398$ $[0.233,0.513]$) and \px{ntk}
+($+0.180$ $[0.056,0.295]$ / $+0.241$ $[0.077,0.388]$) are exploratory marginal
+intervals without multiple-testing certification. These marginal intervals use
+2,000 percentile-bootstrap draws per axis.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+PCA input/orientation & variance T/S & $|\rho(\mathrm{PC1},\erank)|$ T/S & loading cosine\\
+\midrule
+rank, per-axis outcome & $.529/.494$ & $.937/.986$ & $.869$\\
+rank, raw/global       & $.529/.494$ & $.937/.986$ & $.461$\\
+raw-z, per-axis outcome& $.496/.498$ & $.936/.981$ & $.875$\\
+raw-z, raw/global      & $.496/.498$ & $.936/.981$ & $.445$\\
+\bottomrule
+\end{tabular}
+}
+\caption{\textbf{Orientation affects cross-axis loading direction, not factor
+strength.} T/S denote the NB201 topology/size axes.}
+\label{tab:r2-orientation}
+\end{table}
+
+\subsection{Sampling, missingness, and matched sample count}
+\label{app:r2-sampling}
+
+The standard-proxy populations contain 1,000 TSS and 425 SSS architectures. The
+spectral/premise/probe cohorts each contain 500 per axis; complete-case joins with
+the base populations yield 324 TSS and 138 SSS records. The join loss is cohort
+overlap, not row-wise disagreement among already joined tables. The upstream
+500-cohort sampling algorithm cannot be recovered from the cached artifacts.
+
+The SSS intersection is mildly shifted toward higher accuracy and larger models:
+the mean accuracy difference is $+0.285$ percentage points (raw $p=.032$, Holm $p=.096$),
+and parameter-related differences likewise do not pass the within-axis Holm
+correction. We therefore retain a representativeness limitation
+rather than conclude that selection is absent.
+
+After first applying the fixed 29-feature finite mask (317 eligible TSS
+records), we drew 1,000 exact without-replacement samples of $n=138$. The full
+summary is in \cref{tab:r2-sampling}. All three headline raw reversals retain the
+TSS-positive/SSS-negative direction in 1,000/1,000 samples. These are algorithmic
+subsampling summaries, not 1,000 independent trials.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lr}
+\toprule
+Matched-$n$ quantity & 95\% subsampling interval\\
+\midrule
+PC1 variance & $[.497,.559]$\\
+$\rho(\mathrm{PC1},\erank)$ & $[.918,.953]$\\
+outcome-oriented cosine vs. SSS & $[.835,.889]$\\
+capacity rank-$R^2$ & $[.666,.798]$\\
+capacity+$T$ rank-$R^2$ & $[.785,.878]$\\
+$T$ increment & $[.060,.138]$\\
+\px{cond-sum}/\px{meco}/\px{grasp} direction & $1000/1000$ each\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Matched TSS sample size does not explain the headline
+results.} The fixed SSS comparison remains $n=138$.}
+\label{tab:r2-sampling}
+\end{table}
+
+\subsection{Cached-length and effective-rank controls}
+\label{app:r2-dimension}
+
+On balanced $n=500/500$ cohorts, cached normalizations retain the
+full-population \px{cond-sum} sign difference (\cref{tab:r2-dimension}). Within
+SSS, however, the partial of the raw score is $-0.079$ after effective-rank
+control and $-0.068$ after joint cached-length, effective-rank, and parameter
+controls. Cached-length supports are disjoint (TSS 142--502; SSS 118--122), so
+exact cross-axis matching is not identifiable. An unmatched effective-rank
+common-range sensitivity uses only 103 TSS records and gives
+\px{cond-sum}/effective-rank correlations $-0.318/-0.885$, removing the
+cross-axis sign difference. Because the cached count is not a validated
+representation dimension, an exact dimension-matched analysis cannot be
+performed from the available artifacts. Within exact cached-length strata, all
+10 TSS strata with $n\ge20$ remain positive ($\rho=+.396$ to $+.843$), while the
+two large SSS strata remain negative (length 120: $-.849$; length 122: $-.766$).
+All marginal intervals in \cref{tab:r2-dimension} use 2,000 bootstrap draws per
+estimand.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{6pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcc}
+\toprule
+Score correlation & TSS & SSS\\
+\midrule
+raw \px{cond-sum} & $+.887\,[+.860,+.906]$ & $-.781\,[-.815,-.743]$\\
+\px{cond-sum}/cached length & $+.842\,[+.810,+.866]$ & $-.785\,[-.820,-.746]$\\
+\px{cond-sum}/effective rank & $+.418\,[+.340,+.491]$ & $-.885\,[-.902,-.861]$\\
+effective-rank common-range sensitivity & $-.318\,[-.500,-.126]$ & $-.885\,[-.902,-.861]$\\
+\bottomrule
+\end{tabular}
+}
+\caption{\textbf{Dimension-linked sensitivities.} The final row is an unmatched
+common-range sensitivity, not a causal or exact dimension match.}
+\label{tab:r2-dimension}
+\end{table}
+
+\subsection{Search consequence and sensitivity protocols}
+\label{app:r2-search}
+
+The screen uses target-CALIB cached accuracy to reject a source proxy whose sign
+does not transport, and then evaluates a disjoint target-EVAL set. It is not
+fully label-free. \Cref{tab:r2-search} gives the source-best comparisons for all
+K values. The pre-specified $K=10$ primary point is a moderate budget among
+$K=1/5/10/50$; retaining all four avoids favorable-budget selection. At $K=10$,
+percentile intervals under the target-position
+resampling protocol (1,000 algorithmic draws)
+are $[4.386,6.435]$ and $[0.626,3.133]$ for the two traps; the two null intervals
+are $[0,0]$. The identity-disjoint sensitivity first partitions canonical
+identities and has zero overlap; its trap intervals are $[5.057,5.599]$ and
+$[1.487,2.208]$, with both nulls again $[0,0]$. The protocols use different
+resampling units and are not pooled.
+
+At K=10 under the target-position resampling protocol,
+screen-minus-baseline point
+differences for the TSS$\to$SSS trap are $-0.009$ (params), $-0.054$ (SynFlow),
+$-0.044$ (fixed rank ensemble), and $+1.989$ (random). For scene$\to$NB101 they
+are $+0.080$, $0$, $+1.127$, and $+1.448$. Thus the screen addresses the named
+source-best traps but does not dominate every baseline. Percentile intervals are
+reported without inferential p-values; resampling sign mass is only an
+algorithmic diagnostic.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{4pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Screen minus source-best (pts) & K=1 & K=5 & K=10 & K=50\\
+\midrule
+TSS$\to$SSS trap & $+7.826$ & $+6.622$ & $+5.402$ & $+3.001$\\
+SSS$\to$TSS null & $0$ & $0$ & $0$ & $0$\\
+scene$\to$NB101 trap & $+1.108$ & $+1.554$ & $+1.973$ & $+1.563$\\
+scene$\to$NB201 null & $0$ & $0$ & $0$ & $0$\\
+\bottomrule
+\end{tabular}
+}
+\caption{\textbf{Two named traps and two null directions.} Values are point
+costs under the frozen target-CALIB/target-EVAL protocol, not average gains.}
+\label{tab:r2-search}
+\end{table}
+
+\subsection{External decomposition coverage audit}
+\label{app:r2-external}
+
+The external audit joins 49,674 canonical records (\cref{tab:r2-external}).
+Official inputs contain the 13-field common proxy set, but effective-rank
+coverage is zero. NB101/NB301 also lack exact early-training accuracy $T$.
+Four TransNAS accuracy tasks have exact $T$ and final accuracy;
+room layout, normal, and autoencoder instead expose task-native early/final
+metrics. No population jointly contains all four field classes---sufficient proxy
+coverage, effective rank, exact early $T$, and exact final accuracy. Eq.~(1)
+therefore has zero eligible
+external rows, and no surrogate decomposition is reported.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{5pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrr}
+\toprule
+Population & joined rows & exact $T$/final acc. & effective rank\\
+\midrule
+NB101 & 9,781 & 0 & 0\\
+NB301 & 11,221 & 0 & 0\\
+TransNAS accuracy tasks (4) & $4\times4,096$ & $4\times4,096$ & 0\\
+TransNAS task-native metrics (3) & $3\times4,096$ & 0 & 0\\
+\bottomrule
+\end{tabular}
+}
+\caption{\textbf{External field-coverage audit.} Joined rows do not imply
+eligibility for the full decomposition.}
+\label{tab:r2-external}
+\end{table}
+
+\subsection{Recent-proxy controls}
+\label{app:r2-recent}
+
+SWAP~\cite{peng2024swap} and AZ-NAS~\cite{aznas2024} were evaluated on the common 1,425-architecture TSS/SSS
+population. \Cref{tab:r2-recent} uses 10,000 architecture-identity bootstrap
+draws. SWAP is one sign-stable recent control and does not represent every recent
+method. L-SWAG~\cite{casarin2025lswag} and InTrain~\cite{intrain2026} remain unevaluated because no official, licensed,
+auditable implementation was located as of August 25, 2026; no approximate
+substitute was used.
+
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lcc}
+\toprule
+Proxy & TSS $\rho$ [95\%] & SSS $\rho$ [95\%]\\
+\midrule
+SWAP & $.798$ $[.766,.825]$ & $.778$ $[.731,.819]$\\
+AZ-NAS & $.922$ $[.910,.931]$ & $.740$ $[.692,.779]$\\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Recent common-population controls.} Both tested methods remain
+positive on the two NB201 axes.}
+\label{tab:r2-recent}
+\end{table}

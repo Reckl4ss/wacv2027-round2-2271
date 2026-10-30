@@ -1,0 +1,17 @@
+# Corrected nested protocol; frozen before formal outer bootstraps.
+seed=1234
+target_subset_seed=1234
+n_target_bootstraps=1000
+n_splits_per_bootstrap=40
+n_random_draws_per_split_k=50
+
+# Round-1-compatible outer bootstrap stream per pair:
+bootstrap_rng=RandomState(seed+99)
+
+# Split b,s:
+round1_compatible_split_seed=seed+50000+b*40+s
+identity_disjoint_partition_seed=seed+50000+b*40+s
+identity_disjoint_within_side_resample_seed=seed+900000+b*40+s
+
+# Unbootstrapped 40-split point trace:
+point_split_seed=seed+1+s

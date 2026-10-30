@@ -1,0 +1,52 @@
+{
+  "audit_retrieval_date": "2026-08-25",
+  "az_nas": {
+    "commit": "5e6683a2cfa5c6d0dc34a1317a842497ba7eae47",
+    "commit_date": "2024-06-11T15:57:46+09:00",
+    "license": "GPL-3.0",
+    "license_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "repository": "https://github.com/cvlab-yonsei/AZ-NAS",
+    "role": "official NB201 score implementation and TSS model"
+  },
+  "cifar10": {
+    "first_data_batch_md5": "c99cafc152244af753f735de768cd75f",
+    "first16_npy_sha256": "3ff731b7248a0e538ce114bcb6868bf1be292468801c48d723f8266b4e26fedc",
+    "official_archive_md5": "c58f30108f718f92721af3b95e74349a",
+    "official_page": "https://www.cs.toronto.edu/~kriz/cifar.html",
+    "retrieval_note": "The exact data_batch_1 bytes were obtained from a public mirror and verified against torchvision's official per-file MD5 before extracting the first 16 images."
+  },
+  "intrain": {
+    "code_status": "blocked_no_official_reproducible_implementation_located",
+    "license": null,
+    "paper": "https://openaccess.thecvf.com/content/CVPR2026/papers/Zhou_InTrain_Intrinsic_Trainability_for_Zero-Cost_Neural_Architecture_Search_CVPR_2026_paper.pdf",
+    "search_evidence": [
+      "The CVF paper contains no GitHub or code link.",
+      "Queries: exact title plus GitHub/code; author names plus InTrain repository; arXiv 2606.18676 related links."
+    ]
+  },
+  "l_swag": {
+    "code_status": "blocked_no_official_reproducible_implementation_located",
+    "license": null,
+    "paper": "https://openaccess.thecvf.com/content/CVPR2025/papers/Casarin_L-SWAG_Layer-Sample_Wise_Activation_with_Gradients_Information_for_Zero-Shot_NAS_CVPR_2025_paper.pdf",
+    "search_evidence": [
+      "The CVF paper contains no GitHub or code link.",
+      "Queries: exact title plus GitHub/code; Sofia Casarin plus L-SWAG repository; author/project pages."
+    ]
+  },
+  "nats_sss_model": {
+    "commit": "f46486e21b71ae6459a700be720d7648b5429569",
+    "commit_date": "2022-04-24T15:18:16-07:00",
+    "license": "MIT",
+    "license_sha256": "17b6bce0e79c65450102c32c3121eaff36efb00d1714b5e81ec41bf8e10b9b97",
+    "repository": "https://github.com/D-X-Y/AutoDL-Projects",
+    "role": "official SSS enumeration, fixed genotype, and DynamicShapeTinyNet implementation"
+  },
+  "swap": {
+    "commit": "0853fc866051dca2b3b99d068502549de3686bd1",
+    "commit_date": "2024-09-13T14:17:21+10:00",
+    "license": "AFL-3.0",
+    "license_sha256": "65b4868007fb11b77aebc617ede4dd61d0806feb13e8e8c2c387640af7843746",
+    "paper": "https://openreview.net/forum?id=tveiUXU2aa",
+    "repository": "https://github.com/pym1024/SWAP"
+  }
+}

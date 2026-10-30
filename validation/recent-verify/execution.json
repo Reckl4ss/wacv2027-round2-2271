@@ -1,0 +1,13 @@
+{
+  "task": "recent-verify",
+  "status": "PASS",
+  "exit_code": 0,
+  "seconds": 20.01676780008711,
+  "python": "3.13.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "scipy": "1.18.0",
+    "pandas": "3.0.3",
+    "matplotlib": "3.11.0"
+  }
+}

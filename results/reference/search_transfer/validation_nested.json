@@ -1,0 +1,7 @@
+{
+  "identity_disjoint_overlap_max": 0,
+  "paired_comparisons": 160,
+  "round1_compatible_overlap_max": 194,
+  "status": "PASS",
+  "trace_chunks": 80
+}

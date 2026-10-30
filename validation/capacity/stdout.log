@@ -1,0 +1,697 @@
+================================================================================
+PYTHON: <REVIEW_WORKSPACE>\.venv\Scripts\python.exe
+numpy 2.4.4
+MODE: FULL   SEED: 1234
+================================================================================
+[join] space=tss: base=1000 comp=500 premise=500 probes=500
+[join] space=sss: base=425 comp=500 premise=500 probes=500
+[join] space=tss: FULL-ZOO intersection (base&comp&premise&probes) = 324
+[join] space=sss: FULL-ZOO intersection (base&comp&premise&probes) = 138
+[join] space=tss: STANDARD-proxy base table n=1000 (erank present 324, T present 324)
+[join] space=sss: STANDARD-proxy base table n=425 (erank present 138, T present 138)
+
+################################################################################
+# FULL ZOO  space=tss  n=324
+################################################################################
+
+================================================================================
+R1 ONE-AXIS + NBSZ REPLICATE-AND-DECOMPOSE -- FULLZOO-tss  (n=324, proxies requested=29)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        fisher           +1  data(rho=+0.47)
+        grad_norm        +1  data(rho=+0.64)
+        grasp            +1  data(rho=+0.55)
+        snip             +1  data(rho=+0.64)
+        synflow          +1  data(rho=+0.73)
+        jacob_cov        +1  data(rho=+0.76)
+        plain            +1  prior=+1 documented (rho=-0.01)
+        zico             +1  data(rho=+0.78)
+        meco             +1  data(rho=+0.88)
+        zen              -1  data(rho=-0.10)
+        ntk              -1  data(rho=-0.78)
+        gradsign         +1  data(rho=+0.78)
+        cond_sum         +1  data(rho=+0.88)
+        stable_sum       +1  data(rho=+0.86)
+        Ralpha_0.5       +1  data(rho=+0.84)
+        Ralpha_2.0       +1  data(rho=+0.88)
+        Ralpha_4.0       +1  data(rho=+0.88)
+        Ralpha_8.0       +1  data(rho=+0.88)
+        Ralpha_16.0      +1  data(rho=+0.87)
+        Q_ntk_logcond    +1  data(rho=+0.30)
+        Q_ntk_logtrace   -1  data(rho=-0.36)
+        Q_ntk_effrank    -1  data(rho=-0.50)
+        Q_ntk_loglmax    -1  data(rho=-0.36)
+        Q_zico_rand      +1  data(rho=+0.31)
+        Q_zico_rot       +1  data(rho=+0.40)
+        Q_coh_rand       -1  data(rho=-0.48)
+        Q_coh_rot        +1  data(rho=+0.08)
+        Q_adapt_rot      +1  data(rho=+0.10)
+        Q_zico_oracle    +1  data(rho=+0.35)
+  [R1a masking] complete-case PCA: kept 317/324 archs (dropped 7 non-finite). Per-column non-finite cells (masked, NOT zeroed):
+        {'jacob_cov': 7, 'zen': 7, 'Q_zico_rot': 7}
+
+  [R1a rank-HEADLINE] PCA: var(PC1)= 52.9%  var(PC1+PC2)= 66.8%  (k_proxies=29)
+  [R1a rank-HEADLINE] corr(PC1,params)=+0.817  corr(PC1,erank)=+0.937  corr(PC1,acc)=+0.848
+  [R1a rank-HEADLINE] PC1 loadings (sorted |.|):
+        Ralpha_16.0      +0.246
+        Ralpha_8.0       +0.246
+        Ralpha_4.0       +0.246
+        stable_sum       +0.245
+        Ralpha_2.0       +0.244
+        Ralpha_0.5       +0.233
+        cond_sum         +0.231
+        snip             +0.225
+        grad_norm        +0.225
+        ntk              +0.224
+        meco             +0.215
+        zico             +0.211
+        gradsign         +0.201
+        jacob_cov        +0.194
+        Q_coh_rand       +0.192
+        grasp            +0.188
+        synflow          +0.184
+        Q_ntk_loglmax    +0.181
+        Q_ntk_logtrace   +0.181
+        fisher           +0.178
+        Q_ntk_effrank    +0.160
+        Q_ntk_logcond    +0.134
+        Q_zico_rot       +0.091
+        zen              +0.087
+        Q_zico_oracle    +0.061
+        Q_zico_rand      +0.055
+        Q_coh_rot        -0.023
+        Q_adapt_rot      -0.020
+        plain            -0.019
+
+  [R1a raw-z-SENSITIVITY] PCA: var(PC1)= 49.6%  var(PC1+PC2)= 62.3%  (k_proxies=29)
+  [R1a raw-z-SENSITIVITY] corr(PC1,params)=+0.821  corr(PC1,erank)=+0.936  corr(PC1,acc)=+0.847
+  [R1a raw-z-SENSITIVITY] PC1 loadings (sorted |.|):
+        Ralpha_4.0       +0.248
+        Ralpha_2.0       +0.248
+        Ralpha_8.0       +0.248
+        Ralpha_16.0      +0.248
+        stable_sum       +0.243
+        Ralpha_0.5       +0.240
+        snip             +0.236
+        grad_norm        +0.234
+        ntk              +0.233
+        cond_sum         +0.223
+        meco             +0.222
+        zico             +0.211
+        Q_ntk_logtrace   +0.204
+        Q_ntk_loglmax    +0.203
+        gradsign         +0.202
+        synflow          +0.194
+        Q_coh_rand       +0.186
+        Q_ntk_effrank    +0.180
+        zen              +0.159
+        grasp            +0.147
+        Q_ntk_logcond    +0.131
+        jacob_cov        +0.108
+        fisher           +0.093
+        Q_zico_oracle    -0.069
+        Q_zico_rand      -0.067
+        Q_coh_rot        -0.058
+        Q_zico_rot       -0.051
+        plain            -0.039
+        Q_adapt_rot      -0.015
+
+  [R1a] proxy x proxy Spearman (oriented): mean|rho|=0.448  median|rho|=0.434  (P=29)
+
+  [R1b NBSZ replicate] 5-fold CV ridge on per-column RANKS predicting acc.
+       strictly leakage-free: features ranked WITHIN the train fold (test rows mapped via searchsorted); ridge fit + standardization use TRAIN folds only.
+       best single proxy = cond_sum  CV-R2=0.7771
+       ALL 29 proxies        CV-R2=0.8845
+       complementarity GAIN: abs=+0.1074  rel=+13.8%  (their "+42%"-style number)
+       NOTE: best-single baseline is in-sample-selected (argmax CV-R2 over proxies), so the reported gain is a LOWER BOUND (conservative for the one-axis thesis).
+
+  [R1c decompose] capacity {erank,params} regressed out of acc AND every proxy INSIDE each CV train fold (train-fit, applied to held-out rows -> no target-touch).
+       best single residual proxy = meco  CV-R2(res)=0.2863
+       ALL proxies residual          CV-R2(res)=0.5818
+       SURVIVING complementarity GAIN: abs=+0.2955  rel=+103.2%
+
+  [R1d transfer] partial(residual-surrogate-pred, T_slope | erank,params) = +0.536  95%CI[+0.437,+0.618]
+
+  [R1 INTERPRETATION]
+       Residual complementarity is LARGE and TRANSFERS to T -> one-axis FAILS (the zoo carries trainability-relevant residual structure).
+
+================================================================================
+R2 CAPACITY-ANCHORED DECOMPOSITION -- FULLZOO-tss  (n=324)
+================================================================================
+  [credibility] 7/324 archs at the CIFAR-10 chance floor (acc<=10.0): tied chance-level block inflates ties in rank fits (kept as data; flagged).
+  rankR2(acc | erank,params)      = 0.7537  95%CI[0.691,0.806]
+  rankR2(acc | erank,params,T)    = 0.8429  95%CI[0.798,0.880]
+  TRAINABILITY SHARE (in-sample increment from adding T) = +0.0892
+       1-df noise floor (random 3rd predictor): mean=+0.00072  p95=+0.00246
+       share above noise floor = +0.0884 (in-sample; T is a single real predictor)
+  acc-residual on capacity: finite=324/324  std=46.417
+
+================================================================================
+R3 FULL-ZOO TRAINABILITY-RESIDUAL ACCESS + CEILING -- FULLZOO-tss  (n=324, target=T_slope)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        fisher           +1  data(rho=+0.47)
+        grad_norm        +1  data(rho=+0.64)
+        grasp            +1  data(rho=+0.55)
+        snip             +1  data(rho=+0.64)
+        synflow          +1  data(rho=+0.73)
+        jacob_cov        +1  data(rho=+0.76)
+        plain            +1  prior=+1 documented (rho=-0.01)
+        zico             +1  data(rho=+0.78)
+        meco             +1  data(rho=+0.88)
+        zen              -1  data(rho=-0.10)
+        ntk              -1  data(rho=-0.78)
+        gradsign         +1  data(rho=+0.78)
+        cond_sum         +1  data(rho=+0.88)
+        stable_sum       +1  data(rho=+0.86)
+        Ralpha_0.5       +1  data(rho=+0.84)
+        Ralpha_2.0       +1  data(rho=+0.88)
+        Ralpha_4.0       +1  data(rho=+0.88)
+        Ralpha_8.0       +1  data(rho=+0.88)
+        Ralpha_16.0      +1  data(rho=+0.87)
+        Q_ntk_logcond    +1  data(rho=+0.30)
+        Q_ntk_logtrace   -1  data(rho=-0.36)
+        Q_ntk_effrank    -1  data(rho=-0.50)
+        Q_ntk_loglmax    -1  data(rho=-0.36)
+        Q_zico_rand      +1  data(rho=+0.31)
+        Q_zico_rot       +1  data(rho=+0.40)
+        Q_coh_rand       -1  data(rho=-0.48)
+        Q_coh_rot        +1  data(rho=+0.08)
+        Q_adapt_rot      +1  data(rho=+0.10)
+        Q_zico_oracle    +1  data(rho=+0.35)
+  [credibility] 7/324 chance-floor archs (acc<=10.0) in the rank fits.
+  finite T=324/324  partial(T,acc|erank,params)=+0.602 (premise sanity; expect ~+0.6)
+  proxy            corr(Q,T)  partial(Q,T|cap,pa) partial(Q,accres|..)   corr(Q,er)   flag
+  fisher              +0.183    -0.152[-0.27,-0.04]    +0.018[-0.11,+0.13]       +0.513       
+  grad_norm           +0.254    -0.358[-0.44,-0.26]    -0.051[-0.17,+0.08]       +0.747       
+  grasp               +0.268    -0.176[-0.30,-0.04]    -0.032[-0.17,+0.11]       +0.631       
+  snip                +0.252    -0.369[-0.44,-0.28]    -0.061[-0.19,+0.07]       +0.752       
+  synflow             +0.387    -0.126[-0.22,-0.02]    +0.131[+0.00,+0.25]       +0.781       
+  jacob_cov           +0.762    +0.604[+0.52,+0.67]    +0.418[+0.31,+0.51]       +0.726       *
+  plain               -0.144    -0.170[-0.28,-0.06]    -0.033[-0.15,+0.09]       -0.013       
+  zico                +0.446    -0.197[-0.29,-0.09]    +0.010[-0.12,+0.15]       +0.880       
+  meco                +0.576    +0.291[+0.17,+0.40]    +0.553[+0.45,+0.64]       +0.856       *
+  zen                 +0.040    -0.049[-0.15,+0.05]    -0.055[-0.16,+0.05]       +0.146       
+  ntk                 +0.549    +0.180[+0.06,+0.30]    +0.304[+0.18,+0.41]       +0.774       *
+  gradsign            +0.398    -0.135[-0.23,-0.03]    +0.222[+0.10,+0.34]       +0.810       
+  cond_sum            +0.568    +0.215[+0.09,+0.33]    +0.501[+0.39,+0.59]       +0.893       *
+  stable_sum          +0.601    +0.109[-0.02,+0.23]    +0.103[-0.03,+0.24]       +0.971       
+  Ralpha_0.5          +0.577    -0.266[-0.36,-0.13]    -0.330[-0.43,-0.18]       +0.993       
+  Ralpha_2.0          +0.617    +0.256[+0.12,+0.37]    +0.329[+0.19,+0.42]       +0.995       *
+  Ralpha_4.0          +0.621    +0.245[+0.12,+0.35]    +0.291[+0.17,+0.40]       +0.989       *
+  Ralpha_8.0          +0.619    +0.223[+0.09,+0.34]    +0.257[+0.13,+0.38]       +0.985       *
+  Ralpha_16.0         +0.617    +0.205[+0.08,+0.31]    +0.231[+0.11,+0.35]       +0.984       *
+  Q_ntk_logcond       +0.166    -0.121[-0.24,+0.01]    -0.094[-0.22,+0.03]       +0.405       
+  Q_ntk_logtrace      +0.180    -0.075[-0.18,+0.03]    -0.002[-0.12,+0.11]       +0.404       
+  Q_ntk_effrank       +0.421    +0.105[+0.00,+0.21]    +0.044[-0.08,+0.17]       +0.565       *
+  Q_ntk_loglmax       +0.177    -0.078[-0.18,+0.04]    -0.005[-0.12,+0.11]       +0.406       
+  Q_zico_rand         +0.351    +0.207[+0.08,+0.32]    +0.101[-0.01,+0.21]       +0.310       *
+  Q_zico_rot          +0.371    +0.183[+0.06,+0.30]    +0.141[+0.03,+0.25]       +0.392       *
+  Q_coh_rand          +0.255    -0.072[-0.16,+0.03]    +0.001[-0.11,+0.11]       +0.535       
+  Q_coh_rot           +0.120    +0.128[+0.04,+0.21]    +0.094[-0.02,+0.21]       +0.038       *
+  Q_adapt_rot         +0.141    +0.143[+0.03,+0.24]    +0.113[+0.02,+0.22]       +0.041       *
+  Q_zico_oracle       +0.399    +0.253[+0.13,+0.37]    +0.142[+0.03,+0.26]       +0.334  LABEL*
+
+  CEILING rankR2(acc):  {erank,params}=0.7537   {+best label-free proxy=meco}=0.8265   {+T oracle}=0.8429
+  NOTE: best_r2 is an IN-SAMPLE MAX over K=28 label-free proxies -> optimistically biased upward by selection.
+  selection NOISE FLOOR (best-of-K random columns lift): mean=+0.0044  p95=+0.0083
+  best-proxy lift over capacity = +0.0728  (real lift = +0.0683 after noise floor)
+  gap closed ONLY by ground-truth T = +0.0164 (LOWER BOUND: best_r2 is selection-inflated, so true T-only gap is LARGER)
+
+################################################################################
+# FULL ZOO  space=sss  n=138
+################################################################################
+
+================================================================================
+R1 ONE-AXIS + NBSZ REPLICATE-AND-DECOMPOSE -- FULLZOO-sss  (n=138, proxies requested=29)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        fisher           +1  data(rho=+0.70)
+        grad_norm        +1  data(rho=+0.59)
+        grasp            -1  data(rho=-0.19)
+        snip             +1  data(rho=+0.86)
+        synflow          +1  data(rho=+0.94)
+        jacob_cov        +1  prior=+1 documented (rho=-0.00)
+        plain            +1  data(rho=+0.06)
+        zico             +1  data(rho=+0.86)
+        meco             -1  data(rho=-0.79)
+        zen              +1  data(rho=+0.90)
+        ntk              -1  data(rho=-0.20)
+        gradsign         +1  data(rho=+0.86)
+        cond_sum         -1  data(rho=-0.77)
+        stable_sum       +1  data(rho=+0.68)
+        Ralpha_0.5       +1  data(rho=+0.90)
+        Ralpha_2.0       +1  data(rho=+0.91)
+        Ralpha_4.0       +1  data(rho=+0.89)
+        Ralpha_8.0       +1  data(rho=+0.88)
+        Ralpha_16.0      +1  data(rho=+0.87)
+        Q_ntk_logcond    -1  data(rho=-0.53)
+        Q_ntk_logtrace   +1  data(rho=+0.29)
+        Q_ntk_effrank    +1  data(rho=+0.58)
+        Q_ntk_loglmax    -1  data(rho=-0.11)
+        Q_zico_rand      +1  data(rho=+0.09)
+        Q_zico_rot       +1  data(rho=+0.07)
+        Q_coh_rand       -1  data(rho=-0.09)
+        Q_coh_rot        -1  data(rho=-0.24)
+        Q_adapt_rot      +1  data(rho=+0.65)
+        Q_zico_oracle    +1  data(rho=+0.05)
+  [R1a masking] complete-case PCA: kept 138/138 archs (dropped 0 non-finite). Per-column non-finite cells (masked, NOT zeroed):
+        none (all proxy cells finite)
+
+  [R1a rank-HEADLINE] PCA: var(PC1)= 49.4%  var(PC1+PC2)= 56.9%  (k_proxies=29)
+  [R1a rank-HEADLINE] corr(PC1,params)=+0.932  corr(PC1,erank)=+0.986  corr(PC1,acc)=+0.903
+  [R1a rank-HEADLINE] PC1 loadings (sorted |.|):
+        Ralpha_0.5       +0.260
+        Ralpha_2.0       +0.260
+        synflow          +0.257
+        Ralpha_4.0       +0.256
+        Ralpha_8.0       +0.253
+        Ralpha_16.0      +0.250
+        gradsign         +0.247
+        meco             +0.245
+        zen              +0.244
+        snip             +0.240
+        zico             +0.235
+        Q_adapt_rot      +0.227
+        cond_sum         +0.225
+        stable_sum       +0.200
+        fisher           +0.198
+        Q_ntk_effrank    +0.194
+        Q_ntk_logcond    +0.193
+        grad_norm        +0.178
+        Q_coh_rot        +0.088
+        Q_ntk_logtrace   +0.072
+        Q_ntk_loglmax    +0.071
+        grasp            +0.055
+        Q_coh_rand       +0.039
+        ntk              +0.038
+        Q_zico_rand      +0.029
+        Q_zico_rot       +0.019
+        Q_zico_oracle    +0.017
+        plain            +0.013
+        jacob_cov        +0.007
+
+  [R1a raw-z-SENSITIVITY] PCA: var(PC1)= 49.8%  var(PC1+PC2)= 57.6%  (k_proxies=29)
+  [R1a raw-z-SENSITIVITY] corr(PC1,params)=+0.913  corr(PC1,erank)=+0.981  corr(PC1,acc)=+0.897
+  [R1a raw-z-SENSITIVITY] PC1 loadings (sorted |.|):
+        Ralpha_2.0       +0.258
+        synflow          +0.257
+        Ralpha_0.5       +0.256
+        Ralpha_4.0       +0.256
+        Ralpha_8.0       +0.252
+        Ralpha_16.0      +0.250
+        meco             +0.247
+        zen              +0.245
+        gradsign         +0.242
+        snip             +0.238
+        zico             +0.236
+        cond_sum         +0.231
+        Q_adapt_rot      +0.222
+        stable_sum       +0.203
+        Q_ntk_effrank    +0.196
+        Q_ntk_logcond    +0.187
+        fisher           +0.183
+        grad_norm        +0.172
+        Q_coh_rot        +0.113
+        Q_ntk_loglmax    +0.100
+        grasp            +0.067
+        Q_coh_rand       +0.055
+        ntk              +0.052
+        Q_zico_rand      +0.040
+        Q_ntk_logtrace   +0.032
+        plain            +0.028
+        Q_zico_oracle    +0.017
+        jacob_cov        +0.015
+        Q_zico_rot       +0.012
+
+  [R1a] proxy x proxy Spearman (oriented): mean|rho|=0.361  median|rho|=0.202  (P=29)
+
+  [R1b NBSZ replicate] 5-fold CV ridge on per-column RANKS predicting acc.
+       strictly leakage-free: features ranked WITHIN the train fold (test rows mapped via searchsorted); ridge fit + standardization use TRAIN folds only.
+       best single proxy = synflow  CV-R2=0.8894
+       ALL 29 proxies        CV-R2=0.8985
+       complementarity GAIN: abs=+0.0091  rel=+1.0%  (their "+42%"-style number)
+       NOTE: best-single baseline is in-sample-selected (argmax CV-R2 over proxies), so the reported gain is a LOWER BOUND (conservative for the one-axis thesis).
+
+  [R1c decompose] capacity {erank,params} regressed out of acc AND every proxy INSIDE each CV train fold (train-fit, applied to held-out rows -> no target-touch).
+       best single residual proxy = synflow  CV-R2(res)=0.3643
+       ALL proxies residual          CV-R2(res)=0.4287
+       SURVIVING complementarity GAIN: abs=+0.0644  rel=+17.7%
+
+  [R1d transfer] partial(residual-surrogate-pred, T_slope | erank,params) = +0.606  95%CI[+0.475,+0.703]
+
+  [R1 INTERPRETATION]
+       MIXED: residual gain small, transfer positive -> see R3 for the per-proxy verdict.
+
+================================================================================
+R2 CAPACITY-ANCHORED DECOMPOSITION -- FULLZOO-sss  (n=138)
+================================================================================
+  rankR2(acc | erank,params)      = 0.8324  95%CI[0.761,0.880]
+  rankR2(acc | erank,params,T)    = 0.8893  95%CI[0.844,0.919]
+  TRAINABILITY SHARE (in-sample increment from adding T) = +0.0568
+       1-df noise floor (random 3rd predictor): mean=+0.00118  p95=+0.00391
+       share above noise floor = +0.0556 (in-sample; T is a single real predictor)
+  acc-residual on capacity: finite=138/138  std=16.306
+
+================================================================================
+R3 FULL-ZOO TRAINABILITY-RESIDUAL ACCESS + CEILING -- FULLZOO-sss  (n=138, target=T_slope)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        fisher           +1  data(rho=+0.70)
+        grad_norm        +1  data(rho=+0.59)
+        grasp            -1  data(rho=-0.19)
+        snip             +1  data(rho=+0.86)
+        synflow          +1  data(rho=+0.94)
+        jacob_cov        +1  prior=+1 documented (rho=-0.00)
+        plain            +1  data(rho=+0.06)
+        zico             +1  data(rho=+0.86)
+        meco             -1  data(rho=-0.79)
+        zen              +1  data(rho=+0.90)
+        ntk              -1  data(rho=-0.20)
+        gradsign         +1  data(rho=+0.86)
+        cond_sum         -1  data(rho=-0.77)
+        stable_sum       +1  data(rho=+0.68)
+        Ralpha_0.5       +1  data(rho=+0.90)
+        Ralpha_2.0       +1  data(rho=+0.91)
+        Ralpha_4.0       +1  data(rho=+0.89)
+        Ralpha_8.0       +1  data(rho=+0.88)
+        Ralpha_16.0      +1  data(rho=+0.87)
+        Q_ntk_logcond    -1  data(rho=-0.53)
+        Q_ntk_logtrace   +1  data(rho=+0.29)
+        Q_ntk_effrank    +1  data(rho=+0.58)
+        Q_ntk_loglmax    -1  data(rho=-0.11)
+        Q_zico_rand      +1  data(rho=+0.09)
+        Q_zico_rot       +1  data(rho=+0.07)
+        Q_coh_rand       -1  data(rho=-0.09)
+        Q_coh_rot        -1  data(rho=-0.24)
+        Q_adapt_rot      +1  data(rho=+0.65)
+        Q_zico_oracle    +1  data(rho=+0.05)
+  finite T=138/138  partial(T,acc|erank,params)=+0.582 (premise sanity; expect ~+0.6)
+  proxy            corr(Q,T)  partial(Q,T|cap,pa) partial(Q,accres|..)   corr(Q,er)   flag
+  fisher              +0.300    +0.098[-0.09,+0.25]    +0.171[-0.02,+0.35]       +0.728       
+  grad_norm           +0.289    +0.074[-0.11,+0.24]    +0.049[-0.14,+0.23]       +0.648       
+  grasp               +0.044    -0.030[-0.19,+0.14]    +0.015[-0.15,+0.20]       +0.198       
+  snip                +0.435    +0.296[+0.11,+0.45]    +0.261[+0.08,+0.43]       +0.899       *
+  synflow             +0.424    +0.332[+0.14,+0.48]    +0.594[+0.41,+0.71]       +0.972       *
+  jacob_cov           -0.112    -0.124[-0.29,+0.06]    -0.046[-0.20,+0.14]       +0.025       
+  plain               +0.136    +0.131[-0.05,+0.29]    -0.028[-0.22,+0.15]       +0.069       
+  zico                +0.426    +0.233[+0.06,+0.40]    +0.231[+0.06,+0.40]       +0.887       *
+  meco                +0.186    -0.398[-0.51,-0.23]    -0.204[-0.36,+0.00]       +0.910       
+  zen                 +0.506    +0.517[+0.37,+0.63]    +0.380[+0.21,+0.56]       +0.932       *
+  ntk                 +0.269    +0.241[+0.07,+0.39]    +0.159[-0.02,+0.32]       +0.139       *
+  gradsign            +0.302    -0.130[-0.29,+0.09]    -0.112[-0.26,+0.12]       +0.937       
+  cond_sum            +0.226    -0.141[-0.31,+0.04]    +0.070[-0.11,+0.25]       +0.830       
+  stable_sum          +0.277    -0.014[-0.17,+0.15]    +0.007[-0.19,+0.22]       +0.740       
+  Ralpha_0.5          +0.340    -0.295[-0.44,-0.03]    -0.263[-0.40,+0.03]       +0.997       
+  Ralpha_2.0          +0.367    +0.067[-0.13,+0.26]    +0.080[-0.13,+0.30]       +0.995       
+  Ralpha_4.0          +0.359    -0.010[-0.19,+0.17]    +0.008[-0.19,+0.23]       +0.976       
+  Ralpha_8.0          +0.356    +0.006[-0.14,+0.18]    +0.041[-0.18,+0.26]       +0.959       
+  Ralpha_16.0         +0.355    +0.015[-0.15,+0.19]    +0.061[-0.13,+0.30]       +0.946       
+  Q_ntk_logcond       -0.079    -0.475[-0.62,-0.30]    -0.264[-0.44,-0.08]       +0.659       
+  Q_ntk_logtrace      +0.044    -0.032[-0.21,+0.14]    +0.039[-0.15,+0.21]       +0.292       
+  Q_ntk_effrank       +0.001    -0.343[-0.52,-0.14]    -0.108[-0.31,+0.09]       +0.667       
+  Q_ntk_loglmax       -0.081    -0.198[-0.32,-0.06]    -0.142[-0.30,+0.03]       +0.196       
+  Q_zico_rand         +0.161    +0.121[-0.06,+0.29]    -0.043[-0.23,+0.13]       +0.120       
+  Q_zico_rot          +0.001    -0.045[-0.20,+0.14]    -0.009[-0.18,+0.17]       +0.077       
+  Q_coh_rand          +0.120    +0.075[-0.13,+0.26]    -0.066[-0.24,+0.12]       +0.133       
+  Q_coh_rot           -0.075    -0.205[-0.38,-0.01]    -0.078[-0.23,+0.11]       +0.282       
+  Q_adapt_rot         -0.023    -0.602[-0.70,-0.47]    -0.423[-0.54,-0.25]       +0.809       
+  Q_zico_oracle       +0.071    +0.040[-0.13,+0.22]    +0.012[-0.16,+0.20]       +0.060  LABEL
+
+  CEILING rankR2(acc):  {erank,params}=0.8324   {+best label-free proxy=synflow}=0.8941   {+T oracle}=0.8893
+  NOTE: best_r2 is an IN-SAMPLE MAX over K=28 label-free proxies -> optimistically biased upward by selection.
+  selection NOISE FLOOR (best-of-K random columns lift): mean=+0.0067  p95=+0.0118
+  best-proxy lift over capacity = +0.0616  (real lift = +0.0549 after noise floor)
+  gap closed ONLY by ground-truth T = -0.0048 (LOWER BOUND: best_r2 is selection-inflated, so true T-only gap is LARGER)
+
+================================================================================
+R3 HEADLINE VERDICT: does ANY label-free proxy access the trainability residual
+   robustly (partial(Q,T|erank,params)>0 AND CI excludes 0) in BOTH spaces?
+================================================================================
+  ACCESSIBLE in BOTH spaces (robust +partial): ['ntk']
+  => H2 (trainability inaccessible to the zoo) is CHALLENGED for these proxies.
+
+################################################################################
+# STANDARD-13-PROXY-ONLY path at full base n (R1+R2 always; R3 where T available).
+# (triggered: spaces ['sss'] have full-zoo intersection <150.)
+################################################################################
+
+--------------------------------------------------------------------------------
+# STANDARD-ONLY  space=tss  base n=1000
+--------------------------------------------------------------------------------
+
+================================================================================
+R1 ONE-AXIS + NBSZ REPLICATE-AND-DECOMPOSE -- STDONLY-tss  (n=1000, proxies requested=12)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        fisher           +1  data(rho=+0.39)
+        grad_norm        +1  data(rho=+0.60)
+        grasp            +1  data(rho=+0.51)
+        snip             +1  data(rho=+0.60)
+        synflow          +1  data(rho=+0.74)
+        jacob_cov        +1  data(rho=+0.72)
+        plain            -1  data(rho=-0.08)
+        zico             +1  data(rho=+0.76)
+        meco             +1  data(rho=+0.88)
+        zen              -1  data(rho=-0.06)
+        ntk              -1  data(rho=-0.76)
+        gradsign         +1  data(rho=+0.77)
+  [R1a masking] complete-case PCA: kept 977/1000 archs (dropped 23 non-finite). Per-column non-finite cells (masked, NOT zeroed):
+        {'jacob_cov': 23, 'zen': 23}
+
+  [R1a rank-HEADLINE] PCA: var(PC1)= 56.0%  var(PC1+PC2)= 73.5%  (k_proxies=12)
+  [R1a rank-HEADLINE] corr(PC1,params)=+0.803  corr(PC1,erank)=+0.881  corr(PC1,acc)=+0.785
+  [R1a rank-HEADLINE] PC1 loadings (sorted |.|):
+        snip             +0.356
+        grad_norm        +0.355
+        ntk              +0.332
+        zico             +0.322
+        gradsign         +0.315
+        meco             +0.312
+        grasp            +0.308
+        synflow          +0.298
+        fisher           +0.268
+        jacob_cov        +0.253
+        zen              +0.117
+        plain            +0.054
+
+  [R1a raw-z-SENSITIVITY] PCA: var(PC1)= 50.9%  var(PC1+PC2)= 65.7%  (k_proxies=12)
+  [R1a raw-z-SENSITIVITY] corr(PC1,params)=+0.820  corr(PC1,erank)=+0.877  corr(PC1,acc)=+0.794
+  [R1a raw-z-SENSITIVITY] PC1 loadings (sorted |.|):
+        snip             +0.366
+        grad_norm        +0.362
+        ntk              +0.354
+        zico             +0.344
+        meco             +0.336
+        gradsign         +0.335
+        synflow          +0.324
+        grasp            +0.261
+        zen              +0.205
+        jacob_cov        +0.177
+        fisher           +0.126
+        plain            +0.062
+
+  [R1a] proxy x proxy Spearman (oriented): mean|rho|=0.481  median|rho|=0.496  (P=12)
+
+  [R1b NBSZ replicate] 5-fold CV ridge on per-column RANKS predicting acc.
+       strictly leakage-free: features ranked WITHIN the train fold (test rows mapped via searchsorted); ridge fit + standardization use TRAIN folds only.
+       best single proxy = meco  CV-R2=0.7774
+       ALL 12 proxies        CV-R2=0.8581
+       complementarity GAIN: abs=+0.0807  rel=+10.4%  (their "+42%"-style number)
+       NOTE: best-single baseline is in-sample-selected (argmax CV-R2 over proxies), so the reported gain is a LOWER BOUND (conservative for the one-axis thesis).
+
+  [R1c decompose] capacity {erank,params} regressed out of acc AND every proxy INSIDE each CV train fold (train-fit, applied to held-out rows -> no target-touch).
+       best single residual proxy = meco  CV-R2(res)=0.5384
+       ALL proxies residual          CV-R2(res)=0.7142
+       SURVIVING complementarity GAIN: abs=+0.1758  rel=+32.7%
+
+  [R1d transfer] partial(residual-surrogate-pred, T_slope | erank,params) = +0.548  95%CI[+0.448,+0.628]
+
+  [R1 INTERPRETATION]
+       MIXED: residual gain small, transfer positive -> see R3 for the per-proxy verdict.
+
+================================================================================
+R2 CAPACITY-ANCHORED DECOMPOSITION -- STDONLY-tss  (n=1000)
+================================================================================
+  [capacity] 676/1000 rows lack erank -> capacity column uses the params FALLBACK for them (heterogeneous: erank for the rest). See STDONLY note.
+  [credibility] 23/1000 archs at the CIFAR-10 chance floor (acc<=10.0): tied chance-level block inflates ties in rank fits (kept as data; flagged).
+  rankR2(acc | erank,params)      = 0.5217  95%CI[0.477,0.563]
+  rankR2(acc | erank,params,T)    = 0.8429  95%CI[0.799,0.879]
+  TRAINABILITY SHARE (in-sample increment from adding T) = +0.3212
+       1-df noise floor (random 3rd predictor): mean=+0.00047  p95=+0.00176
+       share above noise floor = +0.3207 (in-sample; T is a single real predictor)
+  acc-residual on capacity: finite=1000/1000  std=199.642
+[baseT] tss: loaded 676 cached T from <REVIEW_WORKSPACE>\nas-proxy-transport\runs\capacity\work\results\base_T_tss.pkl
+
+================================================================================
+R3 FULL-ZOO TRAINABILITY-RESIDUAL ACCESS + CEILING -- STDONLY-tss  (n=1000, target=T_slope)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        fisher           +1  data(rho=+0.39)
+        grad_norm        +1  data(rho=+0.60)
+        grasp            +1  data(rho=+0.51)
+        snip             +1  data(rho=+0.60)
+        synflow          +1  data(rho=+0.74)
+        jacob_cov        +1  data(rho=+0.72)
+        plain            -1  data(rho=-0.08)
+        zico             +1  data(rho=+0.76)
+        meco             +1  data(rho=+0.88)
+        zen              -1  data(rho=-0.06)
+        ntk              -1  data(rho=-0.76)
+        gradsign         +1  data(rho=+0.77)
+  [capacity] 676/1000 rows lack erank -> params-fallback in the capacity control (heterogeneous; partials only partially capacity-controlled for those rows).
+  [credibility] 23/1000 chance-floor archs (acc<=10.0) in the rank fits.
+  finite T=1000/1000  partial(T,acc|erank,params)=+0.748 (premise sanity; expect ~+0.6)
+  proxy            corr(Q,T)  partial(Q,T|cap,pa) partial(Q,accres|..)   corr(Q,er)   flag
+  fisher              +0.164    -0.037[-0.11,+0.03]    +0.055[-0.02,+0.13]       +0.513       
+  grad_norm           +0.237    -0.012[-0.08,+0.06]    +0.256[+0.19,+0.33]       +0.747       
+  grasp               +0.254    +0.070[+0.00,+0.13]    +0.231[+0.17,+0.29]       +0.631       *
+  snip                +0.236    -0.016[-0.09,+0.06]    +0.251[+0.18,+0.33]       +0.752       
+  synflow             +0.384    +0.154[+0.09,+0.22]    +0.392[+0.33,+0.45]       +0.781       *
+  jacob_cov           +0.756    +0.713[+0.68,+0.74]    +0.664[+0.62,+0.70]       +0.726       *
+  plain               +0.118    +0.107[+0.05,+0.17]    +0.085[+0.02,+0.15]       +0.013       *
+  zico                +0.406    +0.188[+0.12,+0.25]    +0.438[+0.39,+0.48]       +0.880       *
+  meco                +0.585    +0.531[+0.48,+0.58]    +0.700[+0.67,+0.73]       +0.856       *
+  zen                 +0.017    -0.025[-0.09,+0.03]    -0.002[-0.07,+0.07]       +0.146       
+  ntk                 +0.559    +0.444[+0.39,+0.50]    +0.562[+0.51,+0.61]       +0.774       *
+  gradsign            +0.380    +0.112[+0.04,+0.18]    +0.384[+0.33,+0.43]       +0.810       *
+
+  CEILING rankR2(acc):  {erank,params}=0.5217   {+best label-free proxy=meco}=0.7802   {+T oracle}=0.7891
+  NOTE: best_r2 is an IN-SAMPLE MAX over K=12 label-free proxies -> optimistically biased upward by selection.
+  selection NOISE FLOOR (best-of-K random columns lift): mean=+0.0020  p95=+0.0037
+  best-proxy lift over capacity = +0.2584  (real lift = +0.2565 after noise floor)
+  gap closed ONLY by ground-truth T = +0.0089 (LOWER BOUND: best_r2 is selection-inflated, so true T-only gap is LARGER)
+
+--------------------------------------------------------------------------------
+# STANDARD-ONLY  space=sss  base n=425
+--------------------------------------------------------------------------------
+
+================================================================================
+R1 ONE-AXIS + NBSZ REPLICATE-AND-DECOMPOSE -- STDONLY-sss  (n=425, proxies requested=12)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        fisher           +1  data(rho=+0.69)
+        grad_norm        +1  data(rho=+0.61)
+        grasp            -1  data(rho=-0.16)
+        snip             +1  data(rho=+0.86)
+        synflow          +1  data(rho=+0.95)
+        jacob_cov        +1  data(rho=+0.07)
+        plain            +1  prior=+1 documented (rho=0.00)
+        zico             +1  data(rho=+0.86)
+        meco             -1  data(rho=-0.81)
+        zen              +1  data(rho=+0.92)
+        ntk              -1  data(rho=-0.21)
+        gradsign         +1  data(rho=+0.86)
+  [R1a masking] complete-case PCA: kept 425/425 archs (dropped 0 non-finite). Per-column non-finite cells (masked, NOT zeroed):
+        none (all proxy cells finite)
+
+  [R1a rank-HEADLINE] PCA: var(PC1)= 55.1%  var(PC1+PC2)= 64.3%  (k_proxies=12)
+  [R1a rank-HEADLINE] corr(PC1,params)=+0.922  corr(PC1,erank)=+0.968  corr(PC1,acc)=+0.913
+  [R1a rank-HEADLINE] PC1 loadings (sorted |.|):
+        synflow          +0.375
+        snip             +0.375
+        zen              +0.369
+        gradsign         +0.358
+        zico             +0.356
+        meco             +0.349
+        fisher           +0.315
+        grad_norm        +0.305
+        grasp            +0.087
+        ntk              +0.071
+        jacob_cov        +0.039
+        plain            +0.022
+
+  [R1a raw-z-SENSITIVITY] PCA: var(PC1)= 55.1%  var(PC1+PC2)= 64.0%  (k_proxies=12)
+  [R1a raw-z-SENSITIVITY] corr(PC1,params)=+0.920  corr(PC1,erank)=+0.965  corr(PC1,acc)=+0.911
+  [R1a raw-z-SENSITIVITY] PC1 loadings (sorted |.|):
+        snip             +0.376
+        synflow          +0.376
+        zen              +0.372
+        gradsign         +0.360
+        zico             +0.358
+        meco             +0.348
+        grad_norm        +0.307
+        fisher           +0.305
+        grasp            +0.079
+        ntk              +0.078
+        jacob_cov        +0.025
+        plain            +0.020
+
+  [R1a] proxy x proxy Spearman (oriented): mean|rho|=0.389  median|rho|=0.197  (P=12)
+
+  [R1b NBSZ replicate] 5-fold CV ridge on per-column RANKS predicting acc.
+       strictly leakage-free: features ranked WITHIN the train fold (test rows mapped via searchsorted); ridge fit + standardization use TRAIN folds only.
+       best single proxy = synflow  CV-R2=0.9072
+       ALL 12 proxies        CV-R2=0.9246
+       complementarity GAIN: abs=+0.0175  rel=+1.9%  (their "+42%"-style number)
+       NOTE: best-single baseline is in-sample-selected (argmax CV-R2 over proxies), so the reported gain is a LOWER BOUND (conservative for the one-axis thesis).
+
+  [R1c decompose] capacity {erank,params} regressed out of acc AND every proxy INSIDE each CV train fold (train-fit, applied to held-out rows -> no target-touch).
+       best single residual proxy = synflow  CV-R2(res)=0.6371
+       ALL proxies residual          CV-R2(res)=0.7067
+       SURVIVING complementarity GAIN: abs=+0.0696  rel=+10.9%
+
+  [R1d transfer] partial(residual-surrogate-pred, T_slope | erank,params) = +0.482  95%CI[+0.332,+0.616]
+
+  [R1 INTERPRETATION]
+       MIXED: residual gain small, transfer positive -> see R3 for the per-proxy verdict.
+
+================================================================================
+R2 CAPACITY-ANCHORED DECOMPOSITION -- STDONLY-sss  (n=425)
+================================================================================
+  [capacity] 287/425 rows lack erank -> capacity column uses the params FALLBACK for them (heterogeneous: erank for the rest). See STDONLY note.
+  rankR2(acc | erank,params)      = 0.7451  95%CI[0.691,0.790]
+  rankR2(acc | erank,params,T)    = 0.8893  95%CI[0.840,0.920]
+  TRAINABILITY SHARE (in-sample increment from adding T) = +0.1442
+       1-df noise floor (random 3rd predictor): mean=+0.00050  p95=+0.00193
+       share above noise floor = +0.1437 (in-sample; T is a single real predictor)
+  acc-residual on capacity: finite=425/425  std=61.941
+[baseT] sss: loaded 287 cached T from <REVIEW_WORKSPACE>\nas-proxy-transport\runs\capacity\work\results\base_T_sss.pkl
+
+================================================================================
+R3 FULL-ZOO TRAINABILITY-RESIDUAL ACCESS + CEILING -- STDONLY-sss  (n=425, target=T_slope)
+================================================================================
+  [orient] per-space sign(corr(Q,acc)) (data unless prior-fallback):
+        fisher           +1  data(rho=+0.69)
+        grad_norm        +1  data(rho=+0.61)
+        grasp            -1  data(rho=-0.16)
+        snip             +1  data(rho=+0.86)
+        synflow          +1  data(rho=+0.95)
+        jacob_cov        +1  data(rho=+0.07)
+        plain            +1  prior=+1 documented (rho=0.00)
+        zico             +1  data(rho=+0.86)
+        meco             -1  data(rho=-0.81)
+        zen              +1  data(rho=+0.92)
+        ntk              -1  data(rho=-0.21)
+        gradsign         +1  data(rho=+0.86)
+  [capacity] 287/425 rows lack erank -> params-fallback in the capacity control (heterogeneous; partials only partially capacity-controlled for those rows).
+  finite T=425/425  partial(T,acc|erank,params)=+0.581 (premise sanity; expect ~+0.6)
+  proxy            corr(Q,T)  partial(Q,T|cap,pa) partial(Q,accres|..)   corr(Q,er)   flag
+  fisher              +0.319    +0.153[+0.06,+0.25]    +0.166[+0.06,+0.27]       +0.728       *
+  grad_norm           +0.302    +0.154[+0.06,+0.25]    +0.177[+0.07,+0.28]       +0.648       *
+  grasp               +0.025    -0.033[-0.12,+0.07]    +0.008[-0.09,+0.11]       +0.198       
+  snip                +0.423    +0.351[+0.26,+0.43]    +0.399[+0.30,+0.49]       +0.899       *
+  synflow             +0.424    +0.379[+0.28,+0.47]    +0.758[+0.71,+0.80]       +0.972       *
+  jacob_cov           -0.070    -0.105[-0.19,-0.01]    +0.003[-0.09,+0.10]       +0.025       
+  plain               +0.013    +0.007[-0.10,+0.10]    -0.044[-0.14,+0.05]       +0.069       
+  zico                +0.419    +0.311[+0.22,+0.39]    +0.523[+0.43,+0.60]       +0.887       *
+  meco                +0.186    -0.136[-0.24,-0.02]    +0.269[+0.17,+0.36]       +0.910       
+  zen                 +0.479    +0.443[+0.37,+0.51]    +0.651[+0.58,+0.71]       +0.932       *
+  ntk                 +0.191    +0.166[+0.07,+0.25]    +0.221[+0.14,+0.31]       +0.139       *
+  gradsign            +0.295    -0.325[-0.37,-0.16]    -0.193[-0.28,-0.04]       +0.937       
+
+  CEILING rankR2(acc):  {erank,params}=0.7451   {+best label-free proxy=synflow}=0.9094   {+T oracle}=0.8312
+  NOTE: best_r2 is an IN-SAMPLE MAX over K=12 label-free proxies -> optimistically biased upward by selection.
+  selection NOISE FLOOR (best-of-K random columns lift): mean=+0.0025  p95=+0.0048
+  best-proxy lift over capacity = +0.1643  (real lift = +0.1618 after noise floor)
+  gap closed ONLY by ground-truth T = -0.0782 (LOWER BOUND: best_r2 is selection-inflated, so true T-only gap is LARGER)
+
+================================================================================
+R3 HEADLINE VERDICT: does ANY label-free proxy access the trainability residual
+   robustly (partial(Q,T|erank,params)>0 AND CI excludes 0) in BOTH spaces?
+================================================================================
+  ACCESSIBLE in BOTH spaces (robust +partial): ['synflow', 'zico', 'ntk']
+  => H2 (trainability inaccessible to the zoo) is CHALLENGED for these proxies.
+
+[full] saved results pkl -> <REVIEW_WORKSPACE>\nas-proxy-transport\runs\capacity\work\results\zoo_analysis_results.pkl
+[full] saved text report -> <REVIEW_WORKSPACE>\nas-proxy-transport\runs\capacity\work\results\zoo_analysis_out.txt

@@ -1,0 +1,175 @@
+\section{Setup: One Instrument, One Knob at a Time}
+\label{sec:setup}
+
+The object of this paper is a reversal visible in \cref{fig:signflip}:
+a zero-cost proxy that is among the leading predictors of accuracy on
+one axis of NAS-Bench-201 becomes one of the more \emph{anti}-correlated
+on the other, sign-reversed, the within-benchmark face of the field's
+documented cross-benchmark inconsistency. To make that reversal a clean
+measurement we hold the network family, the dataset, the proxy code, and the
+accuracy table fixed and vary \emph{one} architectural knob: wiring on one axis,
+width on the other. This section pins down each controlled piece and states
+plainly what we do and do not claim.
+
+\textbf{Benchmark and two axes.}
+We use NAS-Bench-201~\cite{dong2020nasbench201} via
+NATS-Bench~\cite{dong2021natsbench}. Its value is that it exposes \emph{two}
+architectural axes over the \emph{same} dataset (CIFAR-10), each varying a single
+knob. The \emph{topology axis} (TSS) varies cell wiring (which operation occupies
+each of the six edges of a fixed-width cell) so architectures differ in
+\emph{connectivity} at roughly constant width. The \emph{size axis} (SSS) varies
+the channel width of a fixed cell topology, so architectures differ in
+\emph{capacity} (parameters and nominal channel width) at fixed wiring. Studying
+both is the point, not a robustness afterthought: because TSS and SSS each turn
+one knob, the same statistic, the same code, on the same family and dataset, can
+relate to accuracy in opposite ways depending on whether topology or width
+varies (\cref{fig:signflip}, \cref{sec:result4}). A single-axis benchmark cannot
+show this: the reversal needs two clean knobs that vary topology and width in
+different ways. Accuracies are the CIFAR-10 test accuracies
+cached in NB201 (TSS hp=200, SSS hp=90), never trained by us.
+
+\textbf{The 29-feature aligned zoo, and sign orientation.}
+We analyze \textbf{29} aligned at-init features in four groups
+(\cref{tab:setup-zoo} lists every member). \emph{Standard} (12) collects
+established metrics used by NAS-Bench-Suite-Zero~\cite{krishnakumar2022nbsz} (including
+\px{zico}~\cite{li2023zico}, \px{meco}~\cite{jiang2023meco},
+\px{zen}~\cite{lin2021zen}, and \px{ntk}~\cite{chen2021tenas}).
+\emph{Spectral} (7) are functionals of the feature-map singular
+spectrum: the Dextr inverse-condition-number sum \px{cond-sum} and stable sum
+\px{stable-sum}~\cite{dextr2025}, and the R\'enyi-$\alpha$ effective ranks
+$R_\alpha$ for $\alpha\in\{0.5,2,4,8,16\}$; $R_1$, the effective-rank
+capacity anchor from NEAR~\cite{near2025}, is held out from the proxy PCA.
+\emph{Label-free probes} (9, the \px{Q-*} family) comprise four NTK/Gram-spectrum
+summaries (log condition, log trace, effective rank, and log largest eigenvalue),
+ZiCo-style gradient variation and feature/gradient coherence under random versus
+$90^\circ$/channel-rotated inputs, and a rotation-adaptivity score.
+And a single \emph{label-using oracle} (1), \px{Q-zico-oracle}, consumes the real
+labels: it is held apart as an upper reference, flagged (``LABEL'') wherever it
+appears, and excluded from every label-free claim. This 29-feature aligned zoo is
+distinct from the 13-proxy common set used for the seven-column portability map.
+Proxies disagree on which direction predicts higher accuracy, so the aggregate
+analysis (e.g.\ the PCA of \cref{sec:r1}) orients each proxy
+\emph{within each axis} by the sign of
+its Spearman correlation with accuracy, falling back to the documented prior
+direction only when the data correlation is negligible (\px{plain}, $\rho=-0.01$
+on TSS). Because this rule uses the outcome separately on each axis, we also
+report raw and globally fixed orientation. Column-sign reflection
+leaves PCA variance and score/capacity association unchanged but reduces the
+cross-axis loading cosine from $0.869$ to $0.461$; we therefore do not interpret
+the outcome-informed directional loading agreement as portable structure.
+\label{sec:setup-orient}
+
+\textbf{The decomposition lens.}
+We read the aligned zoo one term at a time. For a proxy $Q$ the rank relationship
+to accuracy is organized into a \emph{capacity-associated} part, a dominant
+principal component whose scores track effective rank on both axes, and a
+\emph{trainability residual}, whose per-proxy direction is tested for transport
+sensitivity:
+\begin{equation}
+\label{eq:decomp}
+\displaystyle
+\underbrace{\corr(Q,\acc)}_{\text{proxy}}
+\;\rightsquigarrow\;
+\underbrace{\vphantom{\big|}\text{capacity}}_{\substack{\text{PC1}{\approx}\erank\\ \text{(associated)}}}
+\;\rightsquigarrow\;
+\underbrace{\vphantom{\big|}\text{trainability}}_{\substack{\partialcorr(Q,T\mid\mathrm{cap})\\ \text{(association)}}}.
+\end{equation}
+This is descriptive bookkeeping, not a numeric identity: \cref{eq:decomp} names the
+two terms \cref{sec:cap-train} reads off in turn, and the formal yardstick below
+prices only its capacity term.
+
+\textbf{The trainability target $T$ (external, not a proxy).}
+Separating a capacity component from a trainability component requires a
+ground-truth notion of how readily an architecture trains, one that does
+\emph{not} come from a proxy, or the separation collapses into a self-consistency
+check. We therefore define the trainability target $T$ as the \emph{early-training
+learning rate} $T_{\mathrm{slope}}$: the OLS slope of the \emph{train}-accuracy
+curve over the first epochs (hp=12, epochs 0--4), read off the NATS-Bench training
+curves, so larger $T$ means faster early learning. $T$ is finite on every sampled
+architecture on each axis and carries a monotone relationship to accuracy in the
+premise check. Because $T$ comes from training curves rather than proxies,
+partialling a proxy against $T$ is a comparison against an \emph{external}
+benchmark measurement, which makes the downstream residual operationally
+distinct from proxy self-consistency. The three objects this study leans on (the
+zero-cost proxy, the kernel picture, and $T$) are fixed in \cref{app:background}.
+
+\textbf{Faithfulness precondition: the spectral arm is faithful.}
+Before reading any cross-space behavior off the zoo, we validate our spectral
+proxy implementations against the official Dextr harness. \px{cond-sum} reproduces the
+inverse-condition-number statistic at parity and attains Spearman $+0.8868$ with
+accuracy on TSS, consistent with the published Dextr value
+$\approx0.88$~\cite{dextr2025}. The TSS parity check makes a simple
+implementation mismatch less plausible, but it does not by itself validate a
+causal account of the SSS behavior. The full parity check, the
+hook-exception count, and the data-quality flags are in
+\cref{app:faithfulness}.
+\label{sec:setup-faithfulness}\label{sec:faithfulness}
+
+\textbf{Populations and sample sizes.}
+Coverage differs by proxy family, so each axis carries two principal sample sizes
+(\cref{tab:setup-n}, \cref{app:pops}). The \emph{full-zoo join} intersects all
+four measurement tables and contains $n=324$ TSS and $n=138$ SSS rows before
+analysis-specific finite-value masks. The 29-feature PCA-complete population is
+$n=317/138$; decomposition and per-proxy analyses state their own eligible
+counts. The \emph{standard-proxy} population uses only the standard proxies, which
+reach more architectures, $n=1000$ (TSS), $n=425$ (SSS), with effective rank and
+$T$ present on the full-zoo subset. The SSS full-zoo arm ($n{=}138$) is the binding
+sample-size constraint, flagged throughout as the weaker arm. Three proxies are
+computed on separate single-architecture infer.tiny nets and merged in; two
+(\px{nwot}, \px{epe-nas}) return a degenerate value on chance-level architectures
+and are listwise-dropped, a conservative choice detailed in \cref{app:pops}.
+The inclusion audit confirms that the 138 SSS records arise from the
+deterministic table intersection, but also finds a mild shift toward
+higher-accuracy/larger models; we retain this representativeness limitation.
+
+\textbf{An observational study, stated up front.}
+We turn no controlled architectural knob and intervene on nothing: we read
+proxies, accuracies, and training curves off cached benchmark tables and
+correlate them. Every number in \cref{sec:cap-train,sec:crossspace} is therefore
+\emph{correlational}, and we make no causal claims. The full decomposition is
+confined to NB201's TSS and SSS, the two axes where both $T$ and the spectral
+arm are available, with the weaker SSS arm ($n{=}138$ full-zoo) flagged
+throughout; the cross-space flip on $\corr(Q,\acc)$ we additionally confirm
+generalizes across NB101, NB201, NB301, and TransNAS-Bench-101
+(\cref{sec:generalize}). Read each subsequent number as a description of these
+benchmarks, not as a controlled or causal finding. Full populations, the
+leakage-clean cross-validation, and the bootstrap protocol are in
+\cref{app:expdetails}; every body number traces to a logged source
+(\cref{app:repro}).
+
+\textbf{A formal yardstick (one knob has a ceiling).}
+\label{sec:theory}\label{sec:theory-map}%
+The kernel spectral-bias picture offers a narrow formal yardstick. Within that
+picture the spectrum is label-free whereas the target coefficients are not; this
+does not characterize every signal an at-init statistic may carry. The standard
+map~\cite{canatar2021spectral,bordelon2020spectrum} (qualitative only; restated in
+\cref{app:external}) has one certifiable consequence for a fixed target and
+information set.
+
+\begin{proposition}[Label-free resolution limit]
+\label{thm:bound}
+Fix a probability space and let $\Phimc$ be the sub-$\sigma$-algebra generated by
+the label-free at-init information. For a target $Y$ with $0<\Var(Y)<\infty$,
+define the \emph{frozen-kernel resolution limit}
+\begin{equation}
+\label{eq:r2cap}
+R^2_{\mathrm{cap}}\;:=\;\frac{\Var\!\big(\E[Y\mid\Phimc]\big)}{\Var(Y)}\;\in\;[0,1].
+\end{equation}
+Then for any $\Phimc$-measurable statistic $S$ with $0<\Var(S)<\infty$,
+\begin{equation}
+\label{eq:bound}
+\Corr^2(S,Y)\;\le\;R^2_{\mathrm{cap}}.
+\end{equation}
+\end{proposition}
+\noindent\emph{Scope.}\label{sec:theory-bound}{} \cref{eq:bound} bounds the squared \emph{Pearson}
+correlation (not the rank $\rho$ we report), with $Y$ read as the \emph{frozen
+at-init NTK} kernel-regression error, \emph{never} trained accuracy, and
+acquires content only on a \emph{restricted} information set (a finite feature
+dictionary), since the full $\Phimc$ contains architecture identity and makes the
+bound vacuous. Proof in \cref{app:proof}; the spectral-bias map and the longer
+scope discussion are in \cref{app:external}.
+
+\noindent
+This is a label-free statistic's ruler: it bounds the \emph{frozen at-init NTK}
+error, never \emph{trained accuracy} (proof \cref{app:proof}; the spectral-bias map
+is \cref{app:external}).

@@ -1,0 +1,1730 @@
+[
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "source_best",
+    "recomputed": 89.88033333333333,
+    "reference": 89.88033333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "params",
+    "recomputed": 89.78233333333333,
+    "reference": 89.78233333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "synflow",
+    "recomputed": 89.88033333333333,
+    "reference": 89.88033333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "rank_ensemble",
+    "recomputed": 89.634,
+    "reference": 89.634,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "random",
+    "recomputed": 83.12976833333333,
+    "reference": 83.12976833333335,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "sign_stability_screen",
+    "recomputed": 89.88033333333333,
+    "reference": 89.88033333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "source_best",
+    "recomputed": 89.482925,
+    "reference": 89.482925,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "params",
+    "recomputed": 89.75610833333333,
+    "reference": 89.75610833333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "synflow",
+    "recomputed": 89.482925,
+    "reference": 89.482925,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "rank_ensemble",
+    "recomputed": 89.54724166666666,
+    "reference": 89.54724166666666,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "random",
+    "recomputed": 83.12272416666667,
+    "reference": 83.12272416666667,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "sign_stability_screen",
+    "recomputed": 89.482925,
+    "reference": 89.482925,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "source_best",
+    "recomputed": 89.7923375,
+    "reference": 89.7923375,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "params",
+    "recomputed": 89.66500416666668,
+    "reference": 89.66500416666668,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "synflow",
+    "recomputed": 89.7923375,
+    "reference": 89.7923375,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "rank_ensemble",
+    "recomputed": 89.28575833333335,
+    "reference": 89.28575833333335,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "random",
+    "recomputed": 83.2359865,
+    "reference": 83.23598650000001,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "sign_stability_screen",
+    "recomputed": 89.7923375,
+    "reference": 89.7923375,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "source_best",
+    "recomputed": 89.30164333333333,
+    "reference": 89.30164333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "params",
+    "recomputed": 88.50925249999999,
+    "reference": 88.50925249999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "synflow",
+    "recomputed": 89.30164333333333,
+    "reference": 89.30164333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "rank_ensemble",
+    "recomputed": 89.08877249999999,
+    "reference": 89.08877249999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "random",
+    "recomputed": 83.2227769,
+    "reference": 83.2227769,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "sign_stability_screen",
+    "recomputed": 89.30164333333333,
+    "reference": 89.30164333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "source_best",
+    "recomputed": 89.88033333333333,
+    "reference": 89.88033333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "params",
+    "recomputed": 89.78233333333333,
+    "reference": 89.78233333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "synflow",
+    "recomputed": 89.88033333333333,
+    "reference": 89.88033333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "rank_ensemble",
+    "recomputed": 89.634,
+    "reference": 89.634,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "random",
+    "recomputed": 83.12976833333333,
+    "reference": 83.12976833333335,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 1,
+    "method": "sign_stability_screen",
+    "recomputed": 89.88033333333333,
+    "reference": 89.88033333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "source_best",
+    "recomputed": 89.482925,
+    "reference": 89.482925,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "params",
+    "recomputed": 89.75610833333333,
+    "reference": 89.75610833333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "synflow",
+    "recomputed": 89.482925,
+    "reference": 89.482925,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "rank_ensemble",
+    "recomputed": 89.54724166666666,
+    "reference": 89.54724166666666,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "random",
+    "recomputed": 83.12272416666667,
+    "reference": 83.12272416666667,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 5,
+    "method": "sign_stability_screen",
+    "recomputed": 89.482925,
+    "reference": 89.482925,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "source_best",
+    "recomputed": 89.7923375,
+    "reference": 89.7923375,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "params",
+    "recomputed": 89.66500416666668,
+    "reference": 89.66500416666668,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "synflow",
+    "recomputed": 89.7923375,
+    "reference": 89.7923375,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "rank_ensemble",
+    "recomputed": 89.28575833333335,
+    "reference": 89.28575833333335,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "random",
+    "recomputed": 83.2359865,
+    "reference": 83.23598650000001,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 10,
+    "method": "sign_stability_screen",
+    "recomputed": 89.7923375,
+    "reference": 89.7923375,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "source_best",
+    "recomputed": 89.30164333333333,
+    "reference": 89.30164333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "params",
+    "recomputed": 88.50925249999999,
+    "reference": 88.50925249999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "synflow",
+    "recomputed": 89.30164333333333,
+    "reference": 89.30164333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "rank_ensemble",
+    "recomputed": 89.08877249999999,
+    "reference": 89.08877249999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "random",
+    "recomputed": 83.2227769,
+    "reference": 83.2227769,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_sss_to_tss",
+    "K": 50,
+    "method": "sign_stability_screen",
+    "recomputed": 89.30164333333333,
+    "reference": 89.30164333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "source_best",
+    "recomputed": 79.9125,
+    "reference": 79.9125,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "params",
+    "recomputed": 87.7355,
+    "reference": 87.7355,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "synflow",
+    "recomputed": 87.616,
+    "reference": 87.616,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "rank_ensemble",
+    "recomputed": 87.72475,
+    "reference": 87.72475,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "random",
+    "recomputed": 85.23722500000001,
+    "reference": 85.23722500000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "sign_stability_screen",
+    "recomputed": 87.73800000000001,
+    "reference": 87.73800000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "source_best",
+    "recomputed": 80.8167,
+    "reference": 80.8167,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "params",
+    "recomputed": 87.43900000000001,
+    "reference": 87.43900000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "synflow",
+    "recomputed": 87.50965000000001,
+    "reference": 87.50965000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "rank_ensemble",
+    "recomputed": 87.51190000000001,
+    "reference": 87.51190000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "random",
+    "recomputed": 85.304137,
+    "reference": 85.304137,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "sign_stability_screen",
+    "recomputed": 87.43885,
+    "reference": 87.43885,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "source_best",
+    "recomputed": 81.91122499999999,
+    "reference": 81.91122499999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "params",
+    "recomputed": 87.32155,
+    "reference": 87.32155,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "synflow",
+    "recomputed": 87.366625,
+    "reference": 87.366625,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "rank_ensemble",
+    "recomputed": 87.356875,
+    "reference": 87.356875,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "random",
+    "recomputed": 85.3234805,
+    "reference": 85.3234805,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "sign_stability_screen",
+    "recomputed": 87.31280000000001,
+    "reference": 87.31280000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "source_best",
+    "recomputed": 83.64793999999999,
+    "reference": 83.64793999999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "params",
+    "recomputed": 86.65299999999999,
+    "reference": 86.65299999999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "synflow",
+    "recomputed": 86.80550000000001,
+    "reference": 86.80550000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "rank_ensemble",
+    "recomputed": 86.75125499999999,
+    "reference": 86.75125499999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "random",
+    "recomputed": 85.31509530000001,
+    "reference": 85.3150953,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "sign_stability_screen",
+    "recomputed": 86.64929500000001,
+    "reference": 86.64929500000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "source_best",
+    "recomputed": 79.9125,
+    "reference": 79.9125,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "params",
+    "recomputed": 87.7355,
+    "reference": 87.7355,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "synflow",
+    "recomputed": 87.616,
+    "reference": 87.616,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "rank_ensemble",
+    "recomputed": 87.72475,
+    "reference": 87.72475,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "random",
+    "recomputed": 85.23722500000001,
+    "reference": 85.23722500000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 1,
+    "method": "sign_stability_screen",
+    "recomputed": 87.73800000000001,
+    "reference": 87.73800000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "source_best",
+    "recomputed": 80.8167,
+    "reference": 80.8167,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "params",
+    "recomputed": 87.43900000000001,
+    "reference": 87.43900000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "synflow",
+    "recomputed": 87.50965000000001,
+    "reference": 87.50965000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "rank_ensemble",
+    "recomputed": 87.51190000000001,
+    "reference": 87.51190000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "random",
+    "recomputed": 85.304137,
+    "reference": 85.304137,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 5,
+    "method": "sign_stability_screen",
+    "recomputed": 87.43885,
+    "reference": 87.43885,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "source_best",
+    "recomputed": 81.91122499999999,
+    "reference": 81.91122499999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "params",
+    "recomputed": 87.32155,
+    "reference": 87.32155,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "synflow",
+    "recomputed": 87.366625,
+    "reference": 87.366625,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "rank_ensemble",
+    "recomputed": 87.356875,
+    "reference": 87.356875,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "random",
+    "recomputed": 85.3234805,
+    "reference": 85.3234805,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 10,
+    "method": "sign_stability_screen",
+    "recomputed": 87.31280000000001,
+    "reference": 87.31280000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "source_best",
+    "recomputed": 83.64793999999999,
+    "reference": 83.64793999999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "params",
+    "recomputed": 86.65299999999999,
+    "reference": 86.65299999999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "synflow",
+    "recomputed": 86.80550000000001,
+    "reference": 86.80550000000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "rank_ensemble",
+    "recomputed": 86.75125499999999,
+    "reference": 86.75125499999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "random",
+    "recomputed": 85.31509530000001,
+    "reference": 85.3150953,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "nb201_tss_to_sss",
+    "K": 50,
+    "method": "sign_stability_screen",
+    "recomputed": 86.64929500000001,
+    "reference": 86.64929500000001,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "source_best",
+    "recomputed": 89.56680655479431,
+    "reference": 89.56680655479431,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "params",
+    "recomputed": 92.3234686255455,
+    "reference": 92.3234686255455,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "synflow",
+    "recomputed": 90.67432910203934,
+    "reference": 90.67432910203934,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "rank_ensemble",
+    "recomputed": 90.41641771793365,
+    "reference": 90.41641771793365,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "random",
+    "recomputed": 90.10309995785356,
+    "reference": 90.10309995785356,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "sign_stability_screen",
+    "recomputed": 90.67432910203934,
+    "reference": 90.67432910203934,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "source_best",
+    "recomputed": 90.38211181759834,
+    "reference": 90.38211181759834,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "params",
+    "recomputed": 91.43865224719048,
+    "reference": 91.43865224719048,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "synflow",
+    "recomputed": 91.93644917011261,
+    "reference": 91.93644917011261,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "rank_ensemble",
+    "recomputed": 90.44841805100441,
+    "reference": 90.44841805100441,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "random",
+    "recomputed": 90.12635716244579,
+    "reference": 90.12635716244579,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "sign_stability_screen",
+    "recomputed": 91.93644917011261,
+    "reference": 91.93644917011261,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "source_best",
+    "recomputed": 89.68472081422806,
+    "reference": 89.68472081422806,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "params",
+    "recomputed": 91.5775497853756,
+    "reference": 91.5775497853756,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "synflow",
+    "recomputed": 91.65732717514038,
+    "reference": 91.65732717514038,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "rank_ensemble",
+    "recomputed": 90.53079971671104,
+    "reference": 90.53079971671104,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "random",
+    "recomputed": 90.20972506385297,
+    "reference": 90.20972506385297,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "sign_stability_screen",
+    "recomputed": 91.65732717514038,
+    "reference": 91.65732717514038,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "source_best",
+    "recomputed": 89.36875022351742,
+    "reference": 89.36875022351742,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "params",
+    "recomputed": 91.53825629353523,
+    "reference": 91.53825629353523,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "synflow",
+    "recomputed": 90.93145044744014,
+    "reference": 90.93145044744014,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "rank_ensemble",
+    "recomputed": 90.31053694337606,
+    "reference": 90.31053694337606,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "random",
+    "recomputed": 90.1574041475728,
+    "reference": 90.15740414757282,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "sign_stability_screen",
+    "recomputed": 90.93145044744014,
+    "reference": 90.93145044744014,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "source_best",
+    "recomputed": 89.56680655479431,
+    "reference": 89.56680655479431,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "params",
+    "recomputed": 92.3234686255455,
+    "reference": 92.3234686255455,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "synflow",
+    "recomputed": 90.67432910203934,
+    "reference": 90.67432910203934,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "rank_ensemble",
+    "recomputed": 90.41641771793365,
+    "reference": 90.41641771793365,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "random",
+    "recomputed": 90.10309995785356,
+    "reference": 90.10309995785356,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 1,
+    "method": "sign_stability_screen",
+    "recomputed": 90.67432910203934,
+    "reference": 90.67432910203934,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "source_best",
+    "recomputed": 90.38211181759834,
+    "reference": 90.38211181759834,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "params",
+    "recomputed": 91.43865224719048,
+    "reference": 91.43865224719048,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "synflow",
+    "recomputed": 91.93644917011261,
+    "reference": 91.93644917011261,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "rank_ensemble",
+    "recomputed": 90.44841805100441,
+    "reference": 90.44841805100441,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "random",
+    "recomputed": 90.12635716244579,
+    "reference": 90.12635716244579,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 5,
+    "method": "sign_stability_screen",
+    "recomputed": 91.93644917011261,
+    "reference": 91.93644917011261,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "source_best",
+    "recomputed": 89.68472081422806,
+    "reference": 89.68472081422806,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "params",
+    "recomputed": 91.5775497853756,
+    "reference": 91.5775497853756,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "synflow",
+    "recomputed": 91.65732717514038,
+    "reference": 91.65732717514038,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "rank_ensemble",
+    "recomputed": 90.53079971671104,
+    "reference": 90.53079971671104,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "random",
+    "recomputed": 90.20972506385297,
+    "reference": 90.20972506385297,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 10,
+    "method": "sign_stability_screen",
+    "recomputed": 91.65732717514038,
+    "reference": 91.65732717514038,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "source_best",
+    "recomputed": 89.36875022351742,
+    "reference": 89.36875022351742,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "params",
+    "recomputed": 91.53825629353523,
+    "reference": 91.53825629353523,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "synflow",
+    "recomputed": 90.93145044744014,
+    "reference": 90.93145044744014,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "rank_ensemble",
+    "recomputed": 90.31053694337606,
+    "reference": 90.31053694337606,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "random",
+    "recomputed": 90.1574041475728,
+    "reference": 90.15740414757282,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb101",
+    "K": 50,
+    "method": "sign_stability_screen",
+    "recomputed": 90.93145044744014,
+    "reference": 90.93145044744014,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "source_best",
+    "recomputed": 88.00041666666668,
+    "reference": 88.00041666666668,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "params",
+    "recomputed": 89.78233333333333,
+    "reference": 89.78233333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "synflow",
+    "recomputed": 89.88033333333333,
+    "reference": 89.88033333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "rank_ensemble",
+    "recomputed": 89.634,
+    "reference": 89.634,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "random",
+    "recomputed": 83.12976833333333,
+    "reference": 83.12976833333335,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "sign_stability_screen",
+    "recomputed": 88.00041666666668,
+    "reference": 88.00041666666668,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "source_best",
+    "recomputed": 88.05324166666666,
+    "reference": 88.05324166666666,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "params",
+    "recomputed": 89.75610833333333,
+    "reference": 89.75610833333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "synflow",
+    "recomputed": 89.482925,
+    "reference": 89.482925,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "rank_ensemble",
+    "recomputed": 89.54724166666666,
+    "reference": 89.54724166666666,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "random",
+    "recomputed": 83.12272416666667,
+    "reference": 83.12272416666667,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "sign_stability_screen",
+    "recomputed": 88.05324166666666,
+    "reference": 88.05324166666666,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "source_best",
+    "recomputed": 88.15292916666667,
+    "reference": 88.15292916666667,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "params",
+    "recomputed": 89.66500416666668,
+    "reference": 89.66500416666668,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "synflow",
+    "recomputed": 89.7923375,
+    "reference": 89.7923375,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "rank_ensemble",
+    "recomputed": 89.28575833333335,
+    "reference": 89.28575833333335,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "random",
+    "recomputed": 83.2359865,
+    "reference": 83.23598650000001,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "sign_stability_screen",
+    "recomputed": 88.15292916666667,
+    "reference": 88.15292916666667,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "source_best",
+    "recomputed": 88.22266833333333,
+    "reference": 88.22266833333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "params",
+    "recomputed": 88.50925249999999,
+    "reference": 88.50925249999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "synflow",
+    "recomputed": 89.30164333333333,
+    "reference": 89.30164333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "rank_ensemble",
+    "recomputed": 89.08877249999999,
+    "reference": 89.08877249999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "random",
+    "recomputed": 83.2227769,
+    "reference": 83.2227769,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "round1_compatible",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "sign_stability_screen",
+    "recomputed": 88.22266833333333,
+    "reference": 88.22266833333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "source_best",
+    "recomputed": 88.00041666666668,
+    "reference": 88.00041666666668,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "params",
+    "recomputed": 89.78233333333333,
+    "reference": 89.78233333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "synflow",
+    "recomputed": 89.88033333333333,
+    "reference": 89.88033333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "rank_ensemble",
+    "recomputed": 89.634,
+    "reference": 89.634,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "random",
+    "recomputed": 83.12976833333333,
+    "reference": 83.12976833333335,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 1,
+    "method": "sign_stability_screen",
+    "recomputed": 88.00041666666668,
+    "reference": 88.00041666666668,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "source_best",
+    "recomputed": 88.05324166666666,
+    "reference": 88.05324166666666,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "params",
+    "recomputed": 89.75610833333333,
+    "reference": 89.75610833333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "synflow",
+    "recomputed": 89.482925,
+    "reference": 89.482925,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "rank_ensemble",
+    "recomputed": 89.54724166666666,
+    "reference": 89.54724166666666,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "random",
+    "recomputed": 83.12272416666667,
+    "reference": 83.12272416666667,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 5,
+    "method": "sign_stability_screen",
+    "recomputed": 88.05324166666666,
+    "reference": 88.05324166666666,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "source_best",
+    "recomputed": 88.15292916666667,
+    "reference": 88.15292916666667,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "params",
+    "recomputed": 89.66500416666668,
+    "reference": 89.66500416666668,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "synflow",
+    "recomputed": 89.7923375,
+    "reference": 89.7923375,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "rank_ensemble",
+    "recomputed": 89.28575833333335,
+    "reference": 89.28575833333335,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "random",
+    "recomputed": 83.2359865,
+    "reference": 83.23598650000001,
+    "abs_error": 1.4210854715202004e-14
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 10,
+    "method": "sign_stability_screen",
+    "recomputed": 88.15292916666667,
+    "reference": 88.15292916666667,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "source_best",
+    "recomputed": 88.22266833333333,
+    "reference": 88.22266833333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "params",
+    "recomputed": 88.50925249999999,
+    "reference": 88.50925249999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "synflow",
+    "recomputed": 89.30164333333333,
+    "reference": 89.30164333333333,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "rank_ensemble",
+    "recomputed": 89.08877249999999,
+    "reference": 89.08877249999999,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "random",
+    "recomputed": 83.2227769,
+    "reference": 83.2227769,
+    "abs_error": 0.0
+  },
+  {
+    "protocol": "identity_disjoint",
+    "pair_id": "transnas_scene_to_nb201",
+    "K": 50,
+    "method": "sign_stability_screen",
+    "recomputed": 88.22266833333333,
+    "reference": 88.22266833333333,
+    "abs_error": 0.0
+  }
+]

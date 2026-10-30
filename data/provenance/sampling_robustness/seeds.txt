@@ -1,0 +1,7 @@
+Matched-n seeds: every integer from 2027000 through 2027999 inclusive (1000 runs)
+Sample size: 138, sampled without replacement from the TSS all-29-proxy finite pool n=317
+(7 of the 324 four-table rows are excluded by the unchanged Round-1 finite-value mask)
+Distribution selection-randomization seeds: TSS accuracy=2027301, TSS params=2027302,
+TSS param_count=2027303, SSS accuracy=2027311, SSS params=2027312,
+SSS param_count=2027313
+Permutation draws: 2000 per comparison

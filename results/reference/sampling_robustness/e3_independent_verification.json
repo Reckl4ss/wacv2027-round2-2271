@@ -1,0 +1,13 @@
+{
+  "interval_scope": "algorithmic subsampling percentiles; per-proxy marginal Wilson intervals",
+  "matched_n": 138,
+  "max_absolute_numeric_error": 0.0,
+  "run_metrics_recomputed": 13000,
+  "seeds_reconstructed": 1000,
+  "selected_ids_rows": 1000,
+  "selected_ids_sha256": "62f7c52f98ee75a9569544433d8e796ba1b6cd288ca8f823d6d47df874c939b3",
+  "status": "PASS",
+  "summary_metrics_recomputed": 16,
+  "tss_sampling_population": 317,
+  "verifier": "independent_of_run_e3"
+}

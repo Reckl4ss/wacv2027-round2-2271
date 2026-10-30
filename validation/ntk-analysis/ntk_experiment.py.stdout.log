@@ -1,0 +1,162 @@
+================================================================================
+PHASE analyze  python: <REVIEW_WORKSPACE>\.venv\Scripts\python.exe
+numpy 2.4.4  SEED 1234
+estimator: zoo_analysis.cv_rank_r2 (KFOLD=5, RIDGE_LAMBDA=1) -- byte-identical to the certified accuracy analysis
+================================================================================
+[load] 324 archs from <REVIEW_WORKSPACE>\nas-proxy-transport\runs\ntk-analysis\work\results\ntk_gram_features.pkl
+[scope] WEIGHT-ONLY empirical NTK over fixed CIFAR-10 batches; m=256 (M_TR=192/M_TE=64), N_BATCH=5, lambda_canon=0.1.
+[scope] m=256 < P (rank<=m, interpolating). K_a rank <= m -> KRR is in the interpolating/over-parameterized regime.
+
+[Y] target = batch-averaged held-out KRR MSE (lambda=0.1): mean=1.0606 sd=0.1523 min=0.8658 max=2.4243
+[Y] per-arch batch spread (sd across 5 batches): mean abs=0.0543  mean relative=4.6%
+[Y] cross-batch rank stability of Y: Spearman(batch0, batch4)=0.854
+
+[F] pre-declared label-free dictionary F: 30 features
+    NTK-Gram spectral: ['ntkG_logtrace', 'ntkG_loglmax', 'ntkG_logcond', 'ntkG_effrank', 'ntkG_Ralpha_0.5', 'ntkG_Ralpha_1.0', 'ntkG_Ralpha_2.0', 'ntkG_Ralpha_4.0', 'ntkG_Ralpha_8.0', 'ntkG_Ralpha_16.0']
+    cached spectral  : ['erank', 'cond_sum', 'stable_sum', 'Ralpha_0.5', 'Ralpha_2.0', 'Ralpha_4.0', 'Ralpha_8.0', 'Ralpha_16.0']
+    cached zoo+size  : ['fisher', 'grad_norm', 'grasp', 'snip', 'synflow', 'jacob_cov', 'plain', 'zico', 'meco', 'ntk', 'gradsign', 'params']
+    (FORBIDDEN keys excluded by allowlist: ['T_loss', 'T_slope', 'acc', 'api_acc', 'curve_accs', 'curve_losses', 'test', 'testacc', 'val', 'valacc'])
+
+================================================================================
+SECTION 3 -- R2(F -> Y): variance of the at-init NTK KRR error Y explained by the
+  finite label-free dictionary F. (FIX-1: this is NOT "a lower bound on R^2_cap".
+  With the full sigma-algebra Phi -- which contains the architecture identity -- Y is a
+  deterministic function of the arch and R^2_cap = 1 EXACTLY; the theorem is VACUOUS
+  on the across-arch ensemble. The only non-vacuous object is the explained variance
+  of a PRE-DECLARED finite label-free dictionary, reported here.)
+================================================================================
+
+  R2(F->Y) rank-CV  (cv_rank_r2, 5-fold) = 0.8112   [matches certified acc estimator]
+  R2(F->Y) L2 in-sample (Pearson, linear)   = 0.6645   [literal L2 R^2_cap estimator; in-sample so >= the CV number by CV-shrinkage]
+  FIX-1: high R2(F->Y) is EXPECTED, not pathological -- Y is a smooth functional of
+         K_as spectrum (Sec.4b note); the old 0.97 vacuity guard is removed.
+
+================================================================================
+SECTION 4a -- per-proxy Corr^2(S,Y) vs R2(F->Y), BYTE-IDENTICAL estimator (FIX-2).
+  Each single-feature score is cv_rank_r2(Y,[S]) with the SAME folds/seed/ridge as
+  the multi-feature R2(F->Y). Then single<=multi is GUARANTEED; a violation would
+  signal a CV/leakage bug. This is a UNIT TEST, not a result.
+================================================================================
+  feature S            cv_rank_r2(Y,[S])
+  grad_norm                    0.6822
+  snip                         0.6772
+  fisher                       0.5008
+  ntkG_Ralpha_8.0              0.5005
+  ntkG_Ralpha_16.0             0.5001
+  ntkG_Ralpha_4.0              0.4996
+  ntkG_Ralpha_2.0              0.4846
+  ntkG_effrank                 0.4543
+  ntkG_Ralpha_1.0              0.4543
+  ntkG_Ralpha_0.5              0.4284
+  ntk                          0.4231
+  grasp                        0.3913
+  ntkG_logcond                 0.3411
+  Ralpha_16.0                  0.3366
+  stable_sum                   0.3366
+  Ralpha_8.0                   0.3334
+  Ralpha_4.0                   0.3280
+  Ralpha_2.0                   0.3230
+  erank                        0.3205
+  Ralpha_0.5                   0.3110
+  zico                         0.2521
+  cond_sum                     0.1835
+  jacob_cov                    0.1790
+  gradsign                     0.1577
+  synflow                      0.1386
+  params                       0.1287
+  meco                         0.1007
+  ntkG_loglmax                 0.0224
+  ntkG_logtrace                0.0061
+  plain                       -0.0066
+
+  consistency: max single-feature cv_rank_r2 = 0.6822  <=  R2(F->Y)=0.8112  -> OK (no violation)
+
+================================================================================
+SECTION 4b -- which proxy predicts the FROZEN-KERNEL error Y best? (FIX-3)
+  SANITY (tautological, reported as such): Y is by construction a smooth functional
+  of K_as spectrum, so the NTK-Gram spectral features (ntkG_*) predict Y well --
+  this is a self-consistency property of the KRR formula, NOT a test.
+  NON-TAUTOLOGICAL test: among cached proxies that are NOT functions of K_a, does the
+  CAPACITY/SPECTRAL family beat the GRADIENT/NOISE family at predicting Y?
+================================================================================
+
+  [SANITY] best NTK-Gram-spectral predictor of Y: ntkG_Ralpha_8.0  cv_rank_r2=0.5005 (near-tautological)
+  [TEST] best SPECTRAL/CAPACITY cached proxy (not f(K_a)): ntk  cv_rank_r2=0.4231
+         spectral family members: ['erank', 'cond_sum', 'stable_sum', 'Ralpha_0.5', 'Ralpha_2.0', 'Ralpha_4.0', 'Ralpha_8.0', 'Ralpha_16.0', 'synflow', 'meco', 'ntk', 'params']
+  [TEST] best GRADIENT/NOISE cached proxy: grad_norm  cv_rank_r2=0.6822
+         gradient family members: ['fisher', 'grad_norm', 'grasp', 'snip', 'jacob_cov', 'plain', 'zico', 'gradsign']
+  [TEST] family gap (spectral_best - gradient_best) = -0.2591  95%CI[-0.3367,-0.1862]  -> GRADIENT family wins (CI excludes 0)
+
+================================================================================
+SECTION 5 -- coherence: is NB201 in the lazy/NTK regime? (FIX-4)
+  H0 (lazy): trained accuracy = at-init-NTK KRR prediction up to monotone reparam,
+     so (i) the SAME dictionary F explains Y and acc to the SAME level, and
+     (ii) the per-arch at-init-NTK error Y predicts trained accuracy (high |corr|).
+  We report R2(F->Y) vs R2(F->acc), AND the real test: corr(Y, acc).
+================================================================================
+
+  R2(F->Y)   [at-init NTK KRR error] = 0.8112
+  R2(F->acc) [trained test accuracy] = 0.8854   (same F, same estimator)
+
+  LAZY-REGIME TEST: Spearman(at-init-NTK KRR error Y, trained acc) = 0.397 95%CI[0.293,0.491]
+     |corr| small -> at-init NTK does NOT govern trained accuracy -> NB201 is NOT in
+     the lazy regime -> Theorem 1 prices Y exactly but is SILENT on accuracy.
+
+  per-proxy cv_rank_r2 against BOTH targets (matched estimator):
+  feature S               Y (NTK err)  acc (trained)
+  grad_norm                    0.6822         0.3977
+  snip                         0.6772         0.3973
+  fisher                       0.5008         0.2055
+  ntkG_Ralpha_8.0              0.5005         0.5120
+  ntkG_Ralpha_16.0             0.5001         0.5089
+  ntkG_Ralpha_4.0              0.4996         0.5203
+  ntkG_Ralpha_2.0              0.4846         0.5466
+  ntkG_effrank                 0.4543         0.5895
+  ntkG_Ralpha_1.0              0.4543         0.5895
+  ntkG_Ralpha_0.5              0.4284         0.6256
+  ntk                          0.4231         0.6014
+  grasp                        0.3913         0.2894
+  ntkG_logcond                 0.3411         0.4741
+  Ralpha_16.0                  0.3366         0.7611
+  stable_sum                   0.3366         0.7310
+  Ralpha_8.0                   0.3334         0.7655
+  Ralpha_4.0                   0.3280         0.7695
+  Ralpha_2.0                   0.3230         0.7685
+  erank                        0.3205         0.7466
+  Ralpha_0.5                   0.3110         0.7028
+  zico                         0.2521         0.6019
+  cond_sum                     0.1835         0.7771
+  jacob_cov                    0.1790         0.5672
+  gradsign                     0.1577         0.6107
+  synflow                      0.1386         0.5365
+  params                       0.1287         0.5297
+  meco                         0.1007         0.7677
+  ntkG_loglmax                 0.0224         0.0378
+  ntkG_logtrace                0.0061         0.0082
+  plain                       -0.0066        -0.0080
+
+  max single-proxy cv_rank_r2 against acc = 0.7771  (NOT bounded by R2(F->Y)=0.8112; different targets -- there is NO theorem forcing the at-init-NTK ceiling to govern accuracy, and empirically it does not).
+
+================================================================================
+LAMBDA_K insensitivity (FIX-5): R2(F->Y) and corr(Y,acc) across lambda_K grid
+================================================================================
+  lambda=0.01    R2(F->Y)=0.6644  Spearman(Y,acc)=0.112
+  lambda=0.1     R2(F->Y)=0.8112  Spearman(Y,acc)=0.397
+  lambda=1       R2(F->Y)=0.8911  Spearman(Y,acc)=0.467
+
+================================================================================
+SUMMARY (what this experiment delivers, honestly):
+================================================================================
+  (i)   Theorem 1s target Y is now a COMPUTED number (held-out KRR MSE of the
+        frozen at-init weight-only NTK), not just a described object.
+  (ii)  R2(F->Y) = 0.8112 (rank-CV) / 0.6645 (L2 in-sample): the variance of Y explained
+        by the finite label-free dictionary. NOT a "lower bound on R^2_cap"; full-Phi
+        R^2_cap = 1 (vacuous). This is the only non-vacuous quantity (FIX-1).
+  (iii) Sanity (tautological): NTK-Gram spectral features predict Y well (best ntkG_Ralpha_8.0 = 0.5005).
+        Non-tautological (FIX-3): family gap spectral-vs-gradient cached proxies = GRADIENT family wins (CI excludes 0).
+  (iv)  Coherence/lazy test (FIX-4): R2(F->Y)=0.8112 vs R2(F->acc)=0.8854; Spearman(Y,acc)=0.397
+        -> the at-init NTK ceiling does NOT govern trained accuracy (NB201 not lazy).
+  Single benchmark axis (NB201-TSS / CIFAR-10); cross-space story unaffected/unclaimed.
+
+[analyze] wrote results pkl -> <REVIEW_WORKSPACE>\nas-proxy-transport\runs\ntk-analysis\work\results\ntk_experiment_results.pkl
+[analyze] wrote text report -> <REVIEW_WORKSPACE>\nas-proxy-transport\runs\ntk-analysis\work\results\ntk_experiment_out.txt

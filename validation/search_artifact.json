@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "archive_bytes": 1744138240,
+  "archive_sha256": "8325148fe975c9eaf24fa6fca912c8ef5a2a8df96e9d3e7176742e2417ce344a",
+  "url": "https://github.com/Reckl4ss/wacv2027-round2-2271/releases/download/e4-traces-v1/e4-traces-v1.tar",
+  "manifest_entries": 179,
+  "verified": 179,
+  "extracted_files": 179
+}

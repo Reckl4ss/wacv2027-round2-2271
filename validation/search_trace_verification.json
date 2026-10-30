@@ -1,0 +1,32 @@
+{
+  "formal_selection_traces_unchanged": true,
+  "full_deterministic_selected_indices_checked": 105705600,
+  "identity_disjoint_overlap_max": 0,
+  "inferential_p_values_reported": false,
+  "paired_comparisons_recomputed": 160,
+  "point_gates": "PASS",
+  "point_random_selected_indices_seed_reconstructed": 1056000,
+  "random_reconstruction_scope": {
+    "bootstrap_offsets_within_each_chunk": [
+      0,
+      50,
+      99
+    ],
+    "draws_per_sampled_split_k": 50,
+    "every_chunk_protocol_pair_k": true,
+    "split_ids": [
+      0,
+      19,
+      39
+    ]
+  },
+  "random_selected_indices_seed_reconstructed": 2376000,
+  "resampling_sign_mass_diagnostics_checked": 160,
+  "round1_compatible_overlap_max": 194,
+  "screen_decisions_recomputed": 320320,
+  "status": "PASS",
+  "stored_deterministic_scores_checked": 105705600,
+  "target_architecture_id_duplicates": 0,
+  "trace_chunks": 80,
+  "verification_schema_version": "4.0.0"
+}

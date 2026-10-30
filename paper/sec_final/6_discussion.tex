@@ -1,0 +1,42 @@
+%-------------------------------------------------------------------------
+% NOTE: The page-1 concept figure (\cref{fig:signflip}), the multi-panel
+% results figure (\cref{fig:results}), the portability heatmap
+% (\cref{fig:portability}), and Proposition 1 (\cref{thm:bound}) are defined
+% in earlier sections. This section only \cref's them.
+%-------------------------------------------------------------------------
+
+\section{Conclusion and Limitations}
+\label{sec:discussion}
+
+\textbf{What travels, and what flips.}
+\label{sec:disc-refute}\label{sec:disc-measure}\label{sec:disc-cross}\label{sec:disc-org}\label{sec:conclusion}%
+The diagnostic picture is mixed. A dominant capacity-associated factor recurs
+on both axes: its variance share and score/effective-rank association recur,
+although its loading direction is outcome-orientation-sensitive
+(\cref{find:capacity}). Raw proxy/accuracy relations can \emph{flip} (e.g.\
+\px{cond-sum} $+0.88\,{\to}\,-0.77$; \cref{fig:signflip}). A
+capacity-orthogonal early-trainability association remains partly accessible at
+initialization, although its per-proxy directions are also orientation-sensitive
+(\cref{find:trainreal,find:accessible}). Thus \px{cond-sum} indicates a
+dimension-linked/proxy-geometry-dependent transport failure, not an identified
+mechanism. Our data also do not support a ``label-free ceiling'': \px{meco} on
+TSS and \px{synflow} on SSS recover much of the trainability gap
+(\cref{fig:results}c; \cref{find:noceiling}). Proposition~\ref{thm:bound}
+certifies only a squared-correlation bound for a \emph{frozen at-init NTK}
+target, not trained accuracy.
+
+\textbf{The practical rule.}
+Validate a zero-cost proxy's orientation on the target axis before transporting
+its source ranking. In two named traps, a target-CALIB screen avoids $+5.40$ and
+$+1.97$ point costs at $K{=}10$; two null directions remain unchanged
+(\cref{find:searchtransfer}). The diagnostic uses cached calibration labels,
+does not dominate every baseline, and is not a fully label-free or universal
+remedy.
+
+\textbf{Limitations.}
+\label{sec:limitations}%
+All results are observational benchmark correlations. Matched-$n$ resampling
+addresses sample count, but SSS representativeness and true dimension matching
+remain unresolved. External flips reintroduce dataset/$n$ confounds; the
+decomposition is NB201-only, and unconstrained deployment plus
+optimizer/initialization/regime interventions remain future work.

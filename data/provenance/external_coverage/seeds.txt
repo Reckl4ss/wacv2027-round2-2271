@@ -1,0 +1,3 @@
+# Data audit and exact joins are deterministic and use no random seed.
+# Any eligible decomposition bootstrap will use this pre-registered root:
+seed_root=20270825

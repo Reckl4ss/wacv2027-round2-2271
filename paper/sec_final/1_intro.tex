@@ -1,0 +1,79 @@
+\section{Introduction}
+\label{sec:intro}
+
+% fig:signflip is on page 1 (sec/0_abstract.tex); fig:overview is in the appendix.
+
+Neural architecture search is bottlenecked by evaluation: training a candidate
+costs GPU-days, and a search visits thousands. Zero-cost
+proxies~\cite{abdelfattah2021zerocost} aim to reduce this bottleneck, ranking
+an architecture from a single forward--backward pass at initialization, and on any
+\emph{single} benchmark several rival a trained predictor~\cite{krishnakumar2022nbsz}.
+They are often interpreted as \emph{capacity-associated} surrogates, tracking
+parameters and FLOPs about as well as accuracy on some benchmarks
+~\cite{ning2021evaluating,white2021powerful,kadlecova2024graf}, a proposed route
+to cheap evaluation.
+
+However, two observations about this zoo are in tension: many proxies correlate
+with capacity, yet proxy quality is not reliably portable
+~\cite{ning2021evaluating,white2021powerful,krishnakumar2022nbsz}. A proxy that
+tops one benchmark or axis can be anti-correlated with accuracy on another. The
+condition-number sum \px{cond-sum}, for example,
+runs positive ($+0.88$) as wiring varies and negative ($-0.77$)
+as width varies: the same published statistic, with opposite sign across axes
+(\cref{fig:signflip}). We ask which statistical structures accompany this
+transport failure and whether it changes a budgeted search outcome.
+
+Rather than build a new proxy, we analyze the structure associated with existing
+scores. The clean instrument is NAS-Bench-201~\cite{dong2021natsbench}:
+its topology axis varies wiring at fixed width and its size axis varies width at
+fixed wiring, so each axis turns \emph{one} knob, where a cross-\emph{benchmark}
+comparison would confound family, dataset, and parameterization at once. Treating
+a $29$-feature aligned zoo as one instrument, we organize each proxy's accuracy correlation
+(\cref{eq:decomp}) into a \emph{capacity} term, computable label-free from the
+representation spectrum, and a \emph{trainability residual} read against a measured
+target $T$, the early-descent rate of the real training curve. Coincidentally,
+NAS-Bench-Suite-Zero reports an ensemble adds up to $+42\%$ over the best single
+proxy~\cite{krishnakumar2022nbsz}; we do not chase that number; we test how much
+of a related complementarity gain remains after capacity adjustment
+(\cref{app:access-evidence}). This decomposition is descriptive rather
+than causal: it separates a dominant capacity-associated factor from an
+early-trainability residual and then tests how both behave under transport.
+
+Taken together, the evidence supports three bounded conclusions
+(\cref{fig:results,fig:portability,fig:signflip}). First, both axes contain a
+dominant capacity-associated factor, but outcome-informed orientation overstates
+cross-axis loading-direction agreement. Second, a capacity-orthogonal
+early-trainability association remains partly readable at initialization. Third,
+several leading raw proxies reverse sign under transport, while other proxies---
+including recent controls---remain positive on both axes. Concretely, we
+contribute:
+\begin{enumerate}\itemsep2pt
+\item A \textbf{capacity--trainability decomposition} (\cref{eq:decomp}): a
+dominant capacity-associated factor (\cref{sec:result1}, with the narrow
+label-free yardstick of Proposition~\ref{thm:bound}) and a smaller,
+capacity-orthogonal trainability association (\cref{sec:result2}) that is partly
+init-accessible (\cref{sec:result3}).
+\item An \textbf{empirical test} of a proposed ``label-free ceiling'' on these
+benchmarks (\cref{sec:result5}): on the topology axis the best proxies largely close
+the gap themselves, so the binding limitation there is portability, not magnitude;
+on the size axis the residual increment sits at the noise floor.
+\item A \textbf{tiered portability map} (\cref{sec:result4},
+\cref{fig:portability}): three motivating within-NB201 examples, $9/13$
+descriptive reversals across the broader map, and four strictly supported
+cross-benchmark instances. Dimension controls narrow \px{cond-sum} to a
+dimension-linked/proxy-geometry-dependent failure rather than an independent
+mechanism.
+\item A \textbf{controlled search consequence} (\cref{sec:searchtransfer}): two
+named traps cost $+5.40$ and $+1.97$ points at $K{=}10$, while two null
+directions cost zero. The target-calibrated screen is separated from target-EVAL
+scoring but is not fully label-free, and we do not claim universal superiority.
+\item A \textbf{reusable artifact design} (\cref{sec:artifact}): we construct a
+cross-space portability map from per-architecture proxy values and
+per-(proxy, space-pair) sign-stability annotations.
+\end{enumerate}
+
+\noindent Our study is \emph{observational}: we turn no controlled knobs and make
+no causal claims; limitations, including the weaker size-axis arm ($n{=}138$
+full-zoo), are detailed in \cref{sec:limitations}. The appendix supplies the
+dependency layer under each result, organized as a per-conclusion dependency map
+(\cref{app:map}).

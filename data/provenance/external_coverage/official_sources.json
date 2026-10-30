@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "retrieved_utc_date": "2026-08-25",
+  "required_proxy_contract": {
+    "required_count": 21,
+    "available_naslib_fields": [
+      "epe_nas", "fisher", "flops", "grad_norm", "grasp", "jacov", "l2_norm",
+      "nwot", "params", "plain", "snip", "synflow", "zen"
+    ],
+    "available_count": 13,
+    "count_gap": 8,
+    "required_name_set_status": "blocked_not_frozen_in_authoritative_round1_source",
+    "reason": "The frozen manuscript grouping and executable per-proxy list count params, FLOPs, effective rank, spectral fields, and probe fields differently; no unambiguous 21-name set matching the NASLib schema is frozen."
+  },
+  "naslib": {
+    "repository": "https://github.com/automl/NASLib",
+    "commit": "8cb5d2ba1e29784de43039d9824c68e88fb1a1da",
+    "license": "Apache-2.0",
+    "license_sha256": "f1b59e0ebf1186b57fb7f6eb8fef0563ef8b3f88294de8aca9975d993030b293"
+  },
+  "nasbench101": {
+    "repository": "https://github.com/google-research/nasbench",
+    "commit": "b94247037ee470418a3e56dcb83814e9be83f3a8",
+    "license": "Apache-2.0",
+    "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "naslib_pickle_google_drive_id": "1oORtEmzyfG1GcnPHh0ijCs0gCHKEThNx",
+    "official_full_tfrecord": "https://storage.googleapis.com/nasbench/nasbench_full.tfrecord",
+    "official_full_tfrecord_documented_sha256": "3d64db8180fb1b0207212f9032205064312b6907a3bbc81eabea10db2f5c7e9c",
+    "epoch_budgets": [4, 12, 36, 108]
+  },
+  "nasbench301": {
+    "repository": "https://github.com/automl/nasbench301",
+    "commit": "61c670e60512abc14aa472da18bb8d5b985f95e0",
+    "license": "Apache-2.0",
+    "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "naslib_full_training_google_drive_id": "1YJ80Twt9g8Gaf8mMgzK-f5hWaVFPlECF"
+  },
+  "transnasbench101": {
+    "repository": "https://github.com/yawen-d/TransNASBench",
+    "commit": "6d4231b1eb04e95750a5b2b6cf391db770bc25d6",
+    "license": "MIT",
+    "license_sha256": "17eb5774727b609a307832e1902709c81843b25de20446112a1d511e345d6f06",
+    "google_drive_folder_id": "1HlLr2ihZX_ZuV3lJX_4i7q4w-ZBdhJ6o",
+    "api_file_id": "1BV_BRMsCUVBtSVj4SN4QmA9Pjd35B2M4",
+    "api_filename": "transnas-bench_v10141024.pth",
+    "api_size_bytes": 109170445,
+    "api_sha256": "1974b0ba21872494fabb541616e9bdae740242eecd6df5c5893747291364bc10"
+  }
+}

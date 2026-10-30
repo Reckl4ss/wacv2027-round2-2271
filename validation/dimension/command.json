@@ -1,0 +1,10 @@
+[
+  "python",
+  ".\\src\\engines\\dimension_sensitivity\\run.py",
+  "--input-dir",
+  ".\\data\\frozen",
+  "--output-dir",
+  ".\\runs\\dimension",
+  "--nboot",
+  "2000"
+]

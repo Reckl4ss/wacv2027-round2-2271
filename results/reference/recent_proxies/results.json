@@ -1,0 +1,118 @@
+{
+  "bootstrap_draws": 10000,
+  "methods": {
+    "aznas": {
+      "sss": {
+        "n": 425,
+        "test_accuracy": {
+          "ci_percentile": [
+            0.6920152493100398,
+            0.7790750270918682
+          ],
+          "draws": 10000,
+          "probability_negative": 0.0,
+          "probability_positive": 1.0,
+          "seed": 20281825,
+          "spearman_rho": 0.7396540515281734
+        },
+        "validation_accuracy": {
+          "ci_percentile": [
+            0.684191644508499,
+            0.7691028673982143
+          ],
+          "draws": 10000,
+          "probability_negative": 0.0,
+          "probability_positive": 1.0,
+          "seed": 20281925,
+          "spearman_rho": 0.7305841784461969
+        }
+      },
+      "test_accuracy_sign_stability": {
+        "definition": "Point-estimate signs agree and neither point estimate is zero; this does not establish universality.",
+        "same_nonzero_point_sign": true
+      },
+      "tss": {
+        "n": 1000,
+        "test_accuracy": {
+          "ci_percentile": [
+            0.910177422066434,
+            0.9309021067001574
+          ],
+          "draws": 10000,
+          "probability_negative": 0.0,
+          "probability_positive": 1.0,
+          "seed": 20280825,
+          "spearman_rho": 0.9216585543551294
+        },
+        "validation_accuracy": {
+          "ci_percentile": [
+            0.9102157437866687,
+            0.9305771744105188
+          ],
+          "draws": 10000,
+          "probability_negative": 0.0,
+          "probability_positive": 1.0,
+          "seed": 20280925,
+          "spearman_rho": 0.921430391476319
+        }
+      }
+    },
+    "swap": {
+      "sss": {
+        "n": 425,
+        "test_accuracy": {
+          "ci_percentile": [
+            0.7306398219859529,
+            0.8186105977209246
+          ],
+          "draws": 10000,
+          "probability_negative": 0.0,
+          "probability_positive": 1.0,
+          "seed": 20271825,
+          "spearman_rho": 0.7783457331748139
+        },
+        "validation_accuracy": {
+          "ci_percentile": [
+            0.7483178780859744,
+            0.8339606952800249
+          ],
+          "draws": 10000,
+          "probability_negative": 0.0,
+          "probability_positive": 1.0,
+          "seed": 20271925,
+          "spearman_rho": 0.7947688946673815
+        }
+      },
+      "test_accuracy_sign_stability": {
+        "definition": "Point-estimate signs agree and neither point estimate is zero; this does not establish universality.",
+        "same_nonzero_point_sign": true
+      },
+      "tss": {
+        "n": 1000,
+        "test_accuracy": {
+          "ci_percentile": [
+            0.7661774926971976,
+            0.8254092569958857
+          ],
+          "draws": 10000,
+          "probability_negative": 0.0,
+          "probability_positive": 1.0,
+          "seed": 20270825,
+          "spearman_rho": 0.7975574728077051
+        },
+        "validation_accuracy": {
+          "ci_percentile": [
+            0.7649416225485047,
+            0.8240125538964808
+          ],
+          "draws": 10000,
+          "probability_negative": 0.0,
+          "probability_positive": 1.0,
+          "seed": 20270925,
+          "spearman_rho": 0.79647608996451
+        }
+      }
+    }
+  },
+  "schema_version": 1
+}

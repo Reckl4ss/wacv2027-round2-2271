@@ -1,0 +1,19 @@
+{
+  "ntk": {
+    "status": "PASS",
+    "numeric_values": 670,
+    "absolute_tolerance": 1e-10,
+    "max_abs_error": 1.9984014443252818e-15,
+    "differences": []
+  },
+  "early-windows": {
+    "status": "PASS",
+    "numeric_table_rows": 8,
+    "scope": "Logged rounded table values; all selected rows and interval endpoints checked."
+  },
+  "width-partials": {
+    "status": "PASS",
+    "numeric_table_rows": 12,
+    "scope": "Logged rounded table values; all selected rows and interval endpoints checked."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "input_sha256": {
+    "nasbench_only108.pkl": "992337e87be79cfc379195f1b8ba1560741a15501b9a1a36ad315da8decbafcb",
+    "nb301_full_training.pickle": "1f658483ff85b92a6318fdaf4478c60ec42ea3b96af580498b1fb80cdf11fb92",
+    "transnas-bench_v10141024.pth": "1974b0ba21872494fabb541616e9bdae740242eecd6df5c5893747291364bc10",
+    "zc_nasbench101.json": "aaf67baf526661c84b9c2bd449926cd0ff41d9451fe0aeaeba3450013ec6801f",
+    "zc_nasbench301.json": "8951464c59220053b5468a694604e209b9fe9692ef024b00cc0db12ef2f11536",
+    "zc_transbench101_micro.json": "60934abb09b682abe0e1ca44acf08a1162e3001f34960ac78fda9f8867525c52"
+  },
+  "schema_version": "1.1.0",
+  "status": "PASS"
+}

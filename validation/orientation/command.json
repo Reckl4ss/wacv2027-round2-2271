@@ -1,0 +1,10 @@
+[
+  "python",
+  ".\\src\\engines\\orientation_controls\\run.py",
+  "--input-dir",
+  ".\\data\\frozen",
+  "--output-dir",
+  ".\\runs\\orientation",
+  "--nboot",
+  "2000"
+]

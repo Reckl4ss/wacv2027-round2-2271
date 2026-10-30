@@ -1,0 +1,12 @@
+[
+  "python",
+  ".\\src\\engines\\sampling_robustness\\run.py",
+  "--input-dir",
+  ".\\data\\frozen",
+  "--output-dir",
+  ".\\runs\\sampling",
+  "--resamples",
+  "1000",
+  "--permutation-draws",
+  "2000"
+]

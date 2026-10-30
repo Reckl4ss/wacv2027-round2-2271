@@ -1,0 +1,5 @@
+SWAP initialization seeds: 0,1,...,31
+AZ-NAS initialization/input identifiers: 1,2,3,4,5
+AZ-NAS fixed-input generator seed for identifier s: 100000+s
+Architecture-level bootstrap master seed: 20270825
+Per-result bootstrap offsets are recorded in results.json and correlations.csv.

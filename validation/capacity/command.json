@@ -1,0 +1,5 @@
+[
+  "python",
+  ".\\runs\\capacity\\work\\code\\zoo_analysis.py",
+  "--full"
+]

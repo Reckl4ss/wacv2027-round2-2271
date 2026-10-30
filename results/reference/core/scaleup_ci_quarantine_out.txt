@@ -1,0 +1,207 @@
+================================================================================
+SCALE-UP 3: CROSS-SPACE CI QUARANTINE  -- NO GPU, NO TRAINING
+[local execution path omitted]
+Loaders + spearman + boot_spearman_ci imported verbatim from crossspace.py.
+================================================================================
+[NB101-cf10] archs in proxy json: 100 (SMALL-N)
+[NB101-cf10] proxies present: ['grad_norm', 'snip', 'fisher', 'jacov', 'synflow', 'nwot', 'zen', 'grasp', 'l2_norm', 'plain', 'params', 'flops', 'epe_nas']
+[NB101-cf10] acc finite: 100
+[NB201] base_tss archs (std proxies): 1000
+[NB201] premise archs (spectral+T, tss): 500
+[NB201] JOIN base&premise (std+spectral+T): 324
+[NB201] multi-dataset curve archs: cf10=15625 cf100=15625 IN16=15625
+[NB201-cf10] std-proxy arm n=1000 acc finite=1000 T finite=1000
+[NB201-cf100] std-proxy arm n=1000 acc finite=1000 T finite=1000
+[NB201-IN16] std-proxy arm n=1000 acc finite=1000 T finite=1000
+[NB201] spectral-arm n=324 (erank/cond/stable/Ralpha2 available)
+[NB201] index->arch ALIGNMENT cross-check: mean|valacc-curveAcc|=0.404pp, 95.0% within 1pp over n=1000 (mapping verified, not asserted by note).
+[NB201] premise T_slope AGREEMENT: Spearman(our train-acc T, premise.T_slope)=0.939 over n=324 (SAME definition; values differ as premise used a different training-run source, so they agree by rank not byte-for-byte).
+[NB301-cf10] archs in proxy json: 50 (SMALL-N)
+[NB301-cf10] proxies present: ['grad_norm', 'snip', 'fisher', 'jacov', 'synflow', 'nwot', 'zen', 'grasp', 'l2_norm', 'plain', 'params', 'flops', 'epe_nas']
+[NB301-cf10] proxy-json val_acc used as acc (curve cross-match below)
+[NB301] curve pickle archs: 11221; proxy->curve genotype MATCHES: 0/50
+[NB301] -> proxy arch set is DISJOINT from the 11221-arch curve subset; using proxy-json val_acc. No T for NB301 (no per-proxy-arch curve).
+[TransNAS] files: 26; tasks found: ['class_object', 'class_scene']
+[TransNAS-class_object] proxies in files: ['epe_nas', 'fisher', 'flops', 'grad_norm', 'grasp', 'jacov', 'l2_norm', 'nwot', 'params', 'plain', 'snip', 'synflow', 'zen']
+[TransNAS-class_object] common-idx JOIN n=150; acc-consistency across proxies=True
+[TransNAS-class_object] canonical proxies present: ['grad_norm', 'snip', 'fisher', 'jacov', 'synflow', 'nwot', 'zen', 'grasp', 'l2_norm', 'plain', 'params', 'flops', 'epe_nas']
+[TransNAS-class_scene] proxies in files: ['epe_nas', 'fisher', 'flops', 'grad_norm', 'grasp', 'jacov', 'l2_norm', 'nwot', 'params', 'plain', 'snip', 'synflow', 'zen']
+[TransNAS-class_scene] common-idx JOIN n=150; acc-consistency across proxies=True
+[TransNAS-class_scene] canonical proxies present: ['grad_norm', 'snip', 'fisher', 'jacov', 'synflow', 'nwot', 'zen', 'grasp', 'l2_norm', 'plain', 'params', 'flops', 'epe_nas']
+
+================================================================================
+TABLE A: per-(proxy, space) corr(Q,acc) + bootstrap 95% CI
+  [DEGEN] = degenerate/dropped column (NB301 disjoint, TransNAS-object sparse).
+================================================================================
+proxy      space           rho      CI_low   CI_high  n     status
+grad_norm  NB101-cf10      +0.509   [+0.330,+0.664]        n100  CI
+grad_norm  NB201-cf10      +0.595   [+0.545,+0.637]        n1000 CI
+grad_norm  NB201-cf100     +0.640   [+0.593,+0.680]        n1000 CI
+grad_norm  NB201-IN16      +0.580   [+0.529,+0.626]        n1000 CI
+grad_norm  NB301-cf10      -0.153   [-0.452,+0.135]        n50   DEGEN
+grad_norm  TransNAS-object +0.389   [+0.223,+0.542]        n150  CI
+grad_norm  TransNAS-scene  +0.650   [+0.519,+0.764]        n150  CI
+snip       NB101-cf10      +0.539   [+0.367,+0.682]        n100  CI
+snip       NB201-cf10      +0.595   [+0.546,+0.637]        n1000 CI
+snip       NB201-cf100     +0.642   [+0.594,+0.682]        n1000 CI
+snip       NB201-IN16      +0.579   [+0.528,+0.625]        n1000 CI
+snip       NB301-cf10      -0.162   [-0.452,+0.131]        n50   DEGEN
+snip       TransNAS-object +0.431   [+0.275,+0.573]        n150  CI
+snip       TransNAS-scene  +0.684   [+0.564,+0.785]        n150  CI
+fisher     NB101-cf10      +0.501   [+0.310,+0.662]        n100  CI
+fisher     NB201-cf10      +0.394   [+0.333,+0.452]        n1000 CI
+fisher     NB201-cf100     +0.427   [+0.367,+0.482]        n1000 CI
+fisher     NB201-IN16      +0.361   [+0.295,+0.420]        n1000 CI
+fisher     NB301-cf10      -0.338   [-0.584,-0.069]        n50   DEGEN
+fisher     TransNAS-object +0.464   [+0.309,+0.605]        n150  CI
+fisher     TransNAS-scene  +0.655   [+0.533,+0.765]        n150  CI
+jacov      NB101-cf10      -0.526   [-0.666,-0.347]        n100  CI
+jacov      NB201-cf10      +0.721   [+0.678,+0.758]        n977  CI
+jacov      NB201-cf100     +0.700   [+0.655,+0.738]        n977  CI
+jacov      NB201-IN16      +0.677   [+0.631,+0.717]        n977  CI
+jacov      NB301-cf10      -0.075   [-0.372,+0.224]        n50   DEGEN
+jacov      TransNAS-object +0.604   [+0.466,+0.712]        n150  CI
+jacov      TransNAS-scene  +0.783   [+0.690,+0.851]        n150  CI
+synflow    NB101-cf10      +0.693   [+0.569,+0.784]        n100  CI
+synflow    NB201-cf10      +0.737   [+0.704,+0.766]        n1000 CI
+synflow    NB201-cf100     +0.766   [+0.734,+0.792]        n1000 CI
+synflow    NB201-IN16      +0.757   [+0.723,+0.786]        n1000 CI
+synflow    NB301-cf10      +0.221   [-0.082,+0.480]        n50   DEGEN
+synflow    TransNAS-object +0.466   [+0.308,+0.606]        n150  CI
+synflow    TransNAS-scene  +0.647   [+0.520,+0.754]        n150  CI
+nwot       NB101-cf10      +0.323   [+0.134,+0.496]        n100  CI
+nwot       NB201-cf10      +0.755   [+0.725,+0.784]        n984  CI
+nwot       NB201-cf100     +0.800   [+0.772,+0.824]        n984  CI
+nwot       NB201-IN16      +0.775   [+0.744,+0.802]        n984  CI
+nwot       NB301-cf10      +0.565   [+0.322,+0.749]        n50   DEGEN
+nwot       TransNAS-object +0.320   [+0.152,+0.467]        n150  CI
+nwot       TransNAS-scene  +0.517   [+0.365,+0.650]        n150  CI
+zen        NB101-cf10      +0.651   [+0.525,+0.749]        n100  CI
+zen        NB201-cf10      -0.065   [-0.139,+0.010]        n977  CI
+zen        NB201-cf100     -0.086   [-0.160,-0.010]        n977  CI
+zen        NB201-IN16      -0.017   [-0.089,+0.058]        n977  CI
+zen        NB301-cf10      +0.470   [+0.185,+0.680]        n50   DEGEN
+zen        TransNAS-object +0.495   [+0.358,+0.615]        n150  CI
+zen        TransNAS-scene  +0.669   [+0.549,+0.764]        n150  CI
+grasp      NB101-cf10      -0.102   [-0.302,+0.099]        n100  CI
+grasp      NB201-cf10      +0.510   [+0.456,+0.557]        n1000 CI
+grasp      NB201-cf100     +0.556   [+0.506,+0.601]        n1000 CI
+grasp      NB201-IN16      +0.504   [+0.447,+0.556]        n1000 CI
+grasp      NB301-cf10      +0.205   [-0.082,+0.467]        n50   DEGEN
+grasp      TransNAS-object -0.390   [-0.543,-0.215]        n150  CI
+grasp      TransNAS-scene  -0.566   [-0.694,-0.425]        n150  CI
+l2_norm    NB101-cf10      +0.547   [+0.398,+0.674]        n100  CI
+l2_norm    NB201-cf10      +0.678   [+0.641,+0.713]        n1000 CI
+l2_norm    NB201-cf100     +0.719   [+0.685,+0.751]        n1000 CI
+l2_norm    NB201-IN16      +0.703   [+0.666,+0.735]        n1000 CI
+l2_norm    NB301-cf10      +0.461   [+0.197,+0.664]        n50   DEGEN
+l2_norm    TransNAS-object +0.268   [+0.098,+0.417]        n150  CI
+l2_norm    TransNAS-scene  +0.495   [+0.362,+0.616]        n150  CI
+plain      NB101-cf10      +0.047   [-0.150,+0.232]        n100  CI
+plain      NB201-cf10      -0.082   [-0.144,-0.020]        n1000 CI
+plain      NB201-cf100     -0.081   [-0.142,-0.018]        n1000 CI
+plain      NB201-IN16      -0.053   [-0.116,+0.012]        n1000 CI
+plain      NB301-cf10      -0.295   [-0.521,-0.020]        n50   DEGEN
+plain      TransNAS-object +0.516   [+0.372,+0.638]        n150  CI
+plain      TransNAS-scene  +0.326   [+0.151,+0.472]        n150  CI
+params     NB101-cf10      +0.670   [+0.546,+0.756]        n100  CI
+params     NB201-cf10      +0.717   [+0.684,+0.747]        n1000 CI
+params     NB201-cf100     +0.735   [+0.703,+0.764]        n1000 CI
+params     NB201-IN16      +0.702   [+0.665,+0.735]        n1000 CI
+params     NB301-cf10      +0.502   [+0.231,+0.695]        n50   DEGEN
+params     TransNAS-object +0.387   [+0.235,+0.517]        n150  CI
+params     TransNAS-scene  +0.577   [+0.462,+0.683]        n150  CI
+flops      NB101-cf10      +0.478   [+0.292,+0.641]        n100  CI
+flops      NB201-cf10      +0.717   [+0.684,+0.747]        n1000 CI
+flops      NB201-cf100     +0.735   [+0.703,+0.764]        n1000 CI
+flops      NB201-IN16      +0.702   [+0.665,+0.735]        n1000 CI
+flops      NB301-cf10      +0.470   [+0.173,+0.675]        n50   DEGEN
+flops      TransNAS-object -0.048   [-0.192,+0.101]        n150  CI
+flops      TransNAS-scene  -0.125   [-0.270,+0.034]        n150  CI
+epe_nas    NB101-cf10      -0.080   [-0.277,+0.121]        n100  CI
+epe_nas    NB201-cf10      +0.704   [+0.663,+0.739]        n977  CI
+epe_nas    NB201-cf100     +0.691   [+0.648,+0.728]        n977  CI
+epe_nas    NB201-IN16      +0.665   [+0.622,+0.702]        n977  CI
+epe_nas    NB301-cf10      -0.011   [-0.319,+0.276]        n50   DEGEN
+epe_nas    TransNAS-object +0.520   [+0.372,+0.636]        n150  CI
+epe_nas    TransNAS-scene  +0.432   [+0.309,+0.535]        n150  CI
+
+================================================================================
+TABLE B: CROSS-SPACE SIGN-FLIP QUARANTINE
+  A flip = a pair of NON-DEGENERATE spaces where the proxy has rho>+0.02 in one and
+  rho<-0.02 in the other. CI-SEPARATED (load-bearing): one CI entirely >0, the other
+  entirely <0, AND the two CIs are disjoint. Else SUGGESTIVE.
+================================================================================
+
+  proxy=jacov  (non-degenerate spaces only)
+       NB101-cf10       rho=-0.526  CI=[-0.666,-0.347]      n=100
+       TransNAS-object  rho=+0.604  CI=[+0.466,+0.712]      n=150
+       NB201-IN16       rho=+0.677  CI=[+0.631,+0.717]      n=977
+       NB201-cf100      rho=+0.700  CI=[+0.655,+0.738]      n=977
+       NB201-cf10       rho=+0.721  CI=[+0.678,+0.758]      n=977
+       TransNAS-scene   rho=+0.783  CI=[+0.690,+0.851]      n=150
+       -> CI-SEPARATED (LOAD-BEARING): TransNAS-scene rho+0.783 CI[+0.690,+0.851]  VS  NB101-cf10 rho-0.526 CI[-0.666,-0.347]
+
+  proxy=zen  (non-degenerate spaces only)
+       NB201-cf100      rho=-0.086  CI=[-0.160,-0.010]      n=977
+       NB201-cf10       rho=-0.065  CI=[-0.139,+0.010]      n=977
+       NB201-IN16       rho=-0.017  CI=[-0.089,+0.058]      n=977
+       TransNAS-object  rho=+0.495  CI=[+0.358,+0.615]      n=150
+       NB101-cf10       rho=+0.651  CI=[+0.525,+0.749]      n=100
+       TransNAS-scene   rho=+0.669  CI=[+0.549,+0.764]      n=150
+       -> CI-SEPARATED (LOAD-BEARING): TransNAS-scene rho+0.669 CI[+0.549,+0.764]  VS  NB201-cf100 rho-0.086 CI[-0.160,-0.010]
+
+  proxy=grasp  (non-degenerate spaces only)
+       TransNAS-scene   rho=-0.566  CI=[-0.694,-0.425]      n=150
+       TransNAS-object  rho=-0.390  CI=[-0.543,-0.215]      n=150
+       NB101-cf10       rho=-0.102  CI=[-0.302,+0.099]      n=100
+       NB201-IN16       rho=+0.504  CI=[+0.447,+0.556]      n=1000
+       NB201-cf10       rho=+0.510  CI=[+0.456,+0.557]      n=1000
+       NB201-cf100      rho=+0.556  CI=[+0.506,+0.601]      n=1000
+       -> CI-SEPARATED (LOAD-BEARING): NB201-cf100 rho+0.556 CI[+0.506,+0.601]  VS  TransNAS-scene rho-0.566 CI[-0.694,-0.425]
+
+  proxy=plain  (non-degenerate spaces only)
+       NB201-cf10       rho=-0.082  CI=[-0.144,-0.020]      n=1000
+       NB201-cf100      rho=-0.081  CI=[-0.142,-0.018]      n=1000
+       NB201-IN16       rho=-0.053  CI=[-0.116,+0.012]      n=1000
+       NB101-cf10       rho=+0.047  CI=[-0.150,+0.232]      n=100
+       TransNAS-scene   rho=+0.326  CI=[+0.151,+0.472]      n=150
+       TransNAS-object  rho=+0.516  CI=[+0.372,+0.638]      n=150
+       -> CI-SEPARATED (LOAD-BEARING): TransNAS-object rho+0.516 CI[+0.372,+0.638]  VS  NB201-cf10 rho-0.082 CI[-0.144,-0.020]
+
+  proxy=flops  (non-degenerate spaces only)
+       TransNAS-scene   rho=-0.125  CI=[-0.270,+0.034]      n=150
+       TransNAS-object  rho=-0.048  CI=[-0.192,+0.101]      n=150
+       NB101-cf10       rho=+0.478  CI=[+0.292,+0.641]      n=100
+       NB201-IN16       rho=+0.702  CI=[+0.665,+0.735]      n=1000
+       NB201-cf10       rho=+0.717  CI=[+0.684,+0.747]      n=1000
+       NB201-cf100      rho=+0.735  CI=[+0.703,+0.764]      n=1000
+       -> SUGGESTIVE (CIs overlap / straddle 0 / small-n): not load-bearing.
+
+  proxy=epe_nas  (non-degenerate spaces only)
+       NB101-cf10       rho=-0.080  CI=[-0.277,+0.121]      n=100
+       TransNAS-scene   rho=+0.432  CI=[+0.309,+0.535]      n=150
+       TransNAS-object  rho=+0.520  CI=[+0.372,+0.636]      n=150
+       NB201-IN16       rho=+0.665  CI=[+0.622,+0.702]      n=977
+       NB201-cf100      rho=+0.691  CI=[+0.648,+0.728]      n=977
+       NB201-cf10       rho=+0.704  CI=[+0.663,+0.739]      n=977
+       -> SUGGESTIVE (CIs overlap / straddle 0 / small-n): not load-bearing.
+
+================================================================================
+SUMMARY
+================================================================================
+  LOAD-BEARING (CI-separated) sign-flips:
+     jacov         TransNAS-scene (+) vs NB101-cf10 (-)
+     zen           TransNAS-scene (+) vs NB201-cf100 (-)
+     grasp         NB201-cf100 (+) vs TransNAS-scene (-)
+     plain         TransNAS-object (+) vs NB201-cf10 (-)
+
+  DROPPED / FLAGGED degenerate columns (excluded from the flip test):
+     NB301-cf10       DISJOINT: proxy json arch set does not match the curve arch set (genotype matches=0/50 of 11221 curve archs); proxy<->T cannot be joined.
+
+  NOTE: small-n columns (NB101 n~100, NB301 n=50) still receive CIs when n>=8 but
+  are WIDE -> any flip involving them lands SUGGESTIVE unless the CIs are disjoint.
+
+[saved] scaleup_ci_quarantine_results.pkl
+
+[done] CI quarantine complete.

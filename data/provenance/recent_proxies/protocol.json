@@ -1,0 +1,43 @@
+{
+  "architecture_populations": {
+    "sss": {
+      "count": 425,
+      "identity": "Round-1 base_sss_cifar10 rows; i is the canonical NATS-SSS index",
+      "index_mapping": "official five-position base-8 enumeration over [8,16,24,32,40,48,56,64]",
+      "fixed_genotype": "|nor_conv_3x3~0|+|nor_conv_3x3~0|nor_conv_3x3~1|+|skip_connect~0|nor_conv_3x3~1|nor_conv_3x3~2|"
+    },
+    "tss": {
+      "count": 1000,
+      "identity": "Round-1 base_tss_cifar10 rows joined to the locked index-to-architecture-string map"
+    }
+  },
+  "aznas": {
+    "adapter": "SSS only: expose the same stem-and-cell feature list already exposed by the official TSS model; no network layer or metric equation is changed",
+    "aggregate": "Within each space, sum log(rank/n) for cached official FLOPs, expressivity, progressivity, and trainability; average ties",
+    "batch": "one fixed label-free 64x3x32x32 standard-normal tensor per seed, reused for every architecture in both spaces",
+    "batch_size": 64,
+    "initialization": "official kaiming_norm_fanin",
+    "orientation": "higher is better",
+    "seeds": [1, 2, 3, 4, 5]
+  },
+  "bootstrap": {
+    "draws": 10000,
+    "interval": "architecture-level percentile 95% CI",
+    "master_seed": 20270825,
+    "resampling_unit": "architecture identity within a search space"
+  },
+  "identity_gate": "actual torch parameter count must match Round-1 cached params*1e6 within the cache's half-parameter rounding tolerance",
+  "locked_on": "2026-08-25",
+  "primary_target": "cached CIFAR-10 test accuracy in percent",
+  "secondary_target": "cached CIFAR-10 validation accuracy in percent",
+  "sign_stability_definition": "TSS and SSS point-estimate Spearman correlations have the same non-zero sign; this is not a universality claim",
+  "swap": {
+    "batch": "the first 16 CIFAR-10 training images in official order, official SWAP normalization, labels unused",
+    "batch_size": 16,
+    "initialization": "official iid unit-normal Conv2d/Linear weights, BN weight 1 and bias 0",
+    "orientation": "higher is better",
+    "regularization": false,
+    "repeats": 32,
+    "seeds": "0 through 31, reset explicitly for every architecture/repeat"
+  }
+}

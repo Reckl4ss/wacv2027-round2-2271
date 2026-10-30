@@ -1,0 +1,58 @@
+============================================================================================
+WIDTH-PARTIAL MECHANISM TEST -- NB201-SSS  (channel-width varies; params monotone in width)
+python: <REVIEW_WORKSPACE>\.venv\Scripts\python.exe   numpy 2.4.4   SEED=1234
+NO TRAINING / NO net build -- partial-correlation re-analysis of existing pkls only.
+============================================================================================
+  n(base SSS)=425 ; erank/cond_sum available for n=138 (exp_alpha join).
+  acc field = testacc (matches zoo_analysis STDONLY, zoo_analysis.py:469); Spearman(testacc,valacc)=+0.976.
+  Spearman(param_count, params) on SSS = +0.99999  (params IS the width surrogate).
+  W controls: [params]=raw width ; [erank]=representation effective rank ; [params,erank]=BOTH.
+  LIKE-FOR-LIKE: for each proxy ALL controls (and the raw corr) are computed on the SAME
+  per-proxy complete-case set (finite Q, acc, params AND erank), so params-only / erank-only /
+  params+erank form a nested within-sample progression on identical rows (no cross-row contrast).
+  VERDICT per cell: partial CI excludes 0 -> residual association (CI excludes zero);
+                    partial CI spans 0    -> SSS signal is width-driven (circularity holds).
+
+--------------------------------------------------------------------------------------------
+PROXY cond_sum    (complete-case n=138; raw on all-finite n=138)   raw corr(Q, acc_SSS)[cc] = -0.768  (all-finite = -0.768)
+--------------------------------------------------------------------------------------------
+   partial(Q, acc | params      ) = -0.317  95%CI[-0.478,-0.128]  n=138  -> residual association (CI excludes 0)
+   partial(Q, acc | erank       ) = -0.047  95%CI[-0.242,+0.128]  n=138  -> width-driven (CI spans 0)
+   partial(Q, acc | params+erank) = -0.048  95%CI[-0.260,+0.130]  n=138  -> width-driven (CI spans 0)
+   => cond_sum: SSS sign COLLAPSES under the full width control -> circularity concern HOLDS.
+
+--------------------------------------------------------------------------------------------
+PROXY meco        (complete-case n=138; raw on all-finite n=425)   raw corr(Q, acc_SSS)[cc] = -0.791  (all-finite = -0.811)
+--------------------------------------------------------------------------------------------
+   partial(Q, acc | params      ) = -0.294  95%CI[-0.462,-0.087]  n=138  -> residual association (CI excludes 0)
+   partial(Q, acc | erank       ) = +0.231  95%CI[+0.019,+0.397]  n=138  -> residual association (CI excludes 0)  [sign changes vs raw]
+   partial(Q, acc | params+erank) = +0.233  95%CI[-0.004,+0.392]  n=138  -> width-driven (CI spans 0)  [sign changes vs raw]
+   => meco: SSS sign COLLAPSES under the full width control -> circularity concern HOLDS.
+
+--------------------------------------------------------------------------------------------
+PROXY jacob_cov   (complete-case n=138; raw on all-finite n=425)   raw corr(Q, acc_SSS)[cc] = -0.005  (all-finite = +0.073)
+--------------------------------------------------------------------------------------------
+   partial(Q, acc | params      ) = -0.086  95%CI[-0.242,+0.098]  n=138  -> width-driven (CI spans 0)
+   partial(Q, acc | erank       ) = -0.066  95%CI[-0.234,+0.114]  n=138  -> width-driven (CI spans 0)
+   partial(Q, acc | params+erank) = -0.068  95%CI[-0.236,+0.117]  n=138  -> width-driven (CI spans 0)
+   => jacob_cov: SSS sign COLLAPSES under the full width control -> circularity concern HOLDS.
+
+--------------------------------------------------------------------------------------------
+PROXY grasp       (complete-case n=138; raw on all-finite n=425)   raw corr(Q, acc_SSS)[cc] = -0.194  (all-finite = -0.162)
+--------------------------------------------------------------------------------------------
+   partial(Q, acc | params      ) = -0.068  95%CI[-0.269,+0.137]  n=138  -> width-driven (CI spans 0)
+   partial(Q, acc | erank       ) = -0.033  95%CI[-0.192,+0.135]  n=138  -> width-driven (CI spans 0)
+   partial(Q, acc | params+erank) = -0.033  95%CI[-0.199,+0.140]  n=138  -> width-driven (CI spans 0)
+   => grasp: SSS sign COLLAPSES under the full width control -> circularity concern HOLDS.
+
+============================================================================================
+SUMMARY (control = params+erank, the strongest width control; per-proxy complete-case rows,
+  finite Q/acc/params/erank -- interpretation uses these erank-controlled cells)
+============================================================================================
+  proxy        raw[cc]   partial|params+erank verdict
+  cond_sum      -0.768      -0.048 [-0.260,+0.130]   CI includes zero
+  meco          -0.791      +0.233 [-0.004,+0.392]   CI includes zero
+  jacob_cov     -0.005      -0.068 [-0.236,+0.117]   CI includes zero
+  grasp         -0.194      -0.033 [-0.199,+0.140]   CI includes zero
+
+[width_partial] wrote <REVIEW_WORKSPACE>\nas-proxy-transport\runs\width-partials\work\results\width_partial_out.txt

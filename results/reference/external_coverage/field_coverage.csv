@@ -1,0 +1,10 @@
+benchmark,task,rows,curve_joined,q_13_complete,q_required_count,q_required_count_gap,q_required_names_auditable,q_required_fields_status,capacity_finite,erank_finite,task_native_early_metric_finite,exact_paper_t_finite,task_native_final_metric_exact_match,exact_final_accuracy_match,eq1_eligible
+NAS-Bench-101,cifar10,9781,9781,9781,21,8,0,blocked_not_frozen_in_authoritative_round1_source,9781,0,0,0,9781,9781,0
+NAS-Bench-301,cifar10,11221,11221,11221,21,8,0,blocked_not_frozen_in_authoritative_round1_source,11221,0,0,0,11221,11221,0
+TransNAS-Bench-101/micro,class_scene,4096,4096,4096,21,8,0,blocked_not_frozen_in_authoritative_round1_source,4096,0,4096,4096,4096,4096,0
+TransNAS-Bench-101/micro,class_object,4096,4096,4096,21,8,0,blocked_not_frozen_in_authoritative_round1_source,4096,0,4096,4096,4096,4096,0
+TransNAS-Bench-101/micro,jigsaw,4096,4096,4096,21,8,0,blocked_not_frozen_in_authoritative_round1_source,4096,0,4096,4096,4096,4096,0
+TransNAS-Bench-101/micro,room_layout,4096,4096,4096,21,8,0,blocked_not_frozen_in_authoritative_round1_source,4096,0,4096,0,4096,0,0
+TransNAS-Bench-101/micro,segmentsemantic,4096,4096,4096,21,8,0,blocked_not_frozen_in_authoritative_round1_source,4096,0,4096,4096,4096,4096,0
+TransNAS-Bench-101/micro,normal,4096,4096,4096,21,8,0,blocked_not_frozen_in_authoritative_round1_source,4096,0,4096,0,4096,0,0
+TransNAS-Bench-101/micro,autoencoder,4096,4096,4096,21,8,0,blocked_not_frozen_in_authoritative_round1_source,4096,0,4096,0,4096,0,0

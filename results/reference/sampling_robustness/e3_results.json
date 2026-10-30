@@ -1,0 +1,142 @@
+{
+  "distribution_tests": [
+    {
+      "comparison": "intersection_vs_base_available",
+      "holm_adjusted_pvalue_within_axis": 1.0,
+      "ks_statistic": 0.027753086419753048,
+      "mean_difference_intersection_minus_base": 0.2737166872428105,
+      "randomization_draws": 2000,
+      "selection_randomization_pvalue": 0.8380809595202399,
+      "space": "tss",
+      "variable": "accuracy"
+    },
+    {
+      "comparison": "intersection_vs_base_available",
+      "holm_adjusted_pvalue_within_axis": 1.0,
+      "ks_statistic": 0.02354320987654321,
+      "mean_difference_intersection_minus_base": 0.009081513086419912,
+      "randomization_draws": 2000,
+      "selection_randomization_pvalue": 0.7451274362818591,
+      "space": "tss",
+      "variable": "params"
+    },
+    {
+      "comparison": "intersection_vs_base_available",
+      "holm_adjusted_pvalue_within_axis": 1.0,
+      "ks_statistic": 0.0,
+      "mean_difference_intersection_minus_base": 0.0,
+      "randomization_draws": 2000,
+      "selection_randomization_pvalue": 1.0,
+      "space": "tss",
+      "variable": "param_count"
+    },
+    {
+      "comparison": "intersection_vs_base_available",
+      "holm_adjusted_pvalue_within_axis": 0.095952023988006,
+      "ks_statistic": 0.10090366581415175,
+      "mean_difference_intersection_minus_base": 0.2848808184143081,
+      "randomization_draws": 2000,
+      "selection_randomization_pvalue": 0.031984007996002,
+      "space": "sss",
+      "variable": "accuracy"
+    },
+    {
+      "comparison": "intersection_vs_base_available",
+      "holm_adjusted_pvalue_within_axis": 0.10394802598700649,
+      "ks_statistic": 0.0923444160272805,
+      "mean_difference_intersection_minus_base": 0.010123695959079332,
+      "randomization_draws": 2000,
+      "selection_randomization_pvalue": 0.051974012993503245,
+      "space": "sss",
+      "variable": "params"
+    },
+    {
+      "comparison": "intersection_vs_base_available",
+      "holm_adjusted_pvalue_within_axis": 0.10394802598700649,
+      "ks_statistic": 0.0923444160272805,
+      "mean_difference_intersection_minus_base": 10071.271338448423,
+      "randomization_draws": 2000,
+      "selection_randomization_pvalue": 0.057971014492753624,
+      "space": "sss",
+      "variable": "param_count"
+    }
+  ],
+  "experiment": "E3_sampling",
+  "flow": [
+    {
+      "base_available": 1000,
+      "base_with_components": 324,
+      "base_with_premise": 324,
+      "base_with_probes": 324,
+      "components_available_global": 500,
+      "excluded_from_full_zoo": 676,
+      "four_table_intersection": 324,
+      "premise_available_global": 500,
+      "probes_available_global": 500,
+      "space": "tss"
+    },
+    {
+      "base_available": 425,
+      "base_with_components": 138,
+      "base_with_premise": 138,
+      "base_with_probes": 138,
+      "components_available_global": 500,
+      "excluded_from_full_zoo": 287,
+      "four_table_intersection": 138,
+      "premise_available_global": 500,
+      "probes_available_global": 500,
+      "space": "sss"
+    }
+  ],
+  "input_manifest": [
+    {
+      "bytes": 289739,
+      "file": "base_tss_cifar10.pkl",
+      "sha256": "00e6b67e07ea7f3937b35cba8c4852ed00e440213bbb3ef254b6568633e59bb0"
+    },
+    {
+      "bytes": 114804,
+      "file": "base_sss_cifar10.pkl",
+      "sha256": "3b15bec29b9c38e10f5ef7df141bbb7d9c595aab5afd3bb570cc308f48f787d0"
+    },
+    {
+      "bytes": 193362,
+      "file": "exp_alpha_components.pkl",
+      "sha256": "ef6cda6a8580373f6eeda60ca41431bde80f3e332c991a1565f848e91acfafe9"
+    },
+    {
+      "bytes": 366933,
+      "file": "premise_data.pkl",
+      "sha256": "f44509ada854d8484f4d8d949bd392b7a63f17afa7737cefadc0faedef1099b9"
+    },
+    {
+      "bytes": 226316,
+      "file": "trainability_probes.pkl",
+      "sha256": "af7336a25c0e55baba83acefed949f8348cec2e380be5e26d981b1b2728b1736"
+    }
+  ],
+  "measurement_cohorts": {
+    "components_equals_premise": true,
+    "components_equals_probes": true,
+    "interpretation": "The three added measurement tables use the same 500-architecture cohort per axis; full-zoo exclusions arise at the join with the independently covered base table, not from discordant missing rows among those three tables."
+  },
+  "protocol": {
+    "matched_n": 138,
+    "resamples": 1000,
+    "sampling": "without replacement independently for each seed",
+    "seed_schedule": "2027000..2027999",
+    "source_population": "TSS four-table intersection restricted by the unchanged Round 1 all-29-proxy PCA complete-case rule, n=317 (7/324 non-finite rows excluded before sampling)",
+    "survival_definition": "TSS subsample raw Spearman sign is opposite the fixed SSS n=138 raw Spearman sign",
+    "uncertainty": "2.5/97.5 percentiles across matched-size subsamples; Wilson interval for survival proportions"
+  },
+  "sss_reference": {
+    "flip_rhos": {
+      "cond_sum": -0.7680601855587527,
+      "grasp": -0.19409790405486144,
+      "meco": -0.7907712682613877
+    },
+    "n": 138,
+    "pca_corr_pc1_erank": 0.9856343424149919,
+    "pca_var_pc1": 0.49354270945457496
+  }
+}

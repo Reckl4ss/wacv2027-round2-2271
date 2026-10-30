@@ -1,0 +1,2 @@
+# Preserve the exact bytes covered by MANIFEST.sha256 on every platform.
+* -text

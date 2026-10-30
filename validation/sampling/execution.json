@@ -1,0 +1,51 @@
+{
+  "task": "sampling",
+  "status": "PASS",
+  "exit_code": 0,
+  "seconds": 15.270301500102505,
+  "reference_csv_comparisons": [
+    {
+      "file": "e3_distribution_summary.csv",
+      "rows": 12,
+      "numeric_differences_within_tolerance": 0,
+      "max_abs_error": 0.0
+    },
+    {
+      "file": "e3_distribution_tests.csv",
+      "rows": 6,
+      "numeric_differences_within_tolerance": 0,
+      "max_abs_error": 0.0
+    },
+    {
+      "file": "e3_inclusion_audit.csv",
+      "rows": 1425,
+      "numeric_differences_within_tolerance": 0,
+      "max_abs_error": 0.0
+    },
+    {
+      "file": "e3_matched_n_runs.csv",
+      "rows": 1000,
+      "numeric_differences_within_tolerance": 2508,
+      "max_abs_error": 8.881784197001252e-16
+    },
+    {
+      "file": "e3_matched_n_summary.csv",
+      "rows": 16,
+      "numeric_differences_within_tolerance": 15,
+      "max_abs_error": 3.3306690738754696e-16
+    },
+    {
+      "file": "e3_population_flow.csv",
+      "rows": 2,
+      "numeric_differences_within_tolerance": 0,
+      "max_abs_error": 0.0
+    }
+  ],
+  "python": "3.13.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "scipy": "1.18.0",
+    "pandas": "3.0.3",
+    "matplotlib": "3.11.0"
+  }
+}

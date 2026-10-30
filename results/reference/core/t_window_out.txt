@@ -1,0 +1,37 @@
+============================================================================================
+T-WINDOW ROBUSTNESS -- partial(T_window, acc | erank, params), TSS & SSS
+[local execution path omitted]
+NO TRAINING / NO net build -- T recomputed from stored REAL curve_accs over early windows.
+============================================================================================
+  stored curve_eps across all archs: [0, 1, 2, 3, 4]  (max epoch = 4).
+  -> TWO distinct windows: [0-2] = 3 pts, [0-4] = 5 pts (= full stored curve = premise T_slope).
+     [0-8 == DUP of 0-4]: epochs 5-8 are NOT stored, so this row is byte-identical to [0-4]
+     (slope agrees to <1e-12); shown as a LABELLED duplicate, NOT counted in the robustness spread.
+
+--------------------------------------------------------------------------------------------
+SPACE TSS  (n=500)
+--------------------------------------------------------------------------------------------
+  window                     k capped        corr(Tw, acc)    partial(Tw,acc|er,pa)     corr(Tw, premiseT)
+  [0-2]                      3  False               +0.635      +0.521 [+0.444,+0.589]                 +0.950
+  [0-4]                      5  False               +0.749      +0.645 [+0.583,+0.701]                 +1.000
+  [0-8 == DUP of 0-4]        5   True               +0.749      +0.645 [+0.575,+0.698]                 +1.000  [DUPLICATE of [0-4]; not an independent window]
+  -> partial across the 2 DISTINCT windows: min=+0.521 max=+0.645 spread=0.124  (premise [0-4]=+0.645).
+
+--------------------------------------------------------------------------------------------
+SPACE SSS  (n=500)
+--------------------------------------------------------------------------------------------
+  window                     k capped        corr(Tw, acc)    partial(Tw,acc|er,pa)     corr(Tw, premiseT)
+  [0-2]                      3  False               +0.553      +0.519 [+0.452,+0.580]                 +0.820
+  [0-4]                      5  False               +0.460      +0.506 [+0.439,+0.566]                 +1.000
+  [0-8 == DUP of 0-4]        5   True               +0.460      +0.506 [+0.436,+0.566]                 +1.000  [DUPLICATE of [0-4]; not an independent window]
+  -> partial across the 2 DISTINCT windows: min=+0.506 max=+0.519 spread=0.013  (premise [0-4]=+0.506).
+
+============================================================================================
+VERDICT
+============================================================================================
+  The capacity-controlled trainability residual partial(T_window, acc | erank, params) stays
+  POSITIVE with CI excluding 0 across the only TWO distinct early windows ([0-2] 3pts and
+  [0-4] 5pts) in BOTH spaces: YES.
+  The [0-8] row is a LABELLED duplicate of [0-4] (curves cap at epoch 4) and is NOT counted
+  as independent evidence; the residual is robust to the early-window choice within the epochs
+  that actually exist in premise_data.pkl.

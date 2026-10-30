@@ -1,0 +1,53 @@
+============================================================================================
+SURFACE EXISTING ROBUSTNESS NUMBERS (for the rebuttal; no new stats except (b) cross-check)
+[local execution path omitted]
+============================================================================================
+============================================================================================
+(a) PRE-COMMITTED BONFERRONI FAMILY + THRESHOLD   [source: step1_full.log]
+============================================================================================
+  Q SURVIVES iff in BOTH spaces partial(Q,T_slope|erank,params)>0 AND partial(Q,acc|erank,params)>0,
+  with Bonferroni ONE-SIDED lower bounds > 0.  T gate PRE-COMMITTED to T_slope (no OR over T variants).
+  [analyze] Bonferroni family m = 9 Q x 2 spaces x 2 gated tests (T_slope,acc) = 36; one-sided per-test alpha = 0.00139; reported two-sided CI level = 99.722%
+  -> parsed: m=9 tests ; one-sided per-test alpha=0.00139 ; two-sided CI level=99.722%
+  probe            TSS p(Q,Tg|.) SSS p(Q,Tg|.) TSS p(Q,acc|.) SSS p(Q,acc|.)   verdict
+  feature; rot90 cues are attenuated by global average pooling, so a DIES verdict
+
+============================================================================================
+(b) T_loss vs T_slope CAPACITY-CONTROLLED PARTIALS   [logged + recomputed]
+============================================================================================
+  LOGGED  [source: premise_full.log] -- partial(T, acc | erank, params), the KEY line:
+     TSS      T_loss   : partial(T,acc|erank,params) = +0.6096  95%CI[+0.544,+0.672]  <-- KEY
+     TSS      T_slope  : partial(T,acc|erank,params) = +0.6448  95%CI[+0.580,+0.704]  <-- KEY
+     SSS      T_loss   : partial(T,acc|erank,params) = +0.6373  95%CI[+0.573,+0.689]  <-- KEY
+     SSS      T_slope  : partial(T,acc|erank,params) = +0.5063  95%CI[+0.436,+0.563]  <-- KEY
+     POOLED   T_loss   : partial(T,acc|erank,params) = +0.6983  95%CI[+0.666,+0.725]  <-- KEY
+     POOLED   T_slope  : partial(T,acc|erank,params) = +0.6867  95%CI[+0.659,+0.712]  <-- KEY
+
+  RECOMPUTED  [from premise_data.pkl] -- partial(T_variant, acc | erank, params):
+     TSS  T_loss   : partial = +0.610  95%CI[+0.544,+0.669]  (n=500)
+     TSS  T_slope  : partial = +0.645  95%CI[+0.579,+0.696]  (n=500)
+     SSS  T_loss   : partial = +0.637  95%CI[+0.570,+0.692]  (n=500)
+     SSS  T_slope  : partial = +0.506  95%CI[+0.439,+0.569]  (n=500)
+  -> both T variants give a positive capacity-controlled partial in both spaces; the
+     trainability residual is not specific to one T definition.
+
+============================================================================================
+(c) STDONLY 12-PROXY rank-PCA   [source: zoo_analysis_results.pkl R1]
+============================================================================================
+  rank-PCA HEADLINE (sign of PC1 aligned to higher accuracy):
+  arm            var(PC1)    var12   var123   corr(PC1,er) corr(PC1,pa) corr(PC1,ac)   k/n
+  STDONLY-tss       56.0%    73.5%    83.0%         +0.881       +0.803      +0.785   12/977
+  STDONLY-sss       55.1%    64.3%    72.9%         +0.968       +0.922      +0.913   12/425
+  -> one dominant axis (~55%% of variance in 12 proxies) that aligns with capacity
+     (corr(PC1, erank) >> corr with the trainability residual): supports the one-axis claim.
+
+============================================================================================
+(d) NTK lambda_K GRID: R2(F->Y) and Spearman(Y, acc)   [source: ntk_experiment_out.txt]
+============================================================================================
+  lambda_K       R2(F->Y)    Spearman(Y,acc)
+  0.01             0.6644              0.112
+  0.1              0.8112              0.397
+  1                0.8911              0.467
+  LAZY-REGIME TEST: Spearman(at-init-NTK KRR error Y, trained acc) = 0.397 95%CI[0.293,0.491]
+  -> Spearman(at-init NTK error Y, trained acc) stays modest (0.11-0.47) across the lambda grid:
+     the at-init NTK ceiling does NOT govern trained accuracy (NB201 not lazy); robust to lambda_K.

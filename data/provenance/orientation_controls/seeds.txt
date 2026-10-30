@@ -1,0 +1,4 @@
+Bootstrap draws: 2000 per statistic
+Seed rule: 2027000 + uint32(SHA256("E1|<space>|<proxy>|<target>")) mod 1,000,000,000
+PCA: deterministic NumPy SVD; no random seed
+

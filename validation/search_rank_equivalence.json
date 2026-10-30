@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "arrays_checked": 660,
+  "equality": "exact (including NaN mask)",
+  "scope": "Reference tie-rank equivalence on target columns, deterministic duplicate resamples and nonfinite edge cases; all other verifier operations unchanged."
+}

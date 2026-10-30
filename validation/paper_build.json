@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "cross_reference_cycles": 2,
+  "cross_reference_snapshots_stable": true,
+  "steps": [
+    {
+      "cycle": 1,
+      "document": "main",
+      "command": [
+        "tectonic",
+        "main.tex",
+        "--outdir",
+        "build/main",
+        "--keep-intermediates",
+        "--keep-logs"
+      ],
+      "exit_code": 0,
+      "log": "cycle1_main.log"
+    },
+    {
+      "cycle": 1,
+      "document": "appendix",
+      "command": [
+        "tectonic",
+        "appendix.tex",
+        "--outdir",
+        "build/appendix",
+        "--keep-intermediates",
+        "--keep-logs"
+      ],
+      "exit_code": 0,
+      "log": "cycle1_appendix.log"
+    },
+    {
+      "cycle": 2,
+      "document": "main",
+      "command": [
+        "tectonic",
+        "main.tex",
+        "--outdir",
+        "build/main",
+        "--keep-intermediates",
+        "--keep-logs"
+      ],
+      "exit_code": 0,
+      "log": "cycle2_main.log"
+    },
+    {
+      "cycle": 2,
+      "document": "appendix",
+      "command": [
+        "tectonic",
+        "appendix.tex",
+        "--outdir",
+        "build/appendix",
+        "--keep-intermediates",
+        "--keep-logs"
+      ],
+      "exit_code": 0,
+      "log": "cycle2_appendix.log"
+    }
+  ],
+  "issues": [],
+  "outputs": {
+    "main": {
+      "file": "main.pdf",
+      "sha256": "93fc3d58ad51807b7a0b7105728c308ebfaf7b0ae2963a8effef386047df2ee9"
+    },
+    "appendix": {
+      "file": "appendix.pdf",
+      "sha256": "b9f84ed6bc076c194814834998d00d01f08756655251f5c14f6cf03eefa04e54"
+    }
+  },
+  "scope": "Compilation and final log checks; visual/text comparison with reference PDFs is separate."
+}

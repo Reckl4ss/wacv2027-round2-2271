@@ -1,0 +1,33 @@
+{
+  "task": "dimension",
+  "status": "PASS",
+  "exit_code": 0,
+  "seconds": 14.575289099942893,
+  "reference_csv_comparisons": [
+    {
+      "file": "e2_cached_length_strata.csv",
+      "rows": 12,
+      "numeric_differences_within_tolerance": 0,
+      "max_abs_error": 0.0
+    },
+    {
+      "file": "e2_erank_common_range.csv",
+      "rows": 6,
+      "numeric_differences_within_tolerance": 0,
+      "max_abs_error": 0.0
+    },
+    {
+      "file": "e2_score_correlations.csv",
+      "rows": 6,
+      "numeric_differences_within_tolerance": 12,
+      "max_abs_error": 3.3306690738754696e-16
+    }
+  ],
+  "python": "3.13.13",
+  "packages": {
+    "numpy": "2.4.4",
+    "scipy": "1.18.0",
+    "pandas": "3.0.3",
+    "matplotlib": "3.11.0"
+  }
+}

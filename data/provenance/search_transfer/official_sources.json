@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "retrieved_utc_date": "2026-08-25",
+  "naslib": {
+    "repository": "https://github.com/automl/NASLib",
+    "commit": "8cb5d2ba1e29784de43039d9824c68e88fb1a1da",
+    "license": "Apache-2.0",
+    "license_sha256": "f1b59e0ebf1186b57fb7f6eb8fef0563ef8b3f88294de8aca9975d993030b293",
+    "download_script": "scripts/zc/bash_scripts/download_nbs_zero.sh",
+    "download_tool": "gdown==5.2.0",
+    "files": [
+      {
+        "name": "zc_nasbench101.json",
+        "google_drive_file_id": "1uT3tuIDMVaB4U1N8l9imEYHWPOLls3FD",
+        "sha256": "aaf67baf526661c84b9c2bd449926cd0ff41d9451fe0aeaeba3450013ec6801f"
+      },
+      {
+        "name": "zc_transbench101_micro.json",
+        "google_drive_file_id": "1i8N2n7yflN33xAuQVzlTYM4E7W1Cwn1S",
+        "sha256": "60934abb09b682abe0e1ca44acf08a1162e3001f34960ac78fda9f8867525c52"
+      }
+    ]
+  },
+  "transport_note": "The compute host could not reach Google Drive. Files were downloaded from the same official IDs in an isolated local temporary directory, hashed, transferred as a lossless archive, then independently re-hashed and JSON-parsed on the compute host."
+}
